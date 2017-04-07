@@ -8,10 +8,12 @@ public class AttackState : StateBehaviour
 	public float m_huntTime = 5f;
 
 	float m_timer = 0f;
+    public bool IsRunningCR;
 
     public override void OnEnter()
-	{        
+	{
         //Debug.Log("Enter Attack State");
+        //Context.Enemy.RandomizeRotation();
 		m_timer = m_huntTime;
     }
 
@@ -22,10 +24,26 @@ public class AttackState : StateBehaviour
 
 	private void Update()
 	{
+
+        if(IsRunningCR == false)
+        {
+            StartCoroutine(RandomRot());
+        }
 		//m_timer -= Time.deltaTime;
+        
 		//if (m_timer < 0)
 		//	StateMachine.GoToState("111234");
 	}
+
+
+    IEnumerator RandomRot()
+    {
+        IsRunningCR = true;
+        yield return new WaitForSeconds(1);
+        Context.Enemy.RandomizeRotation();
+        IsRunningCR = false;
+        
+    }
 
 	void FixedUpdate ()
 	{

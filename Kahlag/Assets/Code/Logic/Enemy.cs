@@ -8,21 +8,32 @@ public class Enemy : MonoBehaviour
 	public float m_viewRange;
     public float m_attackRage;
 
+    public float randomDir;
+    private float _right = .05f;
+    private float _left = -.05f;
+
     public float ActionTimer;
 
     public Transform aimDirection;
+    public float VisionRadius = 30f;
     public float TurnSmoothing = 5f;
     public float Health;
 
     Rigidbody m_body;
 
     //Navmesh Testing
-    //UnityEngine.AI.NavMeshAgent agent;
+    UnityEngine.AI.NavMeshAgent agent;
+
+    public GameObject[] waypoints; //for patrolling, if enemy does not have any - won't patrol
+    int currentWP = 0;
+    public float accuracyWP;
 
     private void Awake()
 	{
-        //agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing
-		m_body = GetComponent<Rigidbody>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing       
+        agent.autoBraking = false; //does not slow down 
+        
+        m_body = GetComponent<Rigidbody>();
 	}
 
     void Update()
@@ -34,6 +45,7 @@ public class Enemy : MonoBehaviour
         if(ActionTimer >= 0f)
         {
             ActionTimer -= Time.deltaTime;
+            
         }
     }
 
@@ -48,8 +60,12 @@ public class Enemy : MonoBehaviour
 
 	public bool CanSeePlayer()
 	{
-		return Vector3.Distance(transform.position, m_target.position) < m_viewRange;
-	}
+        //return Vector3.Distance(transform.position, m_target.position) < m_viewRange;
+
+        Vector3 targetDir = m_target.position - transform.position;
+        float angle = Vector3.Angle(targetDir, transform.forward);       
+        return Vector3.Distance(m_target.position, transform.position) < m_viewRange && (angle < VisionRadius);
+    }
 
     public bool CanAttackPlayer()
     {
@@ -58,14 +74,18 @@ public class Enemy : MonoBehaviour
 
 	public void MoveTowardsTarget()
 	{
-		m_body.AddForce((m_target.position - m_body.position).normalized * 25f);
-	}
+		//m_body.AddForce((m_target.position - m_body.position).normalized * 25f);
+
+        //NAVMESH TEST
+        agent.SetDestination(m_target.position);
+        Vector3 relDirection = transform.InverseTransformDirection(agent.desiredVelocity);
+    }
 
     public void RotateAroundTarget()
     {
         aimDirection.LookAt(m_target);
         transform.rotation = Quaternion.Lerp(transform.rotation, aimDirection.rotation, TurnSmoothing * Time.deltaTime);
-        transform.Translate(Vector3.right * Time.deltaTime); // Fix this!
+        transform.Translate(randomDir, 0f, 0f * Time.deltaTime /100); // Fix this!
     }
 
 	public void MoveAwayFromTarget()
@@ -75,6 +95,22 @@ public class Enemy : MonoBehaviour
 
 	public void MoveTowardsPosition(Vector3 pos)
 	{
-		m_body.AddForce((pos - m_body.position).normalized * 13f);
-	}
+		//m_body.AddForce((pos - m_body.position).normalized * 13f);
+
+        //NAVMESH TEST
+        // Returns if no points have been set up
+        if (waypoints.Length == 0)
+        {
+            return;
+        }
+        agent.destination = waypoints[currentWP].transform.position;
+        currentWP = (currentWP + 1) % waypoints.Length;
+    }
+
+
+    public void RandomizeRotation()
+    {
+        randomDir = Random.Range(_left, _right);
+
+    }
 }
