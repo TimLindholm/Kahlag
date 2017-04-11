@@ -44,6 +44,6 @@ public class InputScript : MonoBehaviour
         Dash = Input.GetKeyDown(KeyCode.Joystick1Button5);
         //LockOn = Input.GetKeyDown(KeyCode.Joystick1Button4);
 
-        FastAttack = Input.GetKeyDown(KeyCode.JoystickButton0);
+        FastAttack = Input.GetKeyDown(KeyCode.JoystickButton1);
     }
 }

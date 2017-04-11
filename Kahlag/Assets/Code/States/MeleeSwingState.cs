@@ -20,6 +20,7 @@ public class MeleeSwingState : StateBehaviour
         //Random Action Cooldown
         float cooldown = UnityEngine.Random.Range(MinCD, MaxCD);
         Debug.Log("MeleeSwing");
+        Context.Enemy.anim.SetBool("MeleeSwing", true);
         Context.Enemy.ActionTimer = cooldown;
        
         //Perform Action
@@ -28,13 +29,14 @@ public class MeleeSwingState : StateBehaviour
 
     public override void OnExit()
     {
-        
+        Context.Enemy.anim.SetBool("MeleeSwing", false);
     }
 
     private void Update()
     {
         m_timer -= Time.deltaTime;
         if (m_timer < 0)
+            
             StateMachine.GoToState("AttackState");
     }
 }

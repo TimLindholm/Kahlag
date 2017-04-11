@@ -35,6 +35,8 @@ public class CombatState : StateBehaviour
         Context.Enemy.MoveTowardsTarget();
         //Context.Enemy.RotateAroundTarget();
 
+     
+
         if (Context.Enemy.CanAttackPlayer())
         {
             agent.Stop();

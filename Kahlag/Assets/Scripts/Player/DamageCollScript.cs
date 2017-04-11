@@ -28,7 +28,7 @@ public class DamageCollScript : MonoBehaviour
         if (enemyHealth != null)
         {
 
-            
+            print("Damage");
             enemyHealth.TakeDamage(Damage);
             enemyHealth.KnockBack(-collision.contacts[0].normal * Force);
         }

@@ -26,6 +26,10 @@ public class PlayerMovementScript : MonoBehaviour
     public Transform Direction;
 
     public Vector3 DashDirection;
+    public Transform aimDirection;
+
+    //Animation
+    private Animator anim;
 
 
     private PlayerActionScript _actionRef;
@@ -40,7 +44,10 @@ public class PlayerMovementScript : MonoBehaviour
         _camMaster = GameObject.Find("CameraMaster").transform;	// Reach Camera Master obj!	
         _actionRef = GetComponent<PlayerActionScript>();
         _transform = transform;
-        _rb = GetComponent<Rigidbody>();   
+        _rb = GetComponent<Rigidbody>();
+        SetupAnimator();
+
+        anim = GetComponentInChildren<Animator>();
     }
 	
 	
@@ -48,18 +55,28 @@ public class PlayerMovementScript : MonoBehaviour
     {
         if(_actionRef.InAction == false)
         {
-            //MovePlayer();
-            //MoveSpeedAdjustment();
-            Move(_ir.MoveAxis);
+            //MoveAnim();
+            MovePlayer();
+            MoveSpeedAdjustment();
+
+            if (_ir.RotationX != 0f || _ir.RotationY != 0f)
+            {
+                Rotate(_ir.RotationX, _ir.RotationY);
+            }
+            //Move(_ir.MoveAxis);
         }
+        
 
     }
 
     private void Move(Vector2 dir)
     {
 
-        newDir = new Vector3(dir.x, 0, dir.y);
-        newDir = Quaternion.Euler(0, _camMaster.eulerAngles.y, 0) * newDir;
+        //newDir = new Vector3(dir.x, 0, dir.y);
+        //newDir = Quaternion.Euler(0, _camMaster.eulerAngles.y, 0) * newDir;
+
+        //float animValue = Mathf.Abs(dir.x) + Mathf.Abs(dir.y);
+        
 
         RaycastHit hit;
         if (!Physics.Raycast(transform.position, newDir, out hit, .8f, WallMask))
@@ -67,21 +84,73 @@ public class PlayerMovementScript : MonoBehaviour
             if (_actionRef.InAction == false)
             {                       
                     moveVector = newDir * MoveSpeed * Time.deltaTime;
-                    _transform.Translate(moveVector, Space.World);               
-            }
-
-            //if (_freeRot == true)
-            {
+                    _transform.Translate(moveVector, Space.World);
+                   
                     Quaternion targetRotation = Quaternion.LookRotation(newDir, Vector3.up);
-                    _transform.rotation = Quaternion.Lerp(_transform.rotation, targetRotation, TurnSmoothing * Time.deltaTime);
+                    _transform.rotation = Quaternion.Lerp(_transform.rotation, targetRotation, TurnSmoothing * Time.deltaTime);                                     
+            }
+                     
+            
+            else
+            {
+                //anim.SetFloat("Move", 0f);
             }
         }
-     }
-              
+    }
+
+    void ConvertMoveInputAndPassToAnimator(Vector3 moveInput)
+    {
+        Vector3 localMove = transform.InverseTransformDirection(moveInput);
+        float forwardAmount = localMove.z;
+
+        anim.SetFloat("Move", forwardAmount, 0.1f, Time.deltaTime);
+    }
+
+    void SetupAnimator()
+    {
+        anim = GetComponentInChildren<Animator>();
+
+        foreach (var childAnimator in GetComponentsInChildren<Animator>())
+        {
+            if (childAnimator != anim)
+            {
+                anim.avatar = childAnimator.avatar;
+                Destroy(childAnimator);
+                break;
+            }
+        }
+    }
+
+    private void Rotate(float Horizontal, float Vertical)
+    {
+        Vector3 targetDirection = new Vector3(Horizontal, 0f, Vertical);
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
+
+        //Quaternion newRotation = Quaternion.Lerp(_rb.rotation, targetRotation, TurnSmoothing * Time.deltaTime);
+
+        //smooth rotation test
+        aimDirection.rotation = targetRotation;
+        transform.rotation = Quaternion.Lerp(transform.rotation, aimDirection.rotation, TurnSmoothing * Time.deltaTime);
+
+        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, degree), Time.deltaTime);
+
+
+        //_transform.rotation = targetRotation;        
+    }
+
     private void MovePlayer()
     {
+        float animValue = Mathf.Abs(_ir.Horizontal) + Mathf.Abs(_ir.Vertical);
+
+        animValue = Mathf.Clamp01(animValue);
+        anim.SetFloat("Move", animValue);
+
         if (_ir.Horizontal != 0f || _ir.Vertical != 0f)
         {
+
+         
+           
+
             Moving = true;
             //Vector3 newPosition = _rb.position;
             Vector3 newPosition = _transform.position;
@@ -91,8 +160,8 @@ public class PlayerMovementScript : MonoBehaviour
 
             //Vector3 walkDirection = (newPosition - _rb.position).normalized;
             Vector3 walkDirection = (newPosition - _transform.position).normalized;
-            Vector3 lookDirection = Direction.forward;  //Ska vara transform.forward på objektet som roterar dit man siktar
-            angle = Vector3.Angle(walkDirection, lookDirection);
+            //Vector3 lookDirection = Direction.forward;  //Ska vara transform.forward på objektet som roterar dit man siktar
+            //angle = Vector3.Angle(walkDirection, lookDirection);
             //Debug.Log(angle);
 
             DashDirection = walkDirection;
@@ -104,6 +173,18 @@ public class PlayerMovementScript : MonoBehaviour
         else
         {
             Moving = false;
+        }
+    }
+
+    public void MoveAnim()
+    {
+        if(Moving == true)
+        {
+            anim.SetFloat("Move", 1f);
+        }
+        else
+        {
+            anim.SetFloat("Move", 0f);
         }
     }
 

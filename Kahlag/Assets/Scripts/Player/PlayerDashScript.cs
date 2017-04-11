@@ -37,7 +37,7 @@ public class PlayerDashScript : MonoBehaviour
         {
             ApplyForce();
             StaminaRef.CurrentStamina -= DashCost;
-
+            StartCoroutine(DashActionTimer());
             Debug.Log("Dashing");
         }
     }
@@ -47,5 +47,12 @@ public class PlayerDashScript : MonoBehaviour
             _rb.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
             //Debug.Log("ApplyingForce");
         }
+    }
+
+    IEnumerator DashActionTimer()
+    {
+        _actionRef.InAction = true;
+        yield return new WaitForSeconds(.5f);
+        _actionRef.InAction = false;
     }
 }

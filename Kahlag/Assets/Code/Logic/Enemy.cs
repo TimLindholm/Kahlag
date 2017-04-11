@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     public float VisionRadius = 30f;
     public float TurnSmoothing = 5f;
 
+    public Animator anim;
+
 
     //Health Related
     public float Health;
@@ -36,7 +38,8 @@ public class Enemy : MonoBehaviour
 	{
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing       
         agent.autoBraking = false; //does not slow down 
-        
+
+        SetupAnimator(); //get anim component
         m_body = GetComponent<Rigidbody>();
 	}
 
@@ -80,8 +83,10 @@ public class Enemy : MonoBehaviour
 		//m_body.AddForce((m_target.position - m_body.position).normalized * 25f);
 
         //NAVMESH TEST
+
         agent.SetDestination(m_target.position);
         Vector3 relDirection = transform.InverseTransformDirection(agent.desiredVelocity);
+        anim.SetFloat("Moving", 1.1f);
     }
 
     public void RotateAroundTarget()
@@ -98,15 +103,22 @@ public class Enemy : MonoBehaviour
 
 	public void MoveTowardsPosition(Vector3 pos)
 	{
-		//m_body.AddForce((pos - m_body.position).normalized * 13f);
+        //m_body.AddForce((pos - m_body.position).normalized * 13f);
 
         //NAVMESH TEST
         // Returns if no points have been set up
+        //Vector3 relDirection = transform.InverseTransformDirection(agent.desiredVelocity);
+        //anim.SetFloat("Moving", relDirection.z, 2f, Time.deltaTime);
+        anim.SetFloat("Moving", 0.6f);
         if (waypoints.Length == 0)
         {
+            anim.SetFloat("Moving", 0f);
             return;
+            
         }
+        
         agent.destination = waypoints[currentWP].transform.position;
+       
         currentWP = (currentWP + 1) % waypoints.Length;
     }
 
@@ -128,15 +140,31 @@ public class Enemy : MonoBehaviour
         if (IsDead != true)
         {
             //_score.DamageBonus += Damage;
+            anim.SetTrigger("TakeDamage");
             Health -= Damage;
-            Debug.Log("Damaged");
+            Debug.Log("Enemy Hit!");
         }
         if (Health <= 0f && IsDead == false)
         {
             m_body.constraints = RigidbodyConstraints.None;
             //StaminaRef._stamina = StaminaRef.Stamina;
-            //Dead();
+            
             IsDead = true;
+        }
+    }
+
+    void SetupAnimator()
+    {
+        anim = GetComponentInChildren<Animator>();
+
+        foreach (var childAnimator in GetComponentsInChildren<Animator>())
+        {
+            if(childAnimator != anim)
+            {
+                anim.avatar = childAnimator.avatar;
+                Destroy(childAnimator);
+                break;
+            }
         }
     }
 }
