@@ -17,7 +17,11 @@ public class Enemy : MonoBehaviour
     public Transform aimDirection;
     public float VisionRadius = 30f;
     public float TurnSmoothing = 5f;
+
+
+    //Health Related
     public float Health;
+    public bool IsDead;
 
     Rigidbody m_body;
 
@@ -44,8 +48,7 @@ public class Enemy : MonoBehaviour
     {
         if(ActionTimer >= 0f)
         {
-            ActionTimer -= Time.deltaTime;
-            
+            ActionTimer -= Time.deltaTime;           
         }
     }
 
@@ -112,5 +115,28 @@ public class Enemy : MonoBehaviour
     {
         randomDir = Random.Range(_left, _right);
 
+    }
+
+    //Take Damage Related
+    public void KnockBack(Vector3 Force)
+    {
+        m_body.AddForce(Force);
+    }
+
+    public void TakeDamage(float Damage)
+    {
+        if (IsDead != true)
+        {
+            //_score.DamageBonus += Damage;
+            Health -= Damage;
+            Debug.Log("Damaged");
+        }
+        if (Health <= 0f && IsDead == false)
+        {
+            m_body.constraints = RigidbodyConstraints.None;
+            //StaminaRef._stamina = StaminaRef.Stamina;
+            //Dead();
+            IsDead = true;
+        }
     }
 }

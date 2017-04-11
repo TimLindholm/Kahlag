@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LockOnScript : MonoBehaviour
+public class PlayerActionScript : MonoBehaviour
 {
 
+    public bool InAction;
 	
 	void Start ()
     {

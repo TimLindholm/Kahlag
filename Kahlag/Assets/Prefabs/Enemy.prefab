@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4251806384166064}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: aimDir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 114874148822881144}
   - component: {fileID: 114942689848966628}
   - component: {fileID: 195285973072000556}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 33567058802363720}
   - component: {fileID: 136140147566072312}
   - component: {fileID: 23784193068176572}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,8 @@ MonoBehaviour:
   aimDirection: {fileID: 4251806384166064}
   VisionRadius: 60
   TurnSmoothing: 5
-  Health: 0
+  Health: 50
+  IsDead: 0
   waypoints:
   - {fileID: 0}
   - {fileID: 0}

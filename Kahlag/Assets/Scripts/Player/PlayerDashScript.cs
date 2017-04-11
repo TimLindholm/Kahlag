@@ -15,9 +15,12 @@ public class PlayerDashScript : MonoBehaviour
     private Rigidbody _rb;
     private InputScript _ir;
 
+    private PlayerActionScript _actionRef;
+
     void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
+        _actionRef = GetComponent<PlayerActionScript>();
         _rb = GetComponent<Rigidbody>();
     }
 	
@@ -30,7 +33,7 @@ public class PlayerDashScript : MonoBehaviour
 
     private void PlayerDash()
     {
-        if (MovementRef.Moving == true && _ir.Dash == true && StaminaRef.CurrentStamina >= DashCost)
+        if (_ir.Dash == true && StaminaRef.CurrentStamina >= DashCost && _actionRef.InAction == false)
         {
             ApplyForce();
             StaminaRef.CurrentStamina -= DashCost;
@@ -41,7 +44,7 @@ public class PlayerDashScript : MonoBehaviour
     private void ApplyForce()
     {
         {
-            _rb.AddForce(MovementRef.DashDirection * DashSpeed, ForceMode.Impulse);
+            _rb.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
             //Debug.Log("ApplyingForce");
         }
     }

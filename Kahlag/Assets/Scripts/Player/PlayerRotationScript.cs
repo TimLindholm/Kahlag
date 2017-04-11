@@ -10,10 +10,13 @@ public class PlayerRotationScript : MonoBehaviour
     private Transform _transform;
     private Rigidbody _rb;
     private InputScript _ir;
+
+    private PlayerActionScript _actionRef;
   
     void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
+        _actionRef = GetComponentInParent<PlayerActionScript>();
         _transform = transform;
         _rb = GetComponent<Rigidbody>();
     }
@@ -21,10 +24,14 @@ public class PlayerRotationScript : MonoBehaviour
 	
 	void Update ()
     {
-        if (_ir.RotationX != 0f || _ir.RotationY != 0f)
+        if(_actionRef.InAction == false)
         {
-            Rotate(_ir.RotationX, _ir.RotationY);
+            if (_ir.RotationX != 0f || _ir.RotationY != 0f)
+            {
+                Rotate(_ir.RotationX, _ir.RotationY);
+            }
         }
+
     }
 
     private void Rotate(float Horizontal, float Vertical)

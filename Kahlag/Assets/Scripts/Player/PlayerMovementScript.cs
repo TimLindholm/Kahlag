@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
 {
-    public float MoveSpeed = 1f;
-    public float _moveSpeedAdjustment;
 
-   // public float TurnSmoothing = 15f;
+    public LayerMask WallMask;		// Player Collision with Camera!
+    public float MoveSpeed = 1f;
+    public float TurnSmoothing = .5f;
+    public float _moveSpeedAdjustment;
+    private Transform _camMaster;       // Reach Camera Master obj! (see camera script!)
+
+    // public float TurnSmoothing = 15f;
     private Transform _transform;
+
+    public Vector3 newDir;
+    public Vector3 moveVector;
 
     public bool CanMove = true;
     public bool Moving;
@@ -21,12 +28,17 @@ public class PlayerMovementScript : MonoBehaviour
     public Vector3 DashDirection;
 
 
+    private PlayerActionScript _actionRef;
+
+
     //Lock-on testing
     public bool UsingLockOn;
 
     void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
+        _camMaster = GameObject.Find("CameraMaster").transform;	// Reach Camera Master obj!	
+        _actionRef = GetComponent<PlayerActionScript>();
         _transform = transform;
         _rb = GetComponent<Rigidbody>();   
     }
@@ -34,10 +46,38 @@ public class PlayerMovementScript : MonoBehaviour
 	
 	void Update ()
     {
-        MovePlayer();
-        MoveSpeedAdjustment();
+        if(_actionRef.InAction == false)
+        {
+            //MovePlayer();
+            //MoveSpeedAdjustment();
+            Move(_ir.MoveAxis);
+        }
+
     }
 
+    private void Move(Vector2 dir)
+    {
+
+        newDir = new Vector3(dir.x, 0, dir.y);
+        newDir = Quaternion.Euler(0, _camMaster.eulerAngles.y, 0) * newDir;
+
+        RaycastHit hit;
+        if (!Physics.Raycast(transform.position, newDir, out hit, .8f, WallMask))
+        {
+            if (_actionRef.InAction == false)
+            {                       
+                    moveVector = newDir * MoveSpeed * Time.deltaTime;
+                    _transform.Translate(moveVector, Space.World);               
+            }
+
+            //if (_freeRot == true)
+            {
+                    Quaternion targetRotation = Quaternion.LookRotation(newDir, Vector3.up);
+                    _transform.rotation = Quaternion.Lerp(_transform.rotation, targetRotation, TurnSmoothing * Time.deltaTime);
+            }
+        }
+     }
+              
     private void MovePlayer()
     {
         if (_ir.Horizontal != 0f || _ir.Vertical != 0f)
