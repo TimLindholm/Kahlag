@@ -8,6 +8,12 @@ public class FastAttackScript : MonoBehaviour
     private InputScript _ir;
     private Animator anim;
     private PlayerActionScript _actionRef;
+
+    public bool IsSwinging;
+
+    //Shake
+    public float amplitude = 0.1f;
+    public float duration = 0.5f;
 	
 	void Start ()
     {
@@ -27,6 +33,7 @@ public class FastAttackScript : MonoBehaviour
     {
         if(_actionRef.InAction == false && _ir.FastAttack == true)
         {
+            IsSwinging = true;
             StartCoroutine(FastAttack());
         }
     }
@@ -35,8 +42,9 @@ public class FastAttackScript : MonoBehaviour
     {
         _actionRef.InAction = true;
         anim.SetBool("FastAttack", true);
+        CameraShake.Instance.Shake(amplitude, duration);
         yield return new WaitForSeconds(.3f);
-          
+        IsSwinging = false;
         //Execute Action - continue as long as FastAttack = true!
         _actionRef.InAction = false;
         anim.SetBool("FastAttack", false);
