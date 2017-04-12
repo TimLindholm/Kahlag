@@ -17,11 +17,14 @@ public class PlayerDashScript : MonoBehaviour
 
     private PlayerActionScript _actionRef;
 
+    private Animator anim;
+
     void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
         _actionRef = GetComponent<PlayerActionScript>();
         _rb = GetComponent<Rigidbody>();
+        anim = GetComponentInChildren<Animator>();
     }
 	
 	
@@ -44,7 +47,9 @@ public class PlayerDashScript : MonoBehaviour
     private void ApplyForce()
     {
         {
+            anim.SetTrigger("Dash");
             _rb.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
+            
             //Debug.Log("ApplyingForce");
         }
     }

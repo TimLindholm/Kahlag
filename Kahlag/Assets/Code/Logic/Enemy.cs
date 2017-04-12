@@ -129,6 +129,13 @@ public class Enemy : MonoBehaviour
 
     }
 
+    
+    
+    
+    
+    
+    
+    
     //Take Damage Related
     public void KnockBack(Vector3 Force)
     {
@@ -153,6 +160,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
+
+
+    //Anim Related
     void SetupAnimator()
     {
         anim = GetComponentInChildren<Animator>();
