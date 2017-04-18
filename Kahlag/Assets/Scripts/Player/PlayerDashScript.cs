@@ -49,7 +49,9 @@ public class PlayerDashScript : MonoBehaviour
         {
             anim.SetTrigger("Dash");
             _rb.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
+            //transform.Translate(0f, 0f, DashSpeed * Time.deltaTime /5);
             
+
             //Debug.Log("ApplyingForce");
         }
     }

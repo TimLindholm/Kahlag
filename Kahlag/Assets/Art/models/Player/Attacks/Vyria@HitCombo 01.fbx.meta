@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f00ed31695390fd4ab4eb543678fef39
-timeCreated: 1492080552
+guid: d4466f4315ce72746947098c47443413
+timeCreated: 1492081044
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -290,7 +290,7 @@ ModelImporter:
     4300032: Legs
     4300034: Belt
     4300036: Torso
-    7400000: Idle
+    7400000: HitCombo 01
     9500000: //RootNode
     13700000: Arms
     13700002: Bandage01
@@ -333,21 +333,21 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: HitCombo 01
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 80
+      lastFrame: 12
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
-      loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
@@ -661,12 +661,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: Root
+    rootMotionBoneName: RootCTRL
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 508d11b212c167b4c933761c31b5b74c,
+    type: 3}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
