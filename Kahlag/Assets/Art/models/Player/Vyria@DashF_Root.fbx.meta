@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0c53b7fb92e049a4da2daade982709a2
-timeCreated: 1492509885
+guid: 91fa8c1a7e2b44e42abd104dee14f41c
+timeCreated: 1492521544
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -290,7 +290,7 @@ ModelImporter:
     4300032: Legs
     4300034: Belt
     4300036: Torso
-    7400000: HitCombo 03
+    7400000: DashF_Root
     9500000: //RootNode
     13700000: Arms
     13700002: Bandage01
@@ -333,10 +333,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: HitCombo 03
+      name: DashF_Root
       takeName: Take 001
-      firstFrame: 24
-      lastFrame: 36
+      firstFrame: 2.6
+      lastFrame: 19.5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -346,10 +346,10 @@ ModelImporter:
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
-      loopBlendPositionY: 0
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 0
+      keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0

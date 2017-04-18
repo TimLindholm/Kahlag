@@ -12,24 +12,23 @@ public class FastAttackScript : MonoBehaviour
     public Transform root;
 
     public bool IsSwinging;
-    public bool FirstSwing;
-    public bool SecondSwing;
 
 
     private float _combotimer;
-    public float combo1;
-    public float combo2;
-    public float combo3;   
+
 
     //Shake
     public float amplitude = 0.1f;
     public float duration = 0.5f;
+
+    private DetectEnemyScript _detectRef;
 	
 	void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
         _actionRef = GetComponent<PlayerActionScript>();
         anim = GetComponentInChildren<Animator>();
+        _detectRef = GetComponent<DetectEnemyScript>();
 
      
     }
@@ -53,8 +52,19 @@ public class FastAttackScript : MonoBehaviour
     {
         
         _actionRef.InAction = true;
-        anim.SetBool("FastAttack", true);
-        anim.SetTrigger("FastAttack1");
+
+        if(_detectRef.EnemyToTarget != null)
+        {
+            transform.LookAt(_detectRef.EnemyToTarget);
+            anim.SetBool("FastAttack", true);
+            anim.SetTrigger("FastAttack1");
+        }
+        else
+        {
+            anim.SetBool("FastAttack", true);
+            anim.SetTrigger("FastAttack1");
+        }
+    
         //CameraShake.Instance.Shake(amplitude, duration);
       
         
@@ -98,7 +108,7 @@ public class FastAttackScript : MonoBehaviour
     {
         StopCoroutine(FastAttack2());
         anim.SetTrigger("FastAttack3");
-        yield return new WaitForSeconds(combo2);
+        //yield return new WaitForSeconds(combo2);
         //while (_combo1timer <= Combo1.clip.length)
         //{
         //    if (_ir.FastAttack == true)

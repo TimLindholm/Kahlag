@@ -15,6 +15,8 @@ public class PlayerDashScript : MonoBehaviour
     private Rigidbody _rb;
     private InputScript _ir;
 
+    public Transform aimDir;
+
     private PlayerActionScript _actionRef;
 
     private Animator anim;
@@ -47,10 +49,12 @@ public class PlayerDashScript : MonoBehaviour
     private void ApplyForce()
     {
         {
+            transform.rotation = aimDir.rotation;
             anim.SetTrigger("Dash");
-            _rb.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
-            //transform.Translate(0f, 0f, DashSpeed * Time.deltaTime /5);
+            //_rb.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
             
+            //transform.Translate(0f, 0f, DashSpeed * Time.deltaTime /5);
+
 
             //Debug.Log("ApplyingForce");
         }
@@ -59,7 +63,7 @@ public class PlayerDashScript : MonoBehaviour
     IEnumerator DashActionTimer()
     {
         _actionRef.InAction = true;
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.3f);
         _actionRef.InAction = false;
     }
 }
