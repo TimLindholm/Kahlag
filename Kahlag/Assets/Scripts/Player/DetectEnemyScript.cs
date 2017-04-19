@@ -14,8 +14,8 @@ public class DetectEnemyScript : MonoBehaviour
 
     public GameObject[] enemies;
 
-    public float distance = 3f;
-    float nearestDistance = 50f;
+    //public float distance = 3f;
+    //float nearestDistance = 50f;
     public float VisionRadius = 90f;
 
 
@@ -57,7 +57,10 @@ public class DetectEnemyScript : MonoBehaviour
             enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         }
-                  
+
+
+        float distance = 3f;
+        float nearestDistance = 50f;
 
         foreach (GameObject enemy in enemies)
         {

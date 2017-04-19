@@ -9,17 +9,15 @@ public class FastAttackScript : MonoBehaviour
     private Animator anim;
     private PlayerActionScript _actionRef;
 
-    public Transform root;
-
     public bool IsSwinging;
-
-
-    private float _combotimer;
-
 
     //Shake
     public float amplitude = 0.1f;
     public float duration = 0.5f;
+
+    public bool InCombo;
+
+    
 
     private DetectEnemyScript _detectRef;
 	
@@ -43,82 +41,58 @@ public class FastAttackScript : MonoBehaviour
     {
         if(_actionRef.InAction == false && _ir.FastAttack == true)
         {
-            IsSwinging = true;
+            
             StartCoroutine(FastAttack());
         }
     }
 
     IEnumerator FastAttack()
     {
-        
+        CancelInvoke("LeaveActionState");
+        IsSwinging = true;
         _actionRef.InAction = true;
+        int randomValue = Random.Range(0, 2);
 
-        if(_detectRef.EnemyToTarget != null)
+        if (_detectRef.EnemyToTarget != null)
         {
             transform.LookAt(_detectRef.EnemyToTarget);
-            anim.SetBool("FastAttack", true);
-            anim.SetTrigger("FastAttack1");
+            anim.SetTrigger("FastAttackTrigger");
+            //anim.SetBool("FastAttack", true);
+            
+            
+            anim.SetInteger("AttackType", randomValue);
+            
         }
         else
         {
-            anim.SetBool("FastAttack", true);
-            anim.SetTrigger("FastAttack1");
-        }
-    
-        //CameraShake.Instance.Shake(amplitude, duration);
-      
-        
-        
-            
+            //anim.SetBool("FastAttack", true);
+            anim.SetTrigger("FastAttackTrigger");
+            //int randomValue = Random.Range(0, 2);
+            anim.SetInteger("AttackType", randomValue);
 
-            if(_ir.FastAttack == true)
-            {
-                //StartCoroutine(FastAttack2());
-            }
-        
-       
-        yield return new WaitForSeconds(.5f);
+        }
+
+        CameraShake.Instance.Shake(amplitude, duration);
+        yield return new WaitForSeconds(.01f);
+        yield return new WaitForEndOfFrame();
+    
+        yield return new WaitForSeconds(.02f);
+
+        if (_ir.FastAttack == true)
+        {
+            StartCoroutine(FastAttack());
+        }
+
+        //yield return new WaitForSeconds(.5f);
+
         IsSwinging = false;
-        _actionRef.InAction = false;
+        //_actionRef.InAction = false;
+        Invoke("LeaveActionState", .2f);
         anim.SetBool("FastAttack", false);
     }
 
-    IEnumerator FastAttack2()
+    public void LeaveActionState()
     {
-        
-        StopCoroutine(FastAttack());
-        anim.SetTrigger("FastAttack2");
-        //CameraShake.Instance.Shake(amplitude, duration);
-       
-        
-        
-            
-            if (_ir.FastAttack == true)
-            {
-                StartCoroutine(FastAttack3());
-            }
-        
-
-        yield return new WaitForSeconds(.2f);
-        IsSwinging = false;
-        _actionRef.InAction = false;
-    }
-
-    IEnumerator FastAttack3()
-    {
-        StopCoroutine(FastAttack2());
-        anim.SetTrigger("FastAttack3");
-        //yield return new WaitForSeconds(combo2);
-        //while (_combo1timer <= Combo1.clip.length)
-        //{
-        //    if (_ir.FastAttack == true)
-        //    {
-
-        //    }
-        //}
-
-        yield return new WaitForSeconds(.2f);
-        IsSwinging = false;
         _actionRef.InAction = false;
     }
 }
