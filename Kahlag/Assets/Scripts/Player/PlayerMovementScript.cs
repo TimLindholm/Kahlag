@@ -124,6 +124,8 @@ public class PlayerMovementScript : MonoBehaviour
 
             newPosition += new Vector3(_ir.Horizontal * _moveSpeedAdjustment * Time.deltaTime, 0f, 0f);
             newPosition += new Vector3(0f, 0f, _ir.Vertical * _moveSpeedAdjustment * Time.deltaTime);
+
+            
             //Clamp MovementSpeed!
 
             //Vector3 walkDirection = (newPosition - _rb.position).normalized;
@@ -132,11 +134,18 @@ public class PlayerMovementScript : MonoBehaviour
 
             DashDirection = walkDirection;
             _transform.position = Vector3.Lerp(_transform.position, newPosition, _moveSpeedAdjustment * Time.deltaTime);
+            //_rb.position = Vector3.Lerp(_rb.position, newPosition, _moveSpeedAdjustment * Time.deltaTime);
 
         }
         else
         {
+
             Moving = false;
+
+            //TEST
+            animValue = Mathf.Clamp01(animValue);
+            anim.SetFloat("Move", animValue);
+
         }
     }
 
@@ -165,17 +174,17 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
 
-    public void MoveAnim()
-    {
-        if (Moving == true)
-        {
-            anim.SetFloat("Move", 1f);
-        }
-        else
-        {
-            anim.SetFloat("Move", 0f);
-        }
-    }
+    //public void MoveAnim()
+    //{
+    //    if (Moving == true)
+    //    {
+    //        anim.SetFloat("Move", 1f);
+    //    }
+    //    else
+    //    {
+    //        anim.SetFloat("Move", 0f);
+    //    }
+    //}
 
 
     //private void Move(Vector2 dir)

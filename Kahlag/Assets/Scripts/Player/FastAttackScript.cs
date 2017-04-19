@@ -72,8 +72,8 @@ public class FastAttackScript : MonoBehaviour
 
         }
 
-        CameraShake.Instance.Shake(amplitude, duration);
-        yield return new WaitForSeconds(.01f);
+        //CameraShake.Instance.Shake(amplitude, duration);
+       
         yield return new WaitForEndOfFrame();
     
         yield return new WaitForSeconds(.02f);
@@ -82,13 +82,14 @@ public class FastAttackScript : MonoBehaviour
         {
             StartCoroutine(FastAttack());
         }
-
+        //yield return new WaitForSeconds(.02f);
         //yield return new WaitForSeconds(.5f);
 
         IsSwinging = false;
         //_actionRef.InAction = false;
         Invoke("LeaveActionState", .2f);
         anim.SetBool("FastAttack", false);
+        yield return new WaitForSeconds(.2f);
     }
 
     public void LeaveActionState()

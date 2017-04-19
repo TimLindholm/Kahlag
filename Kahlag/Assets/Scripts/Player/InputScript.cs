@@ -19,31 +19,36 @@ public class InputScript : MonoBehaviour
 
     public Vector2 MoveAxis;
 
+    private PlayerHealthScript _healthRef;
 
     //public Vector2 MoveAxis;
 
     void Start ()
     {
-		
+        _healthRef = (PlayerHealthScript)FindObjectOfType(typeof(PlayerHealthScript));
 	}
 	
 	
 	void Update ()
     {
+        if(_healthRef.IsDead == false)
+        {
+            MoveAxis = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        MoveAxis = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            Horizontal = Input.GetAxis("Horizontal");
+            Vertical = Input.GetAxis("Vertical");
 
-        Horizontal = Input.GetAxis("Horizontal");
-        Vertical = Input.GetAxis("Vertical");
+            RotationX = Input.GetAxis("RotationX");
+            RotationY = Input.GetAxis("RotationY");
 
-        RotationX = Input.GetAxis("RotationX");
-        RotationY = Input.GetAxis("RotationY");
 
-        
 
-        Dash = Input.GetKeyDown(KeyCode.Joystick1Button5);
-        //LockOn = Input.GetKeyDown(KeyCode.Joystick1Button4);
+            Dash = Input.GetKeyDown(KeyCode.Joystick1Button5);
+            //LockOn = Input.GetKeyDown(KeyCode.Joystick1Button4);
 
-        FastAttack = Input.GetKeyDown(KeyCode.JoystickButton1);
+            FastAttack = Input.GetKeyDown(KeyCode.JoystickButton1);
+        }
+
+
     }
 }

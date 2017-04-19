@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d4466f4315ce72746947098c47443413
-timeCreated: 1492081044
+guid: bc9321249c1485f488f914ef8e750357
+timeCreated: 1492607152
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -290,7 +290,7 @@ ModelImporter:
     4300032: Legs
     4300034: Belt
     4300036: Torso
-    7400000: HitCombo 01
+    7400000: Walk
     9500000: //RootNode
     13700000: Arms
     13700002: Bandage01
@@ -322,7 +322,20 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
+      in configuration does not match rotation in animation file\nVyria@Walk\nClip
+      'Take 001' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Hip'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Spine01'
+      has translation animation that will be discarded.\n\t'Spine02' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'FaceRoot'
+      has translation animation that will be discarded.\n\t'L_Upper_HelperJoint' is
+      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'L_lower_HelperJoint'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'L_Foot01'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R_Upper_HelperJoint'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R_lower_HelperJoint'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R_Foot01'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -333,19 +346,19 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: HitCombo 01
+      name: Walk
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 12
+      lastFrame: 32
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 1
+      loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
