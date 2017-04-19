@@ -10,14 +10,14 @@ public class CombatState : StateBehaviour
 
     public override void OnEnter()
     {
-        Debug.Log("Enter Combat State");
+        //Debug.Log("Enter Combat State");
         agent.Resume();
 
     }
 
     public override void OnExit()
     {
-        Debug.Log("Exit Combat State");
+        //Debug.Log("Exit Combat State");
         agent.Stop();
 
 
@@ -43,10 +43,11 @@ public class CombatState : StateBehaviour
             StateMachine.GoToState("AttackState"); //If within range, try to attack!
         }
 
-        else if(!Context.Enemy.CanSeePlayer())
-        {
-            agent.Resume();
-            StateMachine.GoToState("IdleState"); //If not in vision, return to idle (dont use this if enemy has vision with limited angle)!!
-        }
+        //TAKE BACK TO LEAVE COMBAT AND GO BACK TO IDLE
+        //else if(!Context.Enemy.CanSeePlayer())
+        //{
+        //    agent.Resume();
+        //    StateMachine.GoToState("IdleState"); //If not in vision, return to idle (dont use this if enemy has vision with limited angle)!!
+        //}
     }
 }

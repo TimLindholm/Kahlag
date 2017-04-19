@@ -16,7 +16,7 @@ public class IdleState : StateBehaviour
 
 	public override void OnExit()
 	{
-        Debug.Log("Exit Idle State");
+        //Debug.Log("Exit Idle State");
         agent.Stop();
     }
 

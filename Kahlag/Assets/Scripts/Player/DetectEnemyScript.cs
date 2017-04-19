@@ -15,14 +15,15 @@ public class DetectEnemyScript : MonoBehaviour
     public GameObject[] enemies;
 
     public float distance = 3f;
+    float nearestDistance = 50f;
     public float VisionRadius = 90f;
 
 
 
     void Start()
     {
-  
 
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     void Update()
@@ -38,6 +39,10 @@ public class DetectEnemyScript : MonoBehaviour
 
     }
 
+    public void AddEnemyToArray()
+    {
+        //enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    }
 
     public void LookForEnemy()
     {
@@ -46,35 +51,55 @@ public class DetectEnemyScript : MonoBehaviour
         RaycastHit hit;
         if (Physics.SphereCast(transform.position, DetectionRadius, transform.forward, out hit) && hit.transform.tag == "Enemy")
         {
-           
 
-                enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            print("Enemy Found");
+            //AddEnemyToArray();
+            enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-                foreach (GameObject enemy in enemies)
-                {
-                    Vector3 targetDir = enemy.transform.position - transform.position;
-                    float angle = Vector3.Angle(targetDir, transform.forward);
-
-                if (Vector3.Distance(enemy.transform.position, transform.position) < distance && (angle < VisionRadius))
-                    {
-                    EnemyToTarget = enemy.transform;
-                    }
-
-
-                if (Vector3.Distance(transform.position, enemy.transform.position) < distance)
-                    {
-                        EnemyToTarget = enemy.transform;
-                    }
-
-                    else
-                    {
-                        EnemyToTarget = null;
-                    }
-                }
-
-            //Head.rotation = Quaternion.LookRotation(hit.normal);
-            //EnemyToTarget = hit.transform;
-            //Head.LookAt(EnemyToTarget);
         }
+                  
+
+        foreach (GameObject enemy in enemies)
+        {
+            distance = (transform.position - enemy.transform.position).sqrMagnitude;
+            if (distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                EnemyToTarget = enemy.transform;
+            }
+        }
+
+
+
+        //foreach (GameObject enemy in enemies)
+        //{
+
+        //    Vector3 targetDir = enemy.transform.position - transform.position;
+        //    float angle = Vector3.Angle(targetDir, transform.forward);
+
+        //    if (Vector3.Distance(enemy.transform.position, transform.position) < distance && (angle < VisionRadius))
+        //    {
+        //        print("Enemy in front");
+        //        EnemyToTarget = enemy.transform;
+        //    }
+
+
+        //    else if (Vector3.Distance(transform.position, enemy.transform.position) < distance)
+        //    {
+        //        print("Enemy near");
+        //        EnemyToTarget = enemy.transform;
+        //    }
+
+        //    else
+        //    {
+        //        print("No Target");
+        //        EnemyToTarget = null;
+        //    }
+        //}
+
+        //Head.rotation = Quaternion.LookRotation(hit.normal);
+        //EnemyToTarget = hit.transform;
+        //Head.LookAt(EnemyToTarget);
     }
+    //}
 }
