@@ -49,7 +49,7 @@ public class PlayerHealthScript : MonoBehaviour
                 //_score.DamageBonus += Damage;
                 anim.SetTrigger("TakeDamage");
                 CurrentHealth -= Damage;
-                Debug.Log("Enemy Hit!");
+                Debug.Log("Player Hit!");
                 StartCoroutine(InvulnerableTimer());
             }
             if (CurrentHealth <= 0f && IsDead == false)
@@ -59,6 +59,7 @@ public class PlayerHealthScript : MonoBehaviour
                 _rag.RagdollCharacter();
                 _rag.CloseAllComponents();
                 IsDead = true;
+                
             }
         }
 

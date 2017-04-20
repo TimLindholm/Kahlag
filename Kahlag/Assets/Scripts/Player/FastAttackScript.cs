@@ -17,6 +17,8 @@ public class FastAttackScript : MonoBehaviour
 
     public bool InCombo;
 
+    public GameObject FastAttackColl;
+
     
 
     private DetectEnemyScript _detectRef;
@@ -75,7 +77,7 @@ public class FastAttackScript : MonoBehaviour
         //CameraShake.Instance.Shake(amplitude, duration);
        
         yield return new WaitForEndOfFrame();
-    
+        FastAttackColl.SetActive(true);
         yield return new WaitForSeconds(.02f);
 
         if (_ir.FastAttack == true)
@@ -88,8 +90,9 @@ public class FastAttackScript : MonoBehaviour
         IsSwinging = false;
         //_actionRef.InAction = false;
         Invoke("LeaveActionState", .2f);
-        anim.SetBool("FastAttack", false);
+        //anim.SetBool("FastAttack", false);
         yield return new WaitForSeconds(.2f);
+        FastAttackColl.SetActive(false);
     }
 
     public void LeaveActionState()

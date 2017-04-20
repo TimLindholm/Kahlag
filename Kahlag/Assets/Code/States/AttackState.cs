@@ -48,6 +48,7 @@ public class AttackState : StateBehaviour
 	void FixedUpdate ()
 	{
         //Try to execute Action, else - MoveTowardsTarget!
+        Context.Enemy.RotateAroundTarget();
         if (Context.Enemy.ActionTimer <= 0f)
         {
            StateMachine.GoToState("MeleeSwing");               

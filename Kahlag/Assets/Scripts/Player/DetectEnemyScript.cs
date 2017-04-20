@@ -47,12 +47,12 @@ public class DetectEnemyScript : MonoBehaviour
     public void LookForEnemy()
     {
 
-        Debug.Log(EnemyToTarget, transform);
+        //Debug.Log(EnemyToTarget, transform);
         RaycastHit hit;
         if (Physics.SphereCast(transform.position, DetectionRadius, transform.forward, out hit) && hit.transform.tag == "Enemy")
         {
 
-            print("Enemy Found");
+            //print("Enemy Found");
             //AddEnemyToArray();
             enemies = GameObject.FindGameObjectsWithTag("Enemy");
 

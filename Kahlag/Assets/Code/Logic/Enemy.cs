@@ -20,10 +20,12 @@ public class Enemy : MonoBehaviour
 
     public Animator anim;
 
-
     //Health Related
     public float Health;
     public bool IsDead;
+
+    public bool invulnerable;
+    public bool inAttack;
 
     Rigidbody m_body;
 
@@ -146,10 +148,25 @@ public class Enemy : MonoBehaviour
     {
         if (IsDead != true)
         {
-            //_score.DamageBonus += Damage;
-            anim.SetTrigger("TakeDamage");
-            Health -= Damage;
-            Debug.Log("Enemy Hit!");
+            
+
+            if(invulnerable != true)
+            {
+                //_score.DamageBonus += Damage;
+                if(inAttack != true)
+                {
+                    anim.SetTrigger("TakeDamage");
+                }
+
+                agent.Stop();
+                Health -= Damage;
+                Debug.Log("Enemy Hit!");
+                Invoke("InvulnerableTimer", .3f);
+                invulnerable = true;
+            }
+
+            
+
         }
         if (Health <= 0f && IsDead == false)
         {
@@ -157,7 +174,14 @@ public class Enemy : MonoBehaviour
             //StaminaRef._stamina = StaminaRef.Stamina;
             
             IsDead = true;
+            Debug.Log("ENEMY DEAD!");
         }
+    }
+
+    public void InvulnerableTimer()
+    {
+        agent.Resume();
+        invulnerable = false;
     }
 
 
