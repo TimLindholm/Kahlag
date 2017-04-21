@@ -38,7 +38,7 @@ public class MeleeSwingState : StateBehaviour
         Context.Enemy.inAttack = false;
     }
 
-    private void Start()
+    private void Awake()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing    
     }

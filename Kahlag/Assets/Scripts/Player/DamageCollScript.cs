@@ -11,18 +11,43 @@ public class DamageCollScript : MonoBehaviour
 
     public AudioSource HitSound;
 
+    private EnemyHealthScript _enemyHealth;
+
+    private Transform _transform;
+
+
     void Start ()
     {
-		
-	}
+        _transform = transform;
+        Killmyself();
+
+    }
 	
 	
 	void Update ()
     {
-        DealDamage();
-
+        //DealDamage();
+        //CheckIfActive();
     }
 
+    public void Killmyself()
+    {
+        Destroy(gameObject, .4f);
+    }
+
+
+    //private void CheckIfActive()
+    //{
+    //    if (_transform.gameObject.activeSelf)
+    //    {
+    //        //Invoke("SetMyselfInactive", .2f);
+    //    }
+    //}
+
+    //public void SetMyselfInactive()
+    //{
+    //    _transform.gameObject.SetActive(false);
+    //}
     private void DealDamage()
     {
         Ray enemyCheck = new Ray(transform.position, transform.forward * Distance);
@@ -43,16 +68,16 @@ public class DamageCollScript : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    Enemy enemyHealth = collision.collider.GetComponent<Enemy>();
-    //    //HitSound.Play();
-    //    if (enemyHealth != null)
-    //    {
+    private void OnCollisionEnter(Collision collision)
+    {
+        Enemy enemyHealth = collision.collider.GetComponent<Enemy>();
+        //HitSound.Play();
+        if (enemyHealth != null)
+        {
 
-    //        print("Damage");
-    //        enemyHealth.TakeDamage(Damage);
-    //        enemyHealth.KnockBack(-collision.contacts[0].normal * Force);
-    //    }
-    //}
+            print("Damage");
+            enemyHealth.TakeDamage(Damage);
+            enemyHealth.KnockBack(-collision.contacts[0].normal * Force);
+        }
+    }
 }

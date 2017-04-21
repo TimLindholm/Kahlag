@@ -7,6 +7,8 @@ public class EnemyDamageScript : MonoBehaviour
     public float Damage;
     public float Force;
 
+    public float Distance;
+
     private PlayerHealthScript _playerHealth;
 
     void Start ()
@@ -18,8 +20,28 @@ public class EnemyDamageScript : MonoBehaviour
 	
 	void Update ()
     {
-		
+		//DealDamage();
 	}
+
+    private void DealDamage()
+    {
+        Ray enemyCheck = new Ray(transform.position, transform.forward * Distance);
+        Debug.DrawRay(transform.position, transform.forward * Distance);
+        RaycastHit hit;
+
+        if (Physics.Raycast(enemyCheck, out hit) && hit.transform.tag == "Player")
+        {
+            _playerHealth = hit.transform.GetComponent<PlayerHealthScript>();
+            //HitSound.Play();
+            if (_playerHealth != null)
+            {
+
+                print("Damage");
+                _playerHealth.TakeDamage(Damage);
+                //enemyHealth.KnockBack(-collision.contacts[0].normal * Force);
+            }
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

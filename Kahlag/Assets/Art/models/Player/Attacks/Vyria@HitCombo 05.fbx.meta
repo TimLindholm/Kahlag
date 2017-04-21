@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d4466f4315ce72746947098c47443413
+guid: bf17b5e020993254ba73637c81891869
 timeCreated: 1492081044
 licenseType: Free
 ModelImporter:
@@ -290,7 +290,7 @@ ModelImporter:
     4300032: Legs
     4300034: Belt
     4300036: Torso
-    7400000: HitCombo 01
+    7400000: HitCombo 03
     9500000: //RootNode
     13700000: Arms
     13700002: Bandage01
@@ -333,10 +333,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: HitCombo 01
+      name: HitCombo 03
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 12
+      firstFrame: 24
+      lastFrame: 36
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -354,26 +354,7 @@ ModelImporter:
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves:
-      - name: HitBox
-        curve:
-          serializedVersion: 2
-          curve:
-          - serializedVersion: 2
-            time: 0
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-          - serializedVersion: 2
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-          preInfinity: 2
-          postInfinity: 2
-          rotationOrder: 0
+      curves: []
       events: []
       transformMask:
       - path: 

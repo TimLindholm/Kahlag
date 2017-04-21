@@ -24,7 +24,7 @@ public class CombatState : StateBehaviour
 
     }
 
-    public void Start()
+    public void Awake()
     {
         
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing    

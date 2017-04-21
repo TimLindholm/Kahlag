@@ -16,6 +16,7 @@ public class InputScript : MonoBehaviour
     public bool LockOn;
 
     public bool FastAttack;
+    public bool HeavyAttack;
 
     public Vector2 MoveAxis;
 
@@ -47,6 +48,7 @@ public class InputScript : MonoBehaviour
             //LockOn = Input.GetKeyDown(KeyCode.Joystick1Button4);
 
             FastAttack = Input.GetKeyDown(KeyCode.JoystickButton1);
+            HeavyAttack = Input.GetKeyDown(KeyCode.JoystickButton3);
         }
 
 

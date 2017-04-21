@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4fbbd186706ed9043ad475574c2a9d6f
-timeCreated: 1492509882
+guid: 113def93da79a67428bfaccb688b7834
+timeCreated: 1492694849
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -290,7 +290,7 @@ ModelImporter:
     4300032: Legs
     4300034: Belt
     4300036: Torso
-    7400000: HitCombo 02
+    7400000: Heavy_HitCombo1_Release
     9500000: //RootNode
     13700000: Arms
     13700002: Bandage01
@@ -333,9 +333,9 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: HitCombo 02
+      name: Heavy_HitCombo1_Release
       takeName: Take 001
-      firstFrame: 12
+      firstFrame: 7
       lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
@@ -349,7 +349,7 @@ ModelImporter:
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 0
+      keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0

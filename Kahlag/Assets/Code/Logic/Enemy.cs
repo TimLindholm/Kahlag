@@ -93,9 +93,13 @@ public class Enemy : MonoBehaviour
 
     public void RotateAroundTarget()
     {
-        aimDirection.LookAt(m_target);
-        transform.rotation = Quaternion.Lerp(transform.rotation, aimDirection.rotation, TurnSmoothing * Time.deltaTime);
-        transform.Translate(randomDir, 0f, 0f * Time.deltaTime /100); // Fix this!
+        if(invulnerable != true)
+        {
+            aimDirection.LookAt(m_target);
+            transform.rotation = Quaternion.Lerp(transform.rotation, aimDirection.rotation, TurnSmoothing * Time.deltaTime);
+            transform.Translate(randomDir, 0f, 0f * Time.deltaTime / 100); // Fix this!
+        }
+
     }
 
 	public void MoveAwayFromTarget()
@@ -161,7 +165,7 @@ public class Enemy : MonoBehaviour
                 agent.Stop();
                 Health -= Damage;
                 Debug.Log("Enemy Hit!");
-                Invoke("InvulnerableTimer", .3f);
+                Invoke("InvulnerableTimer", .2f);
                 invulnerable = true;
             }
 
@@ -180,7 +184,7 @@ public class Enemy : MonoBehaviour
 
     public void InvulnerableTimer()
     {
-        agent.Resume();
+        //agent.Resume();
         invulnerable = false;
     }
 
