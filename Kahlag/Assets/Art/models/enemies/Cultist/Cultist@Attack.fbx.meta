@@ -1,0 +1,447 @@
+fileFormatVersion: 2
+guid: 61eed87cd3d95a54da16d167b09e631d
+timeCreated: 1492781597
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Fabric1
+    100004: Fabric2
+    100006: Fabric3
+    100008: Fabric4
+    100010: Fabric5
+    100012: Fabric6
+    100014: head
+    100016: headtop
+    100018: Hips
+    100020: jaw
+    100022: Jawtop
+    100024: joint11
+    100026: joint12
+    100028: joint13
+    100030: joint14
+    100032: joint15
+    100034: joint16
+    100036: joint17
+    100038: joint18
+    100040: joint19
+    100042: joint20
+    100044: joint3
+    100046: joint3 1
+    100048: joint3 2
+    100050: joint3 3
+    100052: L_ankle
+    100054: L_ball
+    100056: L_clavivle
+    100058: L_elbow
+    100060: L_forearm
+    100062: L_hip
+    100064: L_Index1
+    100066: L_index2
+    100068: L_index4
+    100070: L_knee
+    100072: L_longfinger1
+    100074: L_longfinger2
+    100076: L_longfinger4
+    100078: L_pinky1
+    100080: L_pinky2
+    100082: L_pinky4
+    100084: L_ring1
+    100086: L_ring2
+    100088: L_ring4
+    100090: l_shoulder
+    100092: L_Thumb1
+    100094: L_Thumb2
+    100096: L_thumb3
+    100098: L_Toetip
+    100100: L_wrist
+    100102: Lhandhelper
+    100104: R_ankle1
+    100106: R_ball1
+    100108: R_clavivle
+    100110: R_elbow
+    100112: R_forearm
+    100114: R_hip1
+    100116: R_Index1
+    100118: R_index2
+    100120: R_index3
+    100122: R_knee1
+    100124: R_longfinger1
+    100126: R_longfinger2
+    100128: R_longfinger3
+    100130: R_pinky1
+    100132: R_pinky2
+    100134: R_pinky3
+    100136: R_ring1
+    100138: R_ring2
+    100140: R_ring3
+    100142: R_shoulder
+    100144: R_Thumb1
+    100146: R_Thumb2
+    100148: R_thumb3
+    100150: R_Toetip1
+    100152: R_wrist
+    100154: Rhandhelper
+    100156: Root
+    100158: Skeleton_GRP
+    100160: Spline_1
+    100162: Spline_2
+    100164: Spline_3
+    100166: Supermover__ctrl
+    400000: //RootNode
+    400002: Fabric1
+    400004: Fabric2
+    400006: Fabric3
+    400008: Fabric4
+    400010: Fabric5
+    400012: Fabric6
+    400014: head
+    400016: headtop
+    400018: Hips
+    400020: jaw
+    400022: Jawtop
+    400024: joint11
+    400026: joint12
+    400028: joint13
+    400030: joint14
+    400032: joint15
+    400034: joint16
+    400036: joint17
+    400038: joint18
+    400040: joint19
+    400042: joint20
+    400044: joint3
+    400046: joint3 1
+    400048: joint3 2
+    400050: joint3 3
+    400052: L_ankle
+    400054: L_ball
+    400056: L_clavivle
+    400058: L_elbow
+    400060: L_forearm
+    400062: L_hip
+    400064: L_Index1
+    400066: L_index2
+    400068: L_index4
+    400070: L_knee
+    400072: L_longfinger1
+    400074: L_longfinger2
+    400076: L_longfinger4
+    400078: L_pinky1
+    400080: L_pinky2
+    400082: L_pinky4
+    400084: L_ring1
+    400086: L_ring2
+    400088: L_ring4
+    400090: l_shoulder
+    400092: L_Thumb1
+    400094: L_Thumb2
+    400096: L_thumb3
+    400098: L_Toetip
+    400100: L_wrist
+    400102: Lhandhelper
+    400104: R_ankle1
+    400106: R_ball1
+    400108: R_clavivle
+    400110: R_elbow
+    400112: R_forearm
+    400114: R_hip1
+    400116: R_Index1
+    400118: R_index2
+    400120: R_index3
+    400122: R_knee1
+    400124: R_longfinger1
+    400126: R_longfinger2
+    400128: R_longfinger3
+    400130: R_pinky1
+    400132: R_pinky2
+    400134: R_pinky3
+    400136: R_ring1
+    400138: R_ring2
+    400140: R_ring3
+    400142: R_shoulder
+    400144: R_Thumb1
+    400146: R_Thumb2
+    400148: R_thumb3
+    400150: R_Toetip1
+    400152: R_wrist
+    400154: Rhandhelper
+    400156: Root
+    400158: Skeleton_GRP
+    400160: Spline_1
+    400162: Spline_2
+    400164: Spline_3
+    400166: Supermover__ctrl
+    7400000: Attack_Charge
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Attack_Charge
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 3
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Skeleton_GRP
+        weight: 1
+      - path: Skeleton_GRP/Root
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/joint15
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/joint15/joint19
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/joint16
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/joint16/joint18
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/joint17
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/joint17/joint20
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/L_hip
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/L_hip/L_knee
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/L_hip/L_knee/L_ankle
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/L_hip/L_knee/L_ankle/L_ball
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/L_hip/L_knee/L_ankle/L_ball/L_Toetip
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/R_hip1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/R_hip1/R_knee1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/R_hip1/R_knee1/R_ankle1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/R_hip1/R_knee1/R_ankle1/R_ball1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/R_hip1/R_knee1/R_ankle1/R_ball1/R_Toetip1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Fabric1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Fabric1/Fabric2
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Fabric1/Fabric2/Fabric3
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Fabric1/Fabric2/Fabric3/Fabric4
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Fabric1/Fabric2/Fabric3/Fabric4/Fabric5
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Fabric1/Fabric2/Fabric3/Fabric4/Fabric5/Fabric6
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/L_Index1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/L_Index1/L_index2
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/L_Index1/L_index2/joint3
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/L_Index1/L_index2/joint3/L_index4
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/L_longfinger1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/L_longfinger1/L_longfinger2
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/L_longfinger1/L_longfinger2/joint3
+          1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/L_longfinger1/L_longfinger2/joint3
+          1/L_longfinger4
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/L_Thumb1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/L_Thumb1/L_Thumb2/L_thumb3
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/Lhandhelper
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/Lhandhelper/L_pinky1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/Lhandhelper/L_pinky1/L_pinky2
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/Lhandhelper/L_pinky1/L_pinky2/joint3
+          2
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/Lhandhelper/L_pinky1/L_pinky2/joint3
+          2/L_pinky4
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/Lhandhelper/L_ring1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/Lhandhelper/L_ring1/L_ring2
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/Lhandhelper/L_ring1/L_ring2/joint3
+          3
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/L_clavivle/l_shoulder/L_elbow/L_forearm/L_wrist/Lhandhelper/L_ring1/L_ring2/joint3
+          3/L_ring4
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/R_Index1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/R_Index1/R_index2
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/R_Index1/R_index2/joint14
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/R_Index1/R_index2/joint14/R_index3
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/R_longfinger1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/R_longfinger1/R_longfinger2
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/R_longfinger1/R_longfinger2/joint13
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/R_longfinger1/R_longfinger2/joint13/R_longfinger3
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/R_Thumb1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/R_Thumb1/R_Thumb2
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/R_Thumb1/R_Thumb2/R_thumb3
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/Rhandhelper
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/Rhandhelper/R_pinky1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/Rhandhelper/R_pinky1/R_pinky2
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/Rhandhelper/R_pinky1/R_pinky2/joint11
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/Rhandhelper/R_pinky1/R_pinky2/joint11/R_pinky3
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/Rhandhelper/R_ring1
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/Rhandhelper/R_ring1/R_ring2
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/Rhandhelper/R_ring1/R_ring2/joint12
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/R_clavivle/R_shoulder/R_elbow/R_forearm/R_wrist/Rhandhelper/R_ring1/R_ring2/joint12/R_ring3
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/Spline_3
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/Spline_3/head
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/Spline_3/head/headtop
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/Spline_3/head/jaw
+        weight: 1
+      - path: Skeleton_GRP/Root/Hips/Spline_1/Spline_2/Spline_3/head/jaw/Jawtop
+        weight: 1
+      - path: Supermover__ctrl
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 5
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Root
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

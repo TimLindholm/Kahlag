@@ -33,16 +33,21 @@ public class StateMachine : MonoBehaviour
 	
 	public void GoToState(string activeState)
 	{
-		//First exit the previous state
-		foreach (var state in m_states)
-		{
-			if (state.Key != activeState && state.enabled)
-			{
-				state.OnExit();
-				state.enabled = false;
-				break;
-			}
-		}
+        //First exit the previous state
+      
+        
+            foreach (var state in m_states)
+            {
+                if (state.Key != activeState && state.enabled)
+                {
+                    state.OnExit();
+                    state.enabled = false;
+                    break;
+                }
+            }
+        
+
+
 
 		//Then enter the new state
 		foreach (var state in m_states)

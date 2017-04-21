@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour
     public bool invulnerable;
     public bool inAttack;
 
+    private RagdollEnemy _rag;
+
     Rigidbody m_body;
 
     //Navmesh Testing
@@ -40,6 +42,7 @@ public class Enemy : MonoBehaviour
 	{
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing       
         agent.autoBraking = false; //does not slow down 
+        _rag = GetComponent<RagdollEnemy>();
 
         SetupAnimator(); //get anim component
         m_body = GetComponent<Rigidbody>();
@@ -66,10 +69,10 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, m_attackRage);
 	}
 
+    
 	public bool CanSeePlayer()
 	{
         //return Vector3.Distance(transform.position, m_target.position) < m_viewRange;
-
         Vector3 targetDir = m_target.position - transform.position;
         float angle = Vector3.Angle(targetDir, transform.forward);       
         return Vector3.Distance(m_target.position, transform.position) < m_viewRange && (angle < VisionRadius);
@@ -85,10 +88,12 @@ public class Enemy : MonoBehaviour
 		//m_body.AddForce((m_target.position - m_body.position).normalized * 25f);
 
         //NAVMESH TEST
-
-        agent.SetDestination(m_target.position);
-        Vector3 relDirection = transform.InverseTransformDirection(agent.desiredVelocity);
-        anim.SetFloat("Moving", 1.1f);
+       
+            agent.SetDestination(m_target.position);
+            Vector3 relDirection = transform.InverseTransformDirection(agent.desiredVelocity);
+            anim.SetFloat("Moving", 1.1f);
+        
+    
     }
 
     public void RotateAroundTarget()
@@ -138,10 +143,6 @@ public class Enemy : MonoBehaviour
     
     
     
-    
-    
-    
-    
     //Take Damage Related
     public void KnockBack(Vector3 Force)
     {
@@ -174,10 +175,14 @@ public class Enemy : MonoBehaviour
         }
         if (Health <= 0f && IsDead == false)
         {
-            m_body.constraints = RigidbodyConstraints.None;
+            
             //StaminaRef._stamina = StaminaRef.Stamina;
             
             IsDead = true;
+            m_body.isKinematic = true;
+            m_body.constraints = RigidbodyConstraints.None;
+            _rag.RagdollCharacter();
+            _rag.CloseAllComponents();
             Debug.Log("ENEMY DEAD!");
         }
     }
