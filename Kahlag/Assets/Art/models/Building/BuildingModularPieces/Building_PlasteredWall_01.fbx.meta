@@ -7,8 +7,10 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Building_PlasteredWall_01
     100002: //RootNode
+    100004: Building_pieces
     400000: Building_PlasteredWall_01
     400002: //RootNode
+    400004: Building_pieces
     2300000: Building_PlasteredWall_01
     3300000: Building_PlasteredWall_01
     4300000: Building_PlasteredWall_01
