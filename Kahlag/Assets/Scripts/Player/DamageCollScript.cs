@@ -9,6 +9,8 @@ public class DamageCollScript : MonoBehaviour
 
     public float Distance = 5f;
 
+    public float LifeTime = .2f;
+
     public AudioSource HitSound;
 
     private EnemyHealthScript _enemyHealth;
@@ -32,7 +34,7 @@ public class DamageCollScript : MonoBehaviour
 
     public void Killmyself()
     {
-        Destroy(gameObject, .4f);
+        Destroy(gameObject, LifeTime);
     }
 
 
@@ -65,6 +67,20 @@ public class DamageCollScript : MonoBehaviour
     //            enemyHealth.TakeDamage(Damage);
     //            //enemyHealth.KnockBack(-collision.contacts[0].normal * Force);
     //        }
+    //    }
+    //}
+
+    //private void OnTriggerEnter(Collider coll)
+    //{
+    //    Enemy enemyHealth = GetComponent<Enemy>();
+    //    //Debug.Log("damage");
+    //    //HitSound.Play();
+    //    if (enemyHealth != null)
+    //    {
+
+    //        print("Damage");
+    //        enemyHealth.TakeDamage(Damage);
+    //        //enemyHealth.KnockBack(-collision.contacts[0].normal * Force);
     //    }
     //}
 

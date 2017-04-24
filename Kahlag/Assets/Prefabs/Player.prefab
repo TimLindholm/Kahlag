@@ -1307,7 +1307,7 @@ GameObject:
   - component: {fileID: 114959679374314802}
   - component: {fileID: 114975614473112720}
   - component: {fileID: 114238433467434936}
-  - component: {fileID: 114024945894799070}
+  - component: {fileID: 114450076855133786}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -5204,22 +5204,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114024945894799070
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1468959453204744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4622dcb2ab952e46b60bd109e475649, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsSwinging: 0
-  amplitude: 0.1
-  duration: 0.5
-  InCombo: 0
-  HeavyAttackColl: {fileID: 1413173350248274}
 --- !u!114 &114036028130962764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5282,6 +5266,24 @@ MonoBehaviour:
   DashDirection: {x: 0, y: 0, z: 0}
   aimDirection: {fileID: 4740210974452364}
   UsingLockOn: 0
+--- !u!114 &114450076855133786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1468959453204744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e221837113fd5024eb5e3e445945cec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsSwinging: 0
+  IsHeavyAttacking: 0
+  hAttackColl: {fileID: 54189507965836712, guid: 610690a58aec2f2498c3f908cb973626,
+    type: 2}
+  AttackTimer: 1.4
+  _timer: 0
+  attackPos: {fileID: 4943545809705746}
 --- !u!114 &114522122458047966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5346,7 +5348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0d4bd758d3cf64b8b1b8e43f2305a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InAction: 1
+  InAction: 0
 --- !u!114 &114790918571938792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5372,13 +5374,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsSwinging: 0
-  amplitude: 0.05
-  duration: 1
-  InCombo: 0
-  FastAttackColl: {fileID: 1413173350248274}
+  IsFastAttacking: 0
   fAttackColl: {fileID: 54189507965836712, guid: 610690a58aec2f2498c3f908cb973626,
     type: 2}
-  AttackTimer: 0.5
+  AttackTimer: 0.6
   _timer: 0
   attackPos: {fileID: 4943545809705746}
 --- !u!114 &114825890448610138

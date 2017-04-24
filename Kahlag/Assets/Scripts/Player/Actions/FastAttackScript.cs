@@ -10,14 +10,7 @@ public class FastAttackScript : MonoBehaviour
     private PlayerActionScript _actionRef;
 
     public bool IsSwinging;
-
-    //Shake
-    public float amplitude = 0.1f;
-    public float duration = 0.5f;
-
-    public bool InCombo;
-
-    public GameObject FastAttackColl;
+    public bool IsFastAttacking;
 
 
     public Rigidbody fAttackColl;
@@ -53,7 +46,7 @@ public class FastAttackScript : MonoBehaviour
 
     public void UpdateFastAttack()
     {
-        if (_actionRef.InAction == false && _ir.FastAttack == true)
+        if (_actionRef.InAction == false && IsFastAttacking == false && _ir.FastAttack == true)
         {
 
             StartCoroutine(FastAttack());
@@ -63,8 +56,9 @@ public class FastAttackScript : MonoBehaviour
     IEnumerator FastAttack()
     {
         _timer = AttackTimer;
-        _actionRef.InAction = true;
-        IsSwinging = true;
+        //_actionRef.InAction = true;
+        IsFastAttacking = true;
+        //IsSwinging = true;
 
         
 
@@ -74,7 +68,7 @@ public class FastAttackScript : MonoBehaviour
         {
             transform.LookAt(_detectRef.EnemyToTarget);
         }
-
+        IsSwinging = true;
         anim.SetTrigger("FastAttackTrigger");
         yield return new WaitForSeconds(.2f);
         _attackColl = Instantiate(fAttackColl, attackPos.transform.position, attackPos.transform.rotation);
@@ -105,11 +99,14 @@ public class FastAttackScript : MonoBehaviour
         {
             //anim.applyRootMotion = true;
             //FastAttackColl.SetActive(true);
+            //_actionRef.InAction = true;
+            IsFastAttacking = true;
         }
         else
         {
             //anim.applyRootMotion = false;
-            _actionRef.InAction = false;        
+            // _actionRef.InAction = false; 
+            IsFastAttacking = false;
             //FastAttackColl.SetActive(false);
             IsSwinging = false;
         }

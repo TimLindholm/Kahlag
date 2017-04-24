@@ -9,6 +9,8 @@ public class EnemyDamageScript : MonoBehaviour
 
     public float Distance;
 
+    public float LifeTime = .2f;
+
     private PlayerHealthScript _playerHealth;
 
     void Start ()
@@ -20,7 +22,7 @@ public class EnemyDamageScript : MonoBehaviour
 
     public void Killmyself()
     {
-        Destroy(gameObject, .4f);
+        Destroy(gameObject, LifeTime);
     }
 
 
@@ -56,7 +58,7 @@ public class EnemyDamageScript : MonoBehaviour
         if (_playerHealth != null)
         {
 
-            print("Damage");
+            //print("Damage");
             _playerHealth.TakeDamage(Damage);
             _playerHealth.KnockBack(-collision.contacts[0].normal * Force);
         }

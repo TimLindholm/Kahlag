@@ -4,44 +4,51 @@ using UnityEngine;
 
 public class HeavyAttackScript : MonoBehaviour
 {
+
     private InputScript _ir;
     private Animator anim;
     private PlayerActionScript _actionRef;
 
     public bool IsSwinging;
+    public bool IsHeavyAttacking;
 
-    //Shake
-    public float amplitude = 0.1f;
-    public float duration = 0.5f;
+    public Rigidbody hAttackColl;
+    private Rigidbody _attackColl;
 
-    public bool InCombo;
 
-    public GameObject HeavyAttackColl;
+    public float AttackTimer = 1;
+    public float _timer;
 
-  
+    public Transform attackPos;
+
 
     private DetectEnemyScript _detectRef;
 
-    void Start()
+    void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
         _actionRef = GetComponent<PlayerActionScript>();
         anim = GetComponentInChildren<Animator>();
         _detectRef = GetComponent<DetectEnemyScript>();
 
-
     }
 
 
-    void Update()
+
+
+    void Update ()
     {
         UpdateHeavyAttack();
+        CheckIfSwinging();
+        HandleTimer();
         InAttackCombo();
+        HandleCollider();
+
     }
 
     public void UpdateHeavyAttack()
     {
-        if (_actionRef.InAction == false && _ir.HeavyAttack == true)
+        if (_actionRef.InAction == false && IsHeavyAttacking == false && _ir.HeavyAttack == true)
         {
 
             StartCoroutine(HeavyAttack());
@@ -50,79 +57,70 @@ public class HeavyAttackScript : MonoBehaviour
 
     IEnumerator HeavyAttack()
     {
-        _actionRef.InAction = true;
-        CancelInvoke("LeaveActionState");
-        
-        //TAKE BACK!
-        HeavyAttackColl.SetActive(false);
+        _timer = AttackTimer;
+        //_actionRef.InAction = true;
+        IsHeavyAttacking = true;
+        //IsSwinging = true;
 
-        IsSwinging = true;
-        _actionRef.InAction = true;
-      
+
+
+        yield return new WaitForEndOfFrame();
 
         if (_detectRef.EnemyToTarget != null)
         {
-            transform.LookAt(_detectRef.EnemyToTarget);       
-           
+            transform.LookAt(_detectRef.EnemyToTarget);
         }
-
+        IsSwinging = true;
         anim.SetTrigger("HeavyAttackTrigger");
-
-
-        //if (_ir.HeavyAttack == true)
-        //{
-        //        StartCoroutine(HeavyAttack());
-        //}
-
-        //CameraShake.Instance.Shake(amplitude, duration);
-
-        //yield return new WaitForEndOfFrame();
         yield return new WaitForSeconds(1f);
-
-
-        //TAKE BACK!
-        HeavyAttackColl.SetActive(true);
-
-
-        //yield return new WaitForSeconds(.02f);
-
-        if (_ir.HeavyAttack == true)
-        {
-            //StartCoroutine(HeavyAttack());
-        }
-
-
-        //yield return new WaitForSeconds()
-        //_actionRef.InAction = false;
-        Invoke("LeaveActionState", .4f);
-        _actionRef.InAction = true;
-        //yield return new WaitForSeconds(.2f);
-        //FastAttackColl.SetActive(false);
-
-        yield return new WaitForSeconds(.3f);
-        //IsSwinging = false;
-
-        //TAKE BACK!
-        HeavyAttackColl.SetActive(false);
-
-
-        //_actionRef.InAction = false;
-        
-    }
-
-    public void LeaveActionState()
-    {      
-        _actionRef.InAction = false;
-        IsSwinging = false;
+        _attackColl = Instantiate(hAttackColl, attackPos.transform.position, attackPos.transform.rotation);
     }
 
     public void InAttackCombo()
     {
         if (_ir.HeavyAttack == true && IsSwinging == true)
         {
+            //StopCoroutine(FastAttack());
             StartCoroutine(HeavyAttack());
         }
     }
 
+    public void HandleTimer()
+    {
+        if (_timer > 0)
+        {
+            _timer -= Time.deltaTime;
+        }
+    }
 
+    public void HandleCollider()
+    {
+        if (_timer > 0)
+        {
+            //anim.applyRootMotion = true;
+            //FastAttackColl.SetActive(true);
+            IsHeavyAttacking = true;
+            //_actionRef.InAction = true;
+        }
+        else
+        {
+            //anim.applyRootMotion = false;
+            //_actionRef.InAction = false;
+            IsHeavyAttacking = false;
+            //FastAttackColl.SetActive(false);
+            IsSwinging = false;
+        }
+    }
+
+    public void CheckIfSwinging()
+    {
+        //if(IsHeavyAttacking == true)
+        //{
+        //    _actionRef.InAction = true;
+        //}
+        //else if(IsHeavyAttacking == false)
+        //{
+        //    _actionRef.InAction = false;
+        //}
+    }
 }

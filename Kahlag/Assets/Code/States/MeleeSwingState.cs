@@ -31,7 +31,7 @@ public class MeleeSwingState : StateBehaviour
         Context.Enemy.inAttack = true;
         //Random Action Cooldown
         float cooldown = UnityEngine.Random.Range(MinCD, MaxCD);
-        Debug.Log("MeleeSwing");
+        //Debug.Log("MeleeSwing");
         Context.Enemy.anim.SetBool("MeleeSwing", true);
         Context.Enemy.anim.SetTrigger("MeleeAttack");
         StartCoroutine(DamageCollActive());
@@ -74,12 +74,12 @@ public class MeleeSwingState : StateBehaviour
         //TEST
         //Context.Enemy.RotateAroundTarget();
         //Context.Enemy.inAttack = true;
-        yield return new WaitForSeconds(.6f);
+        yield return new WaitForSeconds(.7f);
 
         //_rb.AddForce(0, 0, -150f, ForceMode.Impulse);
         _meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
         //damageColl.SetActive(true);
-        yield return new WaitForSeconds(.4f);
+        yield return new WaitForSeconds(.3f);
         //damageColl.SetActive(false);
         Context.Enemy.inAttack = false;
     }
