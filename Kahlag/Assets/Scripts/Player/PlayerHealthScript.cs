@@ -16,6 +16,8 @@ public class PlayerHealthScript : MonoBehaviour
     public bool Invulnerable;
     public float Invulnerable_Timer = .5f;
 
+    public bool Damaged;
+
     private RagdollManager _rag;
     
 
@@ -31,8 +33,17 @@ public class PlayerHealthScript : MonoBehaviour
 	
 	void Update ()
     {
-		
+		if(Damaged == true)
+        {
+            Invoke("IfDamaged", .8f);
+        }
 	}
+
+    void IfDamaged()
+    {
+        
+            Damaged = false;
+    }
 
     public void KnockBack(Vector3 Force)
     {
@@ -48,6 +59,8 @@ public class PlayerHealthScript : MonoBehaviour
             {
                 //_score.DamageBonus += Damage;
                 anim.SetTrigger("TakeDamage");
+                CancelInvoke("IfDamaged");
+                Damaged = true;
                 CurrentHealth -= Damage;
                 //Debug.Log("Player Hit!");
                 StartCoroutine(InvulnerableTimer());
