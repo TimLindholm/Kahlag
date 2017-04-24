@@ -11,6 +11,7 @@ public class CombatState : StateBehaviour
     public override void OnEnter()
     {
         //Debug.Log("Enter Combat State");
+        agent.speed = 4;
         agent.Resume();
 
     }
@@ -19,6 +20,7 @@ public class CombatState : StateBehaviour
     {
         //Debug.Log("Exit Combat State");
         agent.Stop();
+        agent.speed = 3;
 
 
 

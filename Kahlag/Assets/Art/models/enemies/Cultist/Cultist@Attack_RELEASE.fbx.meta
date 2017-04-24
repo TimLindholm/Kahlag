@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 720020928bcde0248915a41f120ddc4e
-timeCreated: 1493024969
+guid: bc2020a8942e82e4484df5eccd2413ca
+timeCreated: 1493024964
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -173,7 +173,7 @@ ModelImporter:
     400162: Spline_2
     400164: Spline_3
     400166: Supermover__ctrl
-    7400000: Run
+    7400000: Attack_RELEASE
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -197,9 +197,9 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Run
+      name: Attack_RELEASE
       takeName: Take 001
-      firstFrame: 1
+      firstFrame: 4
       lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
@@ -207,7 +207,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
@@ -391,7 +391,7 @@ ModelImporter:
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []

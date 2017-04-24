@@ -20,6 +20,12 @@ public class Enemy : MonoBehaviour
 
     public Animator anim;
 
+
+    //Camera Shake
+    public bool Cam_Shake = true;
+    public float amplitude = 0.1f;
+    public float duration = 0.5f;
+
     //Health Related
     public float Health;
     public bool IsDead;
@@ -107,6 +113,12 @@ public class Enemy : MonoBehaviour
 
     }
 
+    public void TakeAim()
+    {
+        aimDirection.LookAt(m_target);
+        transform.rotation = Quaternion.Lerp(transform.rotation, aimDirection.rotation, TurnSmoothing * Time.deltaTime);
+    }
+
 	public void MoveAwayFromTarget()
 	{
 		m_body.AddForce((m_body.position - m_target.position).normalized * 25f);
@@ -165,6 +177,11 @@ public class Enemy : MonoBehaviour
 
                 agent.Stop();
                 Health -= Damage;
+                if(Cam_Shake==true)
+                {
+                    CameraShake.Instance.Shake(amplitude, duration);
+                }
+                
                 Debug.Log("Enemy Hit!");
                 Invoke("InvulnerableTimer", .2f);
                 invulnerable = true;

@@ -13,6 +13,14 @@ public class MeleeSwingState : StateBehaviour
 
     public GameObject damageColl;
 
+    private Rigidbody _rb;
+
+    //Attack
+    public Transform attackPos;
+    public Rigidbody meleeAttackColl;
+    private Rigidbody _meleeAttackColl;
+
+
     UnityEngine.AI.NavMeshAgent agent;
 
     public override void OnEnter()
@@ -25,6 +33,7 @@ public class MeleeSwingState : StateBehaviour
         float cooldown = UnityEngine.Random.Range(MinCD, MaxCD);
         Debug.Log("MeleeSwing");
         Context.Enemy.anim.SetBool("MeleeSwing", true);
+        Context.Enemy.anim.SetTrigger("MeleeAttack");
         StartCoroutine(DamageCollActive());
         Context.Enemy.ActionTimer = cooldown;
        
@@ -41,11 +50,18 @@ public class MeleeSwingState : StateBehaviour
     private void Awake()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing    
+        _rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
         m_timer -= Time.deltaTime;
+        //TEST
+        if(m_timer > 0.55f)
+        {
+            Context.Enemy.TakeAim();
+        }
+      
         if (m_timer < 0)
             
             StateMachine.GoToState("AttackState");
@@ -58,10 +74,13 @@ public class MeleeSwingState : StateBehaviour
         //TEST
         //Context.Enemy.RotateAroundTarget();
         //Context.Enemy.inAttack = true;
-        yield return new WaitForSeconds(.8f);      
-        damageColl.SetActive(true);
+        yield return new WaitForSeconds(.6f);
+
+        //_rb.AddForce(0, 0, -150f, ForceMode.Impulse);
+        _meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
+        //damageColl.SetActive(true);
         yield return new WaitForSeconds(.4f);
-        damageColl.SetActive(false);
+        //damageColl.SetActive(false);
         Context.Enemy.inAttack = false;
     }
 }

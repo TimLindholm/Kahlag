@@ -43,7 +43,7 @@ public class PlayerDashScript : MonoBehaviour
             ApplyForce();
             StaminaRef.CurrentStamina -= DashCost;
             StartCoroutine(DashActionTimer());
-            //Debug.Log("Dashing");
+            Debug.Log("Dashing");
         }
     }
     private void ApplyForce()

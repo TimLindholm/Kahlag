@@ -17,6 +17,7 @@ public class RagdollEnemy : MonoBehaviour
     private StateMachine _sm;
     private CombatState _combat;
     private AttackState _attack;
+    private MeleeSwingState _meleeSwing;
     UnityEngine.AI.NavMeshAgent agent;
 
     // Use this for initialization
@@ -78,6 +79,12 @@ public class RagdollEnemy : MonoBehaviour
     public void CloseAllComponents()
     {
         agent.enabled = false;
+
+        if(GetComponent<MeleeSwingState>())
+        {
+            MeleeSwingState _meleeSwing = GetComponent<MeleeSwingState>();
+            _meleeSwing.enabled = false;
+        }
 
         if (GetComponent<AttackState>())
         {

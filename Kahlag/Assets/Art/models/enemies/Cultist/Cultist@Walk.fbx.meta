@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 720020928bcde0248915a41f120ddc4e
-timeCreated: 1493024969
+guid: 004b9a1d5e160ce45966d06e8d2be8c9
+timeCreated: 1493024970
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -173,7 +173,7 @@ ModelImporter:
     400162: Spline_2
     400164: Spline_3
     400166: Supermover__ctrl
-    7400000: Run
+    7400000: Walk
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -197,10 +197,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Run
+      name: Walk
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 24
+      lastFrame: 32
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
