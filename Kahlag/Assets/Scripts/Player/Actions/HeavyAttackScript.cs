@@ -23,6 +23,7 @@ public class HeavyAttackScript : MonoBehaviour
 
 
     private DetectEnemyScript _detectRef;
+    private PlayerHealthScript _healthRef;
 
     void Start ()
     {
@@ -30,6 +31,7 @@ public class HeavyAttackScript : MonoBehaviour
         _actionRef = GetComponent<PlayerActionScript>();
         anim = GetComponentInChildren<Animator>();
         _detectRef = GetComponent<DetectEnemyScript>();
+        _healthRef = GetComponent<PlayerHealthScript>();
 
     }
 
@@ -43,6 +45,7 @@ public class HeavyAttackScript : MonoBehaviour
         HandleTimer();
         InAttackCombo();
         HandleCollider();
+        CheckInteruption();
 
     }
 
@@ -52,6 +55,16 @@ public class HeavyAttackScript : MonoBehaviour
         {
 
             StartCoroutine(HeavyAttack());
+        }
+    }
+
+    public void CheckInteruption()
+    {
+        if(_timer > 1f && _healthRef.Damaged == true)
+        {
+            print("Attack Cancelled");
+            StopCoroutine(HeavyAttack());
+            //_timer = 0f;
         }
     }
 
@@ -73,7 +86,8 @@ public class HeavyAttackScript : MonoBehaviour
         IsSwinging = true;
         anim.SetTrigger("HeavyAttackTrigger");
         yield return new WaitForSeconds(1f);
-        _attackColl = Instantiate(hAttackColl, attackPos.transform.position, attackPos.transform.rotation);
+        if (_healthRef.Damaged == false)
+            _attackColl = Instantiate(hAttackColl, attackPos.transform.position, attackPos.transform.rotation);
     }
 
     public void InAttackCombo()

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23266577082257818}
   - component: {fileID: 114561048411467360}
   - component: {fileID: 54189507965836712}
+  - component: {fileID: 136586089860376436}
   m_Layer: 8
   m_Name: FastAttackColl
   m_TagString: Untagged
@@ -38,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1125402023128810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0089998245, y: 0.18, z: 1.085}
-  m_LocalScale: {x: 0.91095537, y: 1, z: 0.9283796}
+  m_LocalPosition: {x: 12.835576, y: 0.48, z: 24.369398}
+  m_LocalScale: {x: 1.1319441, y: 1, z: 1.3483039}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -50,7 +51,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1125402023128810}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -105,7 +106,7 @@ BoxCollider:
   m_GameObject: {fileID: 1125402023128810}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -125,3 +126,16 @@ MonoBehaviour:
   Distance: 1.5
   LifeTime: 0.2
   HitSound: {fileID: 0}
+--- !u!136 &136586089860376436
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1125402023128810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.642762
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
