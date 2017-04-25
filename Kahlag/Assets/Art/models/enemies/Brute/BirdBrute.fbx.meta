@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 673f8b8a55d8bcd409d386ec01977ebd
-timeCreated: 1493045485
+guid: 801ce2c6862a5f742becf960f884d5da
+timeCreated: 1493113032
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -270,7 +270,6 @@ ModelImporter:
     4300012: Sicklestaff
     4300014: Teeth_Upper
     4300016: Teeth_lower
-    7400000: Take 001
     9500000: //RootNode
     13700000: Beak
     13700002: Brute_Body
@@ -337,7 +336,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: Brute_Root
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
