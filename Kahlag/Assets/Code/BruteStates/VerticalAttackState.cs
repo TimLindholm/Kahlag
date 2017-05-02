@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class VerticalAttackState : StateBehaviour
 {
-    //CD
 
+    public float m_actionTime;
+    float m_timer = 0f;
+
+
+    //CD
     public float MinCD = 2f;
     public float MaxCD = 4f; 
 
@@ -18,9 +22,33 @@ public class VerticalAttackState : StateBehaviour
     public Rigidbody meleeAttackColl;
     private Rigidbody _meleeAttackColl;
 
+    UnityEngine.AI.NavMeshAgent agent;
+
+
+    private void Awake()
+    {
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing    
+        _rb = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        m_timer -= Time.deltaTime;
+        //TEST
+        if (m_timer > .9f)
+        {
+            Context.Enemy.TakeAim();
+        }
+
+        if (m_timer < 0)
+
+            StateMachine.GoToState("AttackState");
+    }
+
     public override void OnEnter()
     {
-        Context.Enemy.inAttack = true;     
+        Context.Enemy.inAttack = true;
+        m_timer = m_actionTime;
         float cooldown = UnityEngine.Random.Range(MinCD, MaxCD);
         Context.Enemy.anim.SetTrigger("Vertical");
         StartCoroutine(DamageCollActive());

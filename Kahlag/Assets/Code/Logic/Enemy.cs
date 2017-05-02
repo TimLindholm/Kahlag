@@ -9,8 +9,8 @@ public class Enemy : MonoBehaviour
     public float m_attackRage;
 
     public float randomDir;
-    private float _right = .05f;
-    private float _left = -.05f;
+    public float _right = .05f;
+    public float _left = -.05f;
 
     public float ActionTimer;
 
@@ -19,6 +19,11 @@ public class Enemy : MonoBehaviour
     public float TurnSmoothing = 5f;
 
     public Animator anim;
+
+
+
+    //Control Damage Animation
+    public bool HasDamageAnim = true;
 
 
     //Camera Shake
@@ -184,7 +189,11 @@ public class Enemy : MonoBehaviour
                 //_score.DamageBonus += Damage;
                 if(inAttack != true)
                 {
-                    anim.SetTrigger("TakeDamage");
+                    if(HasDamageAnim==true)
+                    {
+                        anim.SetTrigger("TakeDamage");
+                    }
+                   
                 }
 
                 agent.Stop();

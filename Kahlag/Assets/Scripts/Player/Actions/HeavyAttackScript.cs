@@ -85,6 +85,10 @@ public class HeavyAttackScript : MonoBehaviour
         }
         IsSwinging = true;
         anim.SetTrigger("HeavyAttackTrigger");
+        if (_detectRef.EnemyToTarget != null)
+        {
+            transform.LookAt(_detectRef.EnemyToTarget);
+        }
         yield return new WaitForSeconds(1f);
         if (_healthRef.Damaged == false)
             _attackColl = Instantiate(hAttackColl, attackPos.transform.position, attackPos.transform.rotation);

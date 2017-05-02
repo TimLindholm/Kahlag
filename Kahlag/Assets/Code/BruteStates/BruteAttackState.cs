@@ -49,19 +49,21 @@ public class BruteAttackState : StateBehaviour
         Context.Enemy.RotateAroundTarget();
         if (Context.Enemy.ActionTimer <= 0f)
         {
-            //StateMachine.GoToState("MeleeSwing");
-            Context.Enemy.RandomizeAttack();
-            // Execute attack based on nr.
-            if(Context.Enemy.randomAttack == 0)
-            {
-                //Do attack1
-                StateMachine.GoToState("Horizontal");
-            }
-            else
-            {
-                //Do attack2
-                StateMachine.GoToState("Vertical");
-            }
+            StateMachine.GoToState("Vertical");
+
+
+            //Context.Enemy.RandomizeAttack();
+            //// Execute attack based on nr.
+            //if(Context.Enemy.randomAttack == 0)
+            //{
+            //    //Do attack1
+            //    StateMachine.GoToState("Horizontal");
+            //}
+            //else
+            //{
+            //    //Do attack2
+            //    StateMachine.GoToState("Vertical");
+            //}
         }
 
         else if (!Context.Enemy.CanAttackPlayer())
@@ -69,7 +71,7 @@ public class BruteAttackState : StateBehaviour
             m_huntTime -= Time.deltaTime;
             if (m_huntTime <= 0f)
             {
-                //StateMachine.GoToState("CombatState");
+                StateMachine.GoToState("CombatState");
                 // Charge if possible?
             }
         }

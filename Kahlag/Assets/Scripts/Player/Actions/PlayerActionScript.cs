@@ -29,6 +29,6 @@ public class PlayerActionScript : MonoBehaviour
         }
 
        
-        Debug.Log(InAction);
+        //Debug.Log(InAction);
 	}
 }

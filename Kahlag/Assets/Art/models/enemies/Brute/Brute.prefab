@@ -676,6 +676,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1335055262422516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4277996682323796}
+  m_Layer: 0
+  m_Name: attackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1335496583906436
 GameObject:
   m_ObjectHideFlags: 1
@@ -1937,7 +1952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1986093983795956
 GameObject:
   m_ObjectHideFlags: 1
@@ -2480,6 +2495,19 @@ Transform:
   m_Father: {fileID: 4918792286891646}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4277996682323796
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1335055262422516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.74}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4578185864126068}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4280017224472214
 Transform:
   m_ObjectHideFlags: 1
@@ -2850,7 +2878,7 @@ Transform:
   - {fileID: 4345576052723630}
   - {fileID: 4226050903843156}
   m_Father: {fileID: 4578185864126068}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4521679346619884
 Transform:
@@ -2945,6 +2973,7 @@ Transform:
   m_LocalPosition: {x: 7.528, y: 0.93, z: 14.37772}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4277996682323796}
   - {fileID: 4518675697618532}
   - {fileID: 4782212323118718}
   m_Father: {fileID: 0}
@@ -3367,7 +3396,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4578185864126068}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4788235335652206
 Transform:
@@ -3926,15 +3955,18 @@ MonoBehaviour:
   m_viewRange: 9
   m_attackRage: 3
   randomDir: 0
+  _right: 0.03
+  _left: -0.03
   ActionTimer: 0
   aimDirection: {fileID: 4782212323118718}
-  VisionRadius: 30
+  VisionRadius: 60
   TurnSmoothing: 5
   anim: {fileID: 0}
+  HasDamageAnim: 0
   Cam_Shake: 1
   amplitude: 0.1
   duration: 0.5
-  Health: 0
+  Health: 50
   IsDead: 0
   invulnerable: 0
   inAttack: 0
@@ -3963,16 +3995,18 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1985437641469034}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8356b301ff0e8f94b936ec41de120bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Vertical
-  MinCD: 2
-  MaxCD: 4
-  attackPos: {fileID: 0}
-  meleeAttackColl: {fileID: 0}
+  m_actionTime: 1.3
+  MinCD: 3.5
+  MaxCD: 5
+  attackPos: {fileID: 4277996682323796}
+  meleeAttackColl: {fileID: 54357428713853292, guid: 404eb490bb5368b4492ecca8035ed433,
+    type: 2}
 --- !u!114 &114879426185625672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3985,6 +4019,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Horizontal
+  m_actionTime: 0
+  MinCD: 2
+  MaxCD: 4
+  attackPos: {fileID: 0}
+  meleeAttackColl: {fileID: 0}
 --- !u!136 &136961245817386202
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -3994,10 +4033,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 1.2
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.35}
 --- !u!137 &137069294135236012
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

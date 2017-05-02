@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1067c22c6417e2342ad3360ffde9b2d2
+guid: a48678269e23bd24daebf6da954f13bc
 timeCreated: 1493113410
 licenseType: Free
 ModelImporter:
@@ -270,7 +270,7 @@ ModelImporter:
     4300012: Sicklestaff
     4300014: Teeth_Upper
     4300016: Teeth_lower
-    7400000: Attack_Downswing
+    7400000: Attack_Downswing_RELEASE
     9500000: //RootNode
     13700000: Beak
     13700002: Brute_Body
@@ -303,9 +303,9 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Attack_Downswing
+      name: Attack_Downswing_RELEASE
       takeName: Take 001
-      firstFrame: 0
+      firstFrame: 12
       lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
