@@ -37,6 +37,13 @@ public class Enemy : MonoBehaviour
 
     Rigidbody m_body;
 
+
+    //Random Attack
+    public int randomAttack;
+    private int horizontal = 0;
+    private int vertical = 1;
+
+
     //Navmesh Testing
     UnityEngine.AI.NavMeshAgent agent;
 
@@ -150,6 +157,11 @@ public class Enemy : MonoBehaviour
     {
         randomDir = Random.Range(_left, _right);
 
+    }
+
+    public void RandomizeAttack()
+    {
+        randomAttack = Random.Range(horizontal, vertical);
     }
 
     

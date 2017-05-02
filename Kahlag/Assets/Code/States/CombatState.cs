@@ -42,7 +42,7 @@ public class CombatState : StateBehaviour
         if (Context.Enemy.CanAttackPlayer())
         {
             agent.Stop();
-            StateMachine.GoToState("AttackState"); //If within range, try to attack!
+            StateMachine.GoToState("AttackState"); 
         }
 
         //TAKE BACK TO LEAVE COMBAT AND GO BACK TO IDLE
