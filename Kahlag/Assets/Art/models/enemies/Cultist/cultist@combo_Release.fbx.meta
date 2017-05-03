@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c6806b801b3bc5140b10e988e0e6c97c
+guid: 5a6105f5b16502443a7369aaf5450c73
 timeCreated: 1493816470
 licenseType: Free
 ModelImporter:
@@ -173,7 +173,7 @@ ModelImporter:
     400162: Spline_2
     400164: Spline_3
     400166: Supermover__ctrl
-    7400000: Attack_Release
+    7400000: combo_Release
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -197,10 +197,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Attack_Release
+      name: combo_Release
       takeName: Take 001
-      firstFrame: 8
-      lastFrame: 24
+      firstFrame: 13
+      lastFrame: 74
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -219,7 +219,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves:
-      - name: attackCurve
+      - name: comboAttackCurve
         curve:
           serializedVersion: 2
           curve:
@@ -230,19 +230,61 @@ ModelImporter:
             outSlope: 0
             tangentMode: 0
           - serializedVersion: 2
-            time: 0.06396742
+            time: 0.09630785
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - serializedVersion: 2
-            time: 0.37481177
+            time: 0.18683603
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - serializedVersion: 2
-            time: 0.43109542
+            time: 0.21399705
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.28857303
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.40050563
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.4216425
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.5759717
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.6051239
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.67738426
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.72540945
             value: 0
             inSlope: 0
             outSlope: 0

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeSwingState : StateBehaviour
+public class ComboState : StateBehaviour
 {
     public float m_actionTime;
     float m_timer = 0f;
@@ -11,6 +11,7 @@ public class MeleeSwingState : StateBehaviour
     public float MinCD = 2f;
     public float MaxCD = 4f;
 
+    public float ComboCD = 10f;
 
     private Rigidbody _rb;
 
@@ -22,14 +23,38 @@ public class MeleeSwingState : StateBehaviour
 
     UnityEngine.AI.NavMeshAgent agent;
 
-    float attackCurve;
+    float comboAttackCurve;
     public GameObject damagecoll;
 
 
+
+    // MOVE TEST
     public Transform comboTarget;
     public Transform startPos;
 
     public float speed = 1.0F;
+
+
+
+    void Update()
+    {
+        AttackCurve();
+        AdjustSpeed();
+
+        m_timer -= Time.deltaTime;
+        
+        if (m_timer > 1f)
+        {
+            Context.Enemy.TakeAim();
+        }
+
+        if (m_timer < 0)
+
+            StateMachine.GoToState("AttackState");
+
+    }
+
+
 
     public override void OnEnter()
     {
@@ -37,47 +62,21 @@ public class MeleeSwingState : StateBehaviour
         comboTarget.position = Context.Enemy.m_target.position;
         startPos.position = transform.position;
         agent.Stop();
-       
-        m_timer = m_actionTime; 
-        Context.Enemy.RotateAroundTarget();
-    
+        m_timer = m_actionTime;
+        
         float cooldown = UnityEngine.Random.Range(MinCD, MaxCD);
 
-        Context.Enemy.anim.SetTrigger("MeleeAttack");
+        Context.Enemy.anim.SetTrigger("Combo");
         StartCoroutine(DamageCollActive());
         Context.Enemy.ActionTimer = cooldown;
-       
-        //Perform Action
+        Context.Enemy.ComboCooldown = ComboCD;
+
 
     }
 
     public override void OnExit()
     {
-        //Context.Enemy.anim.SetBool("MeleeSwing", false);
         Context.Enemy.inAttack = false;
-    }
-
-    private void Awake()
-    {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing    
-        _rb = GetComponent<Rigidbody>();
-    }
-
-    private void Update()
-    {
-        AttackCurve();
-        AdjustSpeed();
-
-        m_timer -= Time.deltaTime;
-        //TEST
-        if(m_timer > 1f)
-        {
-            Context.Enemy.TakeAim();
-        }
-      
-        if (m_timer < 0)
-            
-            StateMachine.GoToState("AttackState");
     }
 
     IEnumerator DamageCollActive()
@@ -90,17 +89,19 @@ public class MeleeSwingState : StateBehaviour
 
 
         //_meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.5f);
         comboTarget.position = Context.Enemy.m_target.position;
-        yield return new WaitForSeconds(.3f);
-        
+
+
+        yield return new WaitForSeconds(1f);
+
         Context.Enemy.inAttack = false;
     }
 
     public void AttackCurve()
     {
-        attackCurve = Context.Enemy.anim.GetFloat("attackCurve");
-        if (attackCurve > 0.5f)
+        comboAttackCurve = Context.Enemy.anim.GetFloat("comboAttackCurve");
+        if (comboAttackCurve > 0.5f)
         {
             damagecoll.SetActive(true);
             print("Active");
@@ -129,13 +130,25 @@ public class MeleeSwingState : StateBehaviour
         //    }
         //}
 
-        if (m_timer <= .8f)
+        if(m_timer <= 1.5f)
         {
             //float distCovered = (Time.time - startTime) * speed;
             //float fracJourney = distCovered / journeyLength;
-            //comboTarget.position = Context.Enemy.m_target.position;
+            comboTarget.position = Context.Enemy.m_target.position;
             transform.position = Vector3.Lerp(startPos.position, comboTarget.position, speed * Time.deltaTime);
             print("lerp");
-        }
+        }    
     }
+
+
+
+    void Awake ()
+    {
+
+
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing    
+        _rb = GetComponent<Rigidbody>();
+    }
+	
+
 }

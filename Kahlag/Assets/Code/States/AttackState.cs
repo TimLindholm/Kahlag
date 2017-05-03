@@ -49,6 +49,12 @@ public class AttackState : StateBehaviour
 	{
         //Try to execute Action, else - MoveTowardsTarget!
         Context.Enemy.RotateAroundTarget();
+
+        if(Context.Enemy.ActionTimer <= 0f && Context.Enemy.ComboCooldown <= 0f)
+        {
+            StateMachine.GoToState("ComboState");
+        }
+
         if (Context.Enemy.ActionTimer <= 0f)
         {
            StateMachine.GoToState("MeleeSwing");               

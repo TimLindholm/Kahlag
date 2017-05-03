@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
 
     public float ActionTimer;
 
+    public float ComboCooldown;
+
     public Transform aimDirection;
     public float VisionRadius = 30f;
     public float TurnSmoothing = 5f;
@@ -75,6 +77,11 @@ public class Enemy : MonoBehaviour
         if(ActionTimer >= 0f)
         {
             ActionTimer -= Time.deltaTime;           
+        }
+
+        if(ComboCooldown >= 0f)
+        {
+            ComboCooldown -= Time.deltaTime;
         }
     }
 
