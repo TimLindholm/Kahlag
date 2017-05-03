@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: fcdc47e5f0c6e124198087c95f295423
-timeCreated: 1493813687
+timeCreated: 1493818991
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -151,7 +151,7 @@ SubstanceImporter:
       colors:
       - first:
           name: _Color
-        second: {r: 0.97794116, g: 0.97456896, b: 0.8556985, a: 1}
+        second: {r: 0.9558824, g: 0.9525201, b: 0.82936853, a: 1}
       - first:
           name: _EmissionColor
         second: {r: 0, g: 0, b: 0, a: 1}
@@ -355,7 +355,7 @@ SubstanceImporter:
       colors:
       - first:
           name: _Color
-        second: {r: 0.9764706, g: 0.9764706, b: 0.85490197, a: 1}
+        second: {r: 0.9191176, g: 0.9191176, b: 0.72988755, a: 1}
       - first:
           name: _EmissionColor
         second: {r: 0, g: 0, b: 0, a: 1}
