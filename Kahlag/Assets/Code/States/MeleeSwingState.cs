@@ -11,7 +11,6 @@ public class MeleeSwingState : StateBehaviour
     public float MinCD = 2f;
     public float MaxCD = 4f;
 
-    public GameObject damageColl;
 
     private Rigidbody _rb;
 
@@ -22,6 +21,9 @@ public class MeleeSwingState : StateBehaviour
 
 
     UnityEngine.AI.NavMeshAgent agent;
+
+    float attackCurve;
+    public GameObject damagecoll;
 
     public override void OnEnter()
     {
@@ -55,6 +57,8 @@ public class MeleeSwingState : StateBehaviour
 
     private void Update()
     {
+        AttackCurve();
+
         m_timer -= Time.deltaTime;
         //TEST
         if(m_timer > 0.55f)
@@ -72,15 +76,32 @@ public class MeleeSwingState : StateBehaviour
         //yield return new WaitForSeconds(.2f);
 
         //TEST
-        //Context.Enemy.RotateAroundTarget();
-        //Context.Enemy.inAttack = true;
-        yield return new WaitForSeconds(.7f);
+       
+        //yield return new WaitForSeconds(.7f);
 
-        //_rb.AddForce(0, 0, -150f, ForceMode.Impulse);
-        _meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
-        //damageColl.SetActive(true);
+      
+        //_meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
+       
         yield return new WaitForSeconds(.3f);
-        //damageColl.SetActive(false);
+        
         Context.Enemy.inAttack = false;
+    }
+
+    public void AttackCurve()
+    {
+        attackCurve = Context.Enemy.anim.GetFloat("attackCurve");
+        if (attackCurve > 0.5f)
+        {
+            damagecoll.SetActive(true);
+            print("Active");
+        }
+        else
+        {
+            if (damagecoll.activeInHierarchy)
+            {
+                damagecoll.SetActive(false);
+            }
+        }
+
     }
 }

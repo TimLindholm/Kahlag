@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8a295dd2e7246ab48b3faae953577276
-timeCreated: 1493024964
+guid: de1a105fb0269464eae76e07ac590cb4
+timeCreated: 1493816470
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -173,7 +173,7 @@ ModelImporter:
     400162: Spline_2
     400164: Spline_3
     400166: Supermover__ctrl
-    7400000: Attack_CHARGE
+    7400000: Attack_charge
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -197,10 +197,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Attack_CHARGE
+      name: Attack_charge
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 4
+      lastFrame: 7
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
