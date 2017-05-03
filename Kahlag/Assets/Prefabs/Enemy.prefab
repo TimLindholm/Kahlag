@@ -2667,7 +2667,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1279432071858574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.85}
+  m_LocalPosition: {x: 0, y: 0, z: 0.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4242382726572358}
@@ -4660,8 +4660,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: ComboState
   m_actionTime: 3.2
-  MinCD: 3
-  MaxCD: 4
+  MinCD: 2.2
+  MaxCD: 3.3
   ComboCD: 10
   attackPos: {fileID: 0}
   meleeAttackColl: {fileID: 0}
@@ -4696,7 +4696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: MeleeSwing
   m_actionTime: 1.8
-  MinCD: 1.2
+  MinCD: 2
   MaxCD: 3.3
   attackPos: {fileID: 4204349247737174}
   meleeAttackColl: {fileID: 54357428713853292, guid: 5c1d6b73a4b56f14ba67f228c4a94d0c,

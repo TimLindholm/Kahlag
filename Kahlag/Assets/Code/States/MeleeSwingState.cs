@@ -129,7 +129,7 @@ public class MeleeSwingState : StateBehaviour
         //    }
         //}
 
-        if (m_timer <= .8f)
+        if (m_timer <= 1f)
         {
             //float distCovered = (Time.time - startTime) * speed;
             //float fracJourney = distCovered / journeyLength;
