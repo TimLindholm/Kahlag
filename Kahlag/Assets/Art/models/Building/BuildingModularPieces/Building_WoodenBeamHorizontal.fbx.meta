@@ -22,16 +22,19 @@ ModelImporter:
     2300004: WoodenBeamsHorizontal_03
     2300006: WoodenBeamsHorizontal_04
     2300008: WoodenBeamsHorizontal_05
+    2300010: //RootNode
     3300000: WoodenBeamsHorizontal_01
     3300002: WoodenBeamsHorizontal_02
     3300004: WoodenBeamsHorizontal_03
     3300006: WoodenBeamsHorizontal_04
     3300008: WoodenBeamsHorizontal_05
+    3300010: //RootNode
     4300000: WoodenBeamsHorizontal_01
     4300002: WoodenBeamsHorizontal_02
     4300004: WoodenBeamsHorizontal_03
     4300006: WoodenBeamsHorizontal_04
     4300008: WoodenBeamsHorizontal_05
+    4300010: Building_WoodenBeamHorizontal
     9500000: //RootNode
   materials:
     importMaterials: 1

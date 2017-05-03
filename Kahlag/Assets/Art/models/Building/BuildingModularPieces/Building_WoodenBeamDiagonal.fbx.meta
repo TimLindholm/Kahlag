@@ -22,16 +22,19 @@ ModelImporter:
     2300004: WoodenBeamDiagonal_03
     2300006: WoodenBeamDiagonal_04
     2300008: WoodenBeamDiagonal_05
+    2300010: //RootNode
     3300000: WoodenBeamDiagonal_01
     3300002: WoodenBeamDiagonal_02
     3300004: WoodenBeamDiagonal_03
     3300006: WoodenBeamDiagonal_04
     3300008: WoodenBeamDiagonal_05
+    3300010: //RootNode
     4300000: WoodenBeamDiagonal_01
     4300002: WoodenBeamDiagonal_02
     4300004: WoodenBeamDiagonal_03
     4300006: WoodenBeamDiagonal_04
     4300008: WoodenBeamDiagonal_05
+    4300010: Building_WoodenBeamDiagonal
     9500000: //RootNode
   materials:
     importMaterials: 1
