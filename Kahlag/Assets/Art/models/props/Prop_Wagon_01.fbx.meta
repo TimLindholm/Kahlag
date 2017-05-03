@@ -7,11 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Prop_Wagon
     100002: //RootNode
+    100004: Prop_Wagon_01
     400000: Prop_Wagon
     400002: //RootNode
+    400004: Prop_Wagon_01
     2300000: Prop_Wagon
+    2300002: Prop_Wagon_01
     3300000: Prop_Wagon
+    3300002: Prop_Wagon_01
     4300000: Prop_Wagon
+    4300002: Prop_Wagon_01
     9500000: //RootNode
   materials:
     importMaterials: 1

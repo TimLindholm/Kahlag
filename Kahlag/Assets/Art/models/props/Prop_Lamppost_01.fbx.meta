@@ -7,11 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Prop_Lamppost
     100002: //RootNode
+    100004: Prop_Lamppost_01
     400000: Prop_Lamppost
     400002: //RootNode
+    400004: Prop_Lamppost_01
     2300000: Prop_Lamppost
+    2300002: Prop_Lamppost_01
     3300000: Prop_Lamppost
+    3300002: Prop_Lamppost_01
     4300000: Prop_Lamppost
+    4300002: Prop_Lamppost_01
     9500000: //RootNode
   materials:
     importMaterials: 1

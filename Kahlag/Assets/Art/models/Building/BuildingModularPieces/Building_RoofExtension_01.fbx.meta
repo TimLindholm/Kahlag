@@ -7,11 +7,21 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Building_RoofExtension_01
     100002: //RootNode
+    100004: Building_Roof_Extension_Base_01
+    100006: Building_Roof_Extension_Roof_01
     400000: Building_RoofExtension_01
     400002: //RootNode
+    400004: Building_Roof_Extension_Base_01
+    400006: Building_Roof_Extension_Roof_01
     2300000: Building_RoofExtension_01
+    2300002: Building_Roof_Extension_Base_01
+    2300004: Building_Roof_Extension_Roof_01
     3300000: Building_RoofExtension_01
+    3300002: Building_Roof_Extension_Base_01
+    3300004: Building_Roof_Extension_Roof_01
     4300000: Building_RoofExtension_01
+    4300002: Building_Roof_Extension_Base_01
+    4300004: Building_Roof_Extension_Roof_01
     9500000: //RootNode
   materials:
     importMaterials: 1
