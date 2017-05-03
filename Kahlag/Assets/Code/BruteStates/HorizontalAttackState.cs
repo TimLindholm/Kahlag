@@ -35,7 +35,7 @@ public class HorizontalAttackState : StateBehaviour
     {
         m_timer -= Time.deltaTime;
         //TEST
-        if (m_timer > 1f)
+        if (m_timer > 1.4f)
         {
             Context.Enemy.TakeAim();
         }
@@ -66,7 +66,7 @@ public class HorizontalAttackState : StateBehaviour
 
         //TEST
 
-        yield return new WaitForSeconds(.7f);
+        yield return new WaitForSeconds(1.2f);
 
         //_rb.AddForce(0, 0, -150f, ForceMode.Impulse);
         _meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a48678269e23bd24daebf6da954f13bc
-timeCreated: 1493113410
+guid: ec968be5ca983a744b4a691d6f18b43b
+timeCreated: 1493801390
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -270,7 +270,7 @@ ModelImporter:
     4300012: Sicklestaff
     4300014: Teeth_Upper
     4300016: Teeth_lower
-    7400000: Attack_Downswing_RELEASE
+    7400000: Strafe_R
     9500000: //RootNode
     13700000: Beak
     13700002: Brute_Body
@@ -303,17 +303,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Attack_Downswing_RELEASE
+      name: Strafe_R
       takeName: Take 001
-      firstFrame: 12
-      lastFrame: 20
+      firstFrame: 40
+      lastFrame: 72
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1

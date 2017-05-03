@@ -35,7 +35,7 @@ public class VerticalAttackState : StateBehaviour
     {
         m_timer -= Time.deltaTime;
         //TEST
-        if (m_timer > .9f)
+        if (m_timer > 1.4f)
         {
             Context.Enemy.TakeAim();
         }

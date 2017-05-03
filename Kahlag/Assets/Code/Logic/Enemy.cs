@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
     //Random Attack
     public int randomAttack;
     private int horizontal = 0;
-    private int vertical = 1;
+    private int vertical = 3;
 
 
     //Navmesh Testing
@@ -167,6 +167,7 @@ public class Enemy : MonoBehaviour
     public void RandomizeAttack()
     {
         randomAttack = Random.Range(horizontal, vertical);
+        print(randomAttack);
     }
 
     
