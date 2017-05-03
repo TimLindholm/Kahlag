@@ -22,7 +22,7 @@ public class EnemyDamageScript : MonoBehaviour
 
     public void Killmyself()
     {
-        Destroy(gameObject, LifeTime);
+        //Destroy(gameObject, LifeTime);
     }
 
 

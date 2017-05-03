@@ -39,7 +39,7 @@ public class AttackState : StateBehaviour
     IEnumerator RandomRot()
     {
         IsRunningCR = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         Context.Enemy.RandomizeRotation();
         IsRunningCR = false;
         

@@ -24,6 +24,9 @@ public class VerticalAttackState : StateBehaviour
 
     UnityEngine.AI.NavMeshAgent agent;
 
+    float attackCurve;
+    public GameObject damagecoll;
+
 
     private void Awake()
     {
@@ -33,6 +36,9 @@ public class VerticalAttackState : StateBehaviour
 
     private void Update()
     {
+        AttackCurve();
+
+
         m_timer -= Time.deltaTime;
         //TEST
         if (m_timer > 1.4f)
@@ -66,13 +72,35 @@ public class VerticalAttackState : StateBehaviour
 
         //TEST
       
-        yield return new WaitForSeconds(.7f);
+        //yield return new WaitForSeconds(.7f);
+        //_meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
 
-        //_rb.AddForce(0, 0, -150f, ForceMode.Impulse);
-        _meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
-        //damageColl.SetActive(true);
+
+
+
         yield return new WaitForSeconds(.3f);
-        //damageColl.SetActive(false);
+       
         Context.Enemy.inAttack = false;
     }
+
+    public void AttackCurve()
+    {
+        attackCurve = Context.Enemy.anim.GetFloat("attackCurve");
+        if (attackCurve > 0.5f)
+        {
+            damagecoll.SetActive(true);
+            print("Active");
+        }
+        else
+        {
+            if (damagecoll.activeInHierarchy)
+            {
+                damagecoll.SetActive(false);
+            }
+        }
+
+    }
+
 }
+
+

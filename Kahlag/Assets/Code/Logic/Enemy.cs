@@ -109,7 +109,9 @@ public class Enemy : MonoBehaviour
        
             agent.SetDestination(m_target.position);
             Vector3 relDirection = transform.InverseTransformDirection(agent.desiredVelocity);
-            anim.SetFloat("Moving", 1.1f);
+            //anim.SetFloat("Moving", 1.1f);
+            anim.SetFloat("Movement", relDirection.z, .5f, Time.deltaTime);
+            anim.SetBool("Strafing", false);
         
     
     }
@@ -118,9 +120,35 @@ public class Enemy : MonoBehaviour
     {
         if(invulnerable != true)
         {
+            if(randomDir > 0)
+            {
+                randomDir = .03f;
+            }
+            else
+            {
+                randomDir = -.03f;
+            }
             aimDirection.LookAt(m_target);
             transform.rotation = Quaternion.Lerp(transform.rotation, aimDirection.rotation, TurnSmoothing * Time.deltaTime);
-            transform.Translate(randomDir, 0f, 0f * Time.deltaTime / 100); // Fix this!
+            transform.Translate(randomDir, 0f, 0f * Time.deltaTime / 200); // Fix this!
+            anim.SetBool("Strafing", true);
+
+        }
+        //else
+        //{
+        //    anim.SetBool("Strafing", false);
+        //}
+
+
+        if(randomDir >=0)
+        {
+            //anim.SetTrigger("strafeRight");
+            anim.SetFloat("Strafe", 1);
+        }
+        else
+        {
+            //anim.SetTrigger("strafeLeft");*
+            anim.SetFloat("Strafe", -1);
         }
 
     }
@@ -144,13 +172,19 @@ public class Enemy : MonoBehaviour
         // Returns if no points have been set up
         //Vector3 relDirection = transform.InverseTransformDirection(agent.desiredVelocity);
         //anim.SetFloat("Moving", relDirection.z, 2f, Time.deltaTime);
-        anim.SetFloat("Moving", 0.6f);
+
+
+        anim.SetFloat("Movement", 1f);
+        //anim.SetFloat("Moving", 0.6f);
         if (waypoints.Length == 0)
         {
-            anim.SetFloat("Moving", 0f);
+            //anim.SetFloat("Moving", 0f);
+            anim.SetFloat("Movement", 0f);
             return;
             
         }
+
+       
         
         agent.destination = waypoints[currentWP].transform.position;
        
@@ -167,7 +201,7 @@ public class Enemy : MonoBehaviour
     public void RandomizeAttack()
     {
         randomAttack = Random.Range(horizontal, vertical);
-        print(randomAttack);
+        //print(randomAttack);
     }
 
     

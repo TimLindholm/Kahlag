@@ -25,6 +25,10 @@ public class HorizontalAttackState : StateBehaviour
     UnityEngine.AI.NavMeshAgent agent;
 
 
+    float horizontalAttackCurve;
+    public GameObject damagecoll;
+
+
     private void Awake()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing    
@@ -33,9 +37,12 @@ public class HorizontalAttackState : StateBehaviour
 
     private void Update()
     {
+
+        HorizontalAttackCurve();
+
         m_timer -= Time.deltaTime;
         //TEST
-        if (m_timer > 1.4f)
+        if (m_timer > 1.55f)
         {
             Context.Enemy.TakeAim();
         }
@@ -62,17 +69,32 @@ public class HorizontalAttackState : StateBehaviour
 
     IEnumerator DamageCollActive()
     {
-        //yield return new WaitForSeconds(.2f);
+    
+        yield return new WaitForSeconds(1.3f);
 
-        //TEST
-
-        yield return new WaitForSeconds(1.2f);
-
-        //_rb.AddForce(0, 0, -150f, ForceMode.Impulse);
-        _meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
-        //damageColl.SetActive(true);
+        
+        //_meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
+      
         yield return new WaitForSeconds(.3f);
-        //damageColl.SetActive(false);
+  
         Context.Enemy.inAttack = false;
+    }
+
+    public void HorizontalAttackCurve()
+    {
+        horizontalAttackCurve = Context.Enemy.anim.GetFloat("horizontalAttackCurve");
+        if (horizontalAttackCurve > 0.5f)
+        {
+            damagecoll.SetActive(true);
+            print("Active");
+        }
+        else
+        {
+            if (damagecoll.activeInHierarchy)
+            {
+                damagecoll.SetActive(false);
+            }
+        }
+
     }
 }
