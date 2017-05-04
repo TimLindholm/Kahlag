@@ -37,5 +37,11 @@ public class IdleState : StateBehaviour
             
             Context.Enemy.MoveTowardsPosition(m_randomizedPos);
         }
+
+        if(Context.Enemy.CurrentHealth < Context.Enemy.MaxHealth)
+        {
+            agent.Stop();
+            StateMachine.GoToState("CombatState");
+        }
 	}
 }

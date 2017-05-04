@@ -36,7 +36,8 @@ public class Enemy : MonoBehaviour
     public float duration = 0.5f;
 
     //Health Related
-    public float Health;
+    public float CurrentHealth;
+    public float MaxHealth;
     public bool IsDead;
 
     public bool invulnerable;
@@ -69,7 +70,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing       
         agent.autoBraking = false; //does not slow down 
         _rag = GetComponent<RagdollEnemy>();
-
+        CurrentHealth = MaxHealth;
         SetupAnimator(); //get anim component
         m_body = GetComponent<Rigidbody>();
 	}
@@ -251,7 +252,7 @@ public class Enemy : MonoBehaviour
                 }
 
                 agent.Stop();
-                Health -= Damage;
+                CurrentHealth -= Damage;
                 if(Cam_Shake==true)
                 {
                     CameraShake.Instance.Shake(amplitude, duration);
@@ -266,7 +267,7 @@ public class Enemy : MonoBehaviour
             
 
         }
-        if (Health <= 0f && IsDead == false)
+        if (CurrentHealth <= 0f && IsDead == false)
         {
             
             //StaminaRef._stamina = StaminaRef.Stamina;
