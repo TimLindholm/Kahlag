@@ -15,6 +15,7 @@ public class CombatState : StateBehaviour
         //Debug.Log("Enter Combat State");
         agent.speed = 4;
         agent.Resume();
+        Context.Enemy.EnteredCombat = true;
 
     }
 

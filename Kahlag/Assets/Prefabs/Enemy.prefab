@@ -4797,7 +4797,7 @@ MonoBehaviour:
   _right: 0.03
   _left: -0.03
   ActionTimer: -0.02
-  ComboCooldown: 0
+  ComboCooldown: 8
   ChargeCooldown: 0
   aimDirection: {fileID: 4251806384166064}
   VisionRadius: 60
@@ -4813,6 +4813,7 @@ MonoBehaviour:
   invulnerable: 0
   inAttack: 0
   randomAttack: 0
+  EnteredCombat: 0
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -4894,7 +4895,7 @@ MonoBehaviour:
   damagecoll: {fileID: 1493187044456352}
   comboTarget: {fileID: 4492998376596982}
   startPos: {fileID: 4352485373974206}
-  speed: 0.6
+  speed: 1
 --- !u!114 &114696482885803324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5114,7 +5115,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4093f8e563b4a5440b2cdc29d7fd22a4, type: 2}
+  - {fileID: 2100000, guid: f5bea99b8c7ad3545ae0ab795144a666, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5397,7 +5398,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0716c1f6cac410d43b72a7ce09ce87f5, type: 2}
+  - {fileID: 2100000, guid: f5bea99b8c7ad3545ae0ab795144a666, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5567,7 +5568,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 0716c1f6cac410d43b72a7ce09ce87f5, type: 2}
-  - {fileID: 2100000, guid: 4093f8e563b4a5440b2cdc29d7fd22a4, type: 2}
+  - {fileID: 2100000, guid: f5bea99b8c7ad3545ae0ab795144a666, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5744,7 +5745,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4093f8e563b4a5440b2cdc29d7fd22a4, type: 2}
+  - {fileID: 2100000, guid: f5bea99b8c7ad3545ae0ab795144a666, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

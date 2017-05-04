@@ -58,6 +58,9 @@ public class Enemy : MonoBehaviour
     private int vertical = 3;
 
 
+    public bool EnteredCombat;
+
+
     //Navmesh Testing
     UnityEngine.AI.NavMeshAgent agent;
 
@@ -88,11 +91,13 @@ public class Enemy : MonoBehaviour
 
         if(ComboCooldown >= 0f)
         {
+            if(EnteredCombat)
             ComboCooldown -= Time.deltaTime;
         }
 
         if(ChargeCooldown >= 0f)
         {
+            if(EnteredCombat)
             ChargeCooldown -= Time.deltaTime;
         }
     }
