@@ -4062,7 +4062,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1489033893016978}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -4093,7 +4093,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047259749945966}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -4124,7 +4124,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1971608222865378}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -4538,7 +4538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 572626ef5e4a1f141addea6133a5ff07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 5
+  Damage: 4
   Force: 0
   Distance: 1.5
   LifeTime: 0.2
@@ -4608,7 +4608,7 @@ MonoBehaviour:
   Cam_Shake: 1
   amplitude: 0.08
   duration: 0.08
-  Health: 5
+  Health: 30
   IsDead: 0
   invulnerable: 0
   inAttack: 0
@@ -4667,7 +4667,7 @@ MonoBehaviour:
   SwingCollider: {fileID: 0}
   chargeTarget: {fileID: 4633989114634334}
   startPos: {fileID: 4624417824664286}
-  ChargeSpeed: 1.4
+  ChargeSpeed: 1.5
   IsCharging: 0
 --- !u!114 &114857547705639880
 MonoBehaviour:

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 113def93da79a67428bfaccb688b7834
-timeCreated: 1492694849
+guid: f77ff63c2d0ad1a4d996eae875dfc64c
+timeCreated: 1493925018
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -290,7 +290,7 @@ ModelImporter:
     4300032: Legs
     4300034: Belt
     4300036: Torso
-    7400000: Heavy_HitCombo1_Release
+    7400000: Idle_Combat
     9500000: //RootNode
     13700000: Arms
     13700002: Bandage01
@@ -333,59 +333,28 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Heavy_HitCombo1_Release
+      name: Idle_Combat
       takeName: Take 001
-      firstFrame: 7
-      lastFrame: 26
+      firstFrame: 0
+      lastFrame: 32
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves:
-      - name: heavyAttackCurve
-        curve:
-          serializedVersion: 2
-          curve:
-          - serializedVersion: 2
-            time: 0
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-          - serializedVersion: 2
-            time: 0.04196564
-            value: 0.99375
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-          - serializedVersion: 2
-            time: 0.8624097
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-          - serializedVersion: 2
-            time: 1
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-          preInfinity: 3
-          postInfinity: 3
-          rotationOrder: 0
+      curves: []
       events: []
       transformMask:
       - path: 
