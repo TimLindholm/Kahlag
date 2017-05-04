@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 508d11b212c167b4c933761c31b5b74c
-timeCreated: 1492080546
+guid: d34bffe38a29e154998cc2444601a77d
+timeCreated: 1493912116
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -325,7 +325,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -336,7 +336,7 @@ ModelImporter:
       name: Take 001
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 200
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -347,7 +347,7 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0

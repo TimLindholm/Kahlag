@@ -4446,7 +4446,7 @@ MonoBehaviour:
   SwingCollider: {fileID: 0}
   chargeTarget: {fileID: 4633989114634334}
   startPos: {fileID: 4624417824664286}
-  ChargeSpeed: 1.2
+  ChargeSpeed: 1.4
   IsCharging: 0
 --- !u!114 &114857547705639880
 MonoBehaviour:
