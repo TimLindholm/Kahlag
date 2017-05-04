@@ -270,7 +270,7 @@ ModelImporter:
     4300012: Sicklestaff
     4300014: Teeth_Upper
     4300016: Teeth_lower
-    7400000: Charge
+    7400000: Charge_Aim
     9500000: //RootNode
     13700000: Beak
     13700002: Brute_Body
@@ -303,10 +303,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Charge
+      name: Charge_Aim
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 62
+      lastFrame: 16
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -324,7 +324,38 @@ ModelImporter:
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
+      curves:
+      - name: chargeAimCurve
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 2
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.16154508
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.76479083
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          preInfinity: 3
+          postInfinity: 3
+          rotationOrder: 0
       events: []
       transformMask:
       - path: 

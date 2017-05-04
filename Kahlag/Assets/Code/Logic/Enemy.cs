@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
 
     public float ComboCooldown;
 
+    public float ChargeCooldown;
+
     public Transform aimDirection;
     public float VisionRadius = 30f;
     public float TurnSmoothing = 5f;
@@ -86,6 +88,11 @@ public class Enemy : MonoBehaviour
         if(ComboCooldown >= 0f)
         {
             ComboCooldown -= Time.deltaTime;
+        }
+
+        if(ChargeCooldown >= 0f)
+        {
+            ChargeCooldown -= Time.deltaTime;
         }
     }
 
@@ -177,13 +184,7 @@ public class Enemy : MonoBehaviour
 
 	public void MoveTowardsPosition(Vector3 pos)
 	{
-        //m_body.AddForce((pos - m_body.position).normalized * 13f);
-
-        //NAVMESH TEST
-        // Returns if no points have been set up
-        //Vector3 relDirection = transform.InverseTransformDirection(agent.desiredVelocity);
-        //anim.SetFloat("Moving", relDirection.z, 2f, Time.deltaTime);
-
+  
 
         anim.SetFloat("Movement", 1f);
         //anim.SetFloat("Moving", 0.6f);

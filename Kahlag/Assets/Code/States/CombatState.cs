@@ -8,6 +8,8 @@ public class CombatState : StateBehaviour
     //Navmesh Testing
     UnityEngine.AI.NavMeshAgent agent;
 
+    public bool CanCharge;
+
     public override void OnEnter()
     {
         //Debug.Log("Enter Combat State");
@@ -34,6 +36,16 @@ public class CombatState : StateBehaviour
 
     void Update()
     {
+        
+        if(CanCharge == true)
+        {
+            if (Context.Enemy.ChargeCooldown <= 0f && Context.Enemy.inAttack != true)
+            {
+                StateMachine.GoToState("ChargeState");
+            }
+        }
+      
+
         Context.Enemy.MoveTowardsTarget();
         //Context.Enemy.RotateAroundTarget();
 

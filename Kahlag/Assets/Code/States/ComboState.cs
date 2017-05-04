@@ -74,6 +74,7 @@ public class ComboState : StateBehaviour
     public override void OnExit()
     {
         Context.Enemy.inAttack = false;
+        damagecoll.SetActive(false);
     }
 
     IEnumerator DamageCollActive()
@@ -90,7 +91,7 @@ public class ComboState : StateBehaviour
         comboTarget.position = Context.Enemy.m_target.position;
 
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         Context.Enemy.inAttack = false;
     }
@@ -115,23 +116,11 @@ public class ComboState : StateBehaviour
 
     public void AdjustSpeed()
     {
-        //comboAttackCurve = Context.Enemy.anim.GetFloat("comboAttackCurve");
-        //{
-        //    if(comboAttackCurve < 0.5f)
-        //    {
-        //        agent.speed = 0.1f;
-        //    }
-        //    else
-        //    {
-        //        agent.speed = 2f;
-        //    }
-        //}
+  
 
         if(m_timer <= 1.8f)
         {
-            //float distCovered = (Time.time - startTime) * speed;
-            //float fracJourney = distCovered / journeyLength;
-            //comboTarget.position = Context.Enemy.m_target.position;
+            
             transform.position = Vector3.Lerp(startPos.position, comboTarget.position, speed * Time.deltaTime);
             print("lerp");
         }    
