@@ -17,7 +17,7 @@ public class ChargeState : StateBehaviour
 
     private Rigidbody _rb;
 
-    public float Distance;
+    public float ChargeDistance = 6;
 
 
     
@@ -55,6 +55,7 @@ public class ChargeState : StateBehaviour
     public override void OnExit()
 
     {
+        chargeTarget.position = transform.position;
         Context.Enemy.inAttack = false;
         ChargeCollider.SetActive(false);
     }
@@ -97,7 +98,11 @@ public class ChargeState : StateBehaviour
         //_meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
         //yield return new WaitForSeconds(.5f);
         startPos.position = transform.position;
-        chargeTarget.position = Context.Enemy.m_target.position;
+        //chargeTarget.position = Context.Enemy.m_target.position;
+
+        chargeTarget.Translate(0, 0, ChargeDistance);
+
+        
         //chargeTarget.position = new Vector3(0, 0, 5f);
 
 
