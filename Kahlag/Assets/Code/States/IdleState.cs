@@ -11,7 +11,7 @@ public class IdleState : StateBehaviour
 	{
 		//Debug.Log("Enter Idle State");
 		//m_randomizedPos = new Vector3(Random.Range(-25f, 25f), 0f, Random.Range(-10f, 25f));
-        agent.Resume();
+        //agent.Resume();
     }
 
 	public override void OnExit()
