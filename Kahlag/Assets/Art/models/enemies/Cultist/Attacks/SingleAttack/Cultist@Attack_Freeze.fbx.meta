@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 80c27a883647c2843a6a95b9eae12aec
-timeCreated: 1493816470
+guid: a02e7fba95c3066439c5bf83533eb8ab
+timeCreated: 1493885535
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -173,7 +173,7 @@ ModelImporter:
     400162: Spline_2
     400164: Spline_3
     400166: Supermover__ctrl
-    7400000: Strafe_Left
+    7400000: Attack_Freeze
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -197,17 +197,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Strafe_Left
+      name: Attack_Freeze
       takeName: Take 001
-      firstFrame: 1
-      lastFrame: 32
+      firstFrame: 21
+      lastFrame: 22
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1

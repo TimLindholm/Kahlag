@@ -4660,9 +4660,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: ComboState
   m_actionTime: 3.2
-  MinCD: 2.2
-  MaxCD: 3.3
-  ComboCD: 10
+  MinCD: 3.5
+  MaxCD: 4
+  ComboCD: 12
   attackPos: {fileID: 0}
   meleeAttackColl: {fileID: 0}
   damagecoll: {fileID: 1493187044456352}

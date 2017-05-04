@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6967254e766eb96479bbf5f9941cd973
-timeCreated: 1493816470
+guid: 0e8217d58c8b70c438b89b9a8b0a2ebb
+timeCreated: 1493885535
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -173,7 +173,7 @@ ModelImporter:
     400162: Spline_2
     400164: Spline_3
     400166: Supermover__ctrl
-    7400000: Attack_Recover
+    7400000: Attack_Release
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -197,10 +197,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Attack_Recover
+      name: Attack_Release
       takeName: Take 001
-      firstFrame: 16
-      lastFrame: 24
+      firstFrame: 9
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -218,7 +218,50 @@ ModelImporter:
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
+      curves:
+      - name: attackCurve
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 2
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.56364506
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.704947
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.9673652
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.99293286
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          preInfinity: 3
+          postInfinity: 3
+          rotationOrder: 0
       events: []
       transformMask:
       - path: 

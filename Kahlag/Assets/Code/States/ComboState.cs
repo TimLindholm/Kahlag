@@ -130,7 +130,7 @@ public class ComboState : StateBehaviour
         //    }
         //}
 
-        if(m_timer <= 1.5f)
+        if(m_timer <= 1.8f)
         {
             //float distCovered = (Time.time - startTime) * speed;
             //float fracJourney = distCovered / journeyLength;

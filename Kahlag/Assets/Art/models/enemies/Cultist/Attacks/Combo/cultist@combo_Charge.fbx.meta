@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1b965b971c744c945a3ecdec4aa57163
-timeCreated: 1493816470
+guid: d9bb15b89afe2be4994eef7624d62262
+timeCreated: 1493885535
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -173,7 +173,7 @@ ModelImporter:
     400162: Spline_2
     400164: Spline_3
     400166: Supermover__ctrl
-    7400000: Idle
+    7400000: combo_Charge
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -197,17 +197,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: combo_Charge
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 32
+      lastFrame: 12
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
