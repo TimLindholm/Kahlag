@@ -191,22 +191,21 @@ public class Enemy : MonoBehaviour
 	public void MoveTowardsPosition(Vector3 pos)
 	{
   
-
-        anim.SetFloat("Movement", 1f);
-        //anim.SetFloat("Moving", 0.6f);
-        if (waypoints.Length == 0)
+        if(waypoints.Length > 0)
         {
-            //anim.SetFloat("Moving", 0f);
-            anim.SetFloat("Movement", 0f);
-            return;
-            
-        }
+            anim.SetFloat("Movement", 1f);
+            //anim.SetFloat("Moving", 0.6f);
+            if (waypoints.Length == 0)
+            {
+                //anim.SetFloat("Moving", 0f);
+                anim.SetFloat("Movement", 0f);
+                return;
 
+            }
+            agent.destination = waypoints[currentWP].transform.position;
+            currentWP = (currentWP + 1) % waypoints.Length;
+        }
        
-        
-        agent.destination = waypoints[currentWP].transform.position;
-       
-        currentWP = (currentWP + 1) % waypoints.Length;
     }
 
 

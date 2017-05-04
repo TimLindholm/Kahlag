@@ -7,6 +7,9 @@ public class IdleState : StateBehaviour
 	Vector3 m_randomizedPos;
     UnityEngine.AI.NavMeshAgent agent;
 
+
+    public bool IsPatrolling;
+
     public override void OnEnter()
 	{
 		//Debug.Log("Enter Idle State");
@@ -34,7 +37,7 @@ public class IdleState : StateBehaviour
 		}
 		else
 		{
-            
+            if(IsPatrolling)
             Context.Enemy.MoveTowardsPosition(m_randomizedPos);
         }
 
