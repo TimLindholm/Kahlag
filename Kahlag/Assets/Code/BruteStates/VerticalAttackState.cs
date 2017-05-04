@@ -89,6 +89,7 @@ public class VerticalAttackState : StateBehaviour
         if (attackCurve > 0.5f)
         {
             damagecoll.SetActive(true);
+            
             //print("Active");
         }
         else

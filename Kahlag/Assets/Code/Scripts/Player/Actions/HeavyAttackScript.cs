@@ -61,7 +61,8 @@ public class HeavyAttackScript : MonoBehaviour
         if (heavyAttackCurve > 0.5f)
         {
             attackColl.SetActive(true);
-            print("Active");
+            _actionRef.InAction = true;
+            //print("Active");
         }
         else
         {

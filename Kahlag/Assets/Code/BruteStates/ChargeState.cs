@@ -61,7 +61,7 @@ public class ChargeState : StateBehaviour
     }
   
 
-    void Start ()
+    void Awake ()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing    
         _rb = GetComponent<Rigidbody>();

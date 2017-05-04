@@ -61,6 +61,7 @@ public class FastAttackScript : MonoBehaviour
         if (fastAttackCurve > 0.5f)
         {
             attackColl.SetActive(true);
+            _actionRef.InAction = true;
             //print("Active");
         }
         else
