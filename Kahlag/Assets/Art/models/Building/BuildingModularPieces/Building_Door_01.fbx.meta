@@ -10,7 +10,9 @@ ModelImporter:
     400000: Building_Door_01
     400002: //RootNode
     2300000: Building_Door_01
+    2300002: //RootNode
     3300000: Building_Door_01
+    3300002: //RootNode
     4300000: Building_Door_01
     9500000: //RootNode
   materials:
