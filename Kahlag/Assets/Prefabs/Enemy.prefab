@@ -4580,6 +4580,7 @@ MonoBehaviour:
   _left: -0.03
   ActionTimer: -0.02
   ComboCooldown: 0
+  ChargeCooldown: 0
   aimDirection: {fileID: 4251806384166064}
   VisionRadius: 60
   TurnSmoothing: 8
@@ -4638,6 +4639,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cols: []
   rigids: []
+  IsCultist: 1
+  IsBrute: 0
 --- !u!114 &114596611151636530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4650,6 +4653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: CombatState
+  CanCharge: 0
 --- !u!114 &114642274784109060
 MonoBehaviour:
   m_ObjectHideFlags: 1

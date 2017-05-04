@@ -15,10 +15,23 @@ public class RagdollEnemy : MonoBehaviour
 
     private Enemy enemy;
     private StateMachine _sm;
+
+    //Cultist
     private CombatState _combat;
     private AttackState _attack;
     private MeleeSwingState _meleeSwing;
+    private ComboState _combo;
+    private DownSwing _downSwing;
     UnityEngine.AI.NavMeshAgent agent;
+
+    //Brute
+    private BruteAttackState _bruteAtt;
+    private HorizontalAttackState _hor;
+    private VerticalAttackState _vert;
+    private ChargeState _charge;
+
+    public bool IsCultist;
+    public bool IsBrute;
 
     // Use this for initialization
     void Start()
@@ -28,9 +41,27 @@ public class RagdollEnemy : MonoBehaviour
         cols = GetComponentsInChildren<Collider>();
         enemy = GetComponent<Enemy>();
         _sm = GetComponent<StateMachine>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing 
         _combat = GetComponent<CombatState>();
-        _attack = GetComponent<AttackState>();
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing  
+
+        if (IsCultist == true)
+        {           
+            _attack = GetComponent<AttackState>();
+            _meleeSwing = GetComponent<MeleeSwingState>();
+            _combo = GetComponent<ComboState>();
+            _downSwing = GetComponent<DownSwing>();
+        }
+
+        if(IsBrute == true)
+        {
+            _bruteAtt = GetComponent<BruteAttackState>();
+            _hor = GetComponent<HorizontalAttackState>();
+            _vert = GetComponent<VerticalAttackState>();
+            _charge = GetComponent<ChargeState>();
+
+        }
+        
+         
         //_move = GetComponent<PlayerMovementScript>();
 
 
@@ -80,17 +111,62 @@ public class RagdollEnemy : MonoBehaviour
     {
         agent.enabled = false;
 
-        if(GetComponent<MeleeSwingState>())
+        if(IsCultist == true)
         {
-            MeleeSwingState _meleeSwing = GetComponent<MeleeSwingState>();
-            _meleeSwing.enabled = false;
+            if (GetComponent<MeleeSwingState>())
+            {
+                MeleeSwingState _meleeSwing = GetComponent<MeleeSwingState>();
+                _meleeSwing.enabled = false;
+            }
+
+            if (GetComponent<DownSwing>())
+            {
+                DownSwing _downSwing = GetComponent<DownSwing>();
+                _downSwing.enabled = false;
+            }
+
+            if (GetComponent<ComboState>())
+            {
+                ComboState _combo = GetComponent<ComboState>();
+                _combo.enabled = false;
+            }
+
+            if (GetComponent<AttackState>())
+            {
+                AttackState _attack = GetComponent<AttackState>();
+                _attack.enabled = false;
+            }
+
+
         }
 
-        if (GetComponent<AttackState>())
+        if(IsBrute == true)
         {
-            AttackState _attack = GetComponent<AttackState>();
-            _attack.enabled = false;
+            if (GetComponent<HorizontalAttackState>())
+            {
+                HorizontalAttackState _hor = GetComponent<HorizontalAttackState>();
+                _hor.enabled = false;
+            }
+
+            if (GetComponent<VerticalAttackState>())
+            {
+                VerticalAttackState _vert = GetComponent<VerticalAttackState>();
+                _vert.enabled = false;
+            }
+
+            if (GetComponent<ChargeState>())
+            {
+                ChargeState _charge = GetComponent<ChargeState>();
+                _charge.enabled = false;
+            }
+
+            if (GetComponent<BruteAttackState>())
+            {
+                BruteAttackState _bruteAtt = GetComponent<BruteAttackState>();
+                _bruteAtt.enabled = false;
+            }
         }
+
 
 
         if (GetComponent<CombatState>())

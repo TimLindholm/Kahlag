@@ -2054,6 +2054,7 @@ GameObject:
   - component: {fileID: 114847585025790862}
   - component: {fileID: 95309898449173538}
   - component: {fileID: 54042667004341166}
+  - component: {fileID: 114924429576763638}
   m_Layer: 10
   m_Name: Brute
   m_TagString: Enemy
@@ -2705,7 +2706,7 @@ Transform:
   m_GameObject: {fileID: 1489033893016978}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.20642948, y: -0.4351892, z: 3.46}
-  m_LocalScale: {x: 1.6120055, y: 1.045613, z: 5.382202}
+  m_LocalScale: {x: 1.6646786, y: 1.045613, z: 5.593523}
   m_Children: []
   m_Father: {fileID: 4578185864126068}
   m_RootOrder: 3
@@ -4436,11 +4437,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: ChargeState
-  m_actionTime: 2
+  m_actionTime: 1.8
   MinCD: 0
   MaxCD: 0
-  ChargeCD: 15
-  Distance: 0
+  ChargeCD: 12
+  ChargeDistance: 6
   ChargeCollider: {fileID: 1047259749945966}
   SwingCollider: {fileID: 0}
   chargeTarget: {fileID: 4633989114634334}
@@ -4461,7 +4462,7 @@ MonoBehaviour:
   Key: Vertical
   m_actionTime: 2.2
   MinCD: 2.8
-  MaxCD: 3.3
+  MaxCD: 3.8
   attackPos: {fileID: 4776936173571478}
   meleeAttackColl: {fileID: 54357428713853292, guid: 404eb490bb5368b4492ecca8035ed433,
     type: 2}
@@ -4480,7 +4481,7 @@ MonoBehaviour:
   Key: Horizontal
   m_actionTime: 2.2
   MinCD: 2.8
-  MaxCD: 3.3
+  MaxCD: 3.8
   attackPos: {fileID: 4277996682323796}
   meleeAttackColl: {fileID: 54357428713853292, guid: 3ae29544c27a2ee4698cac1e93a29d20,
     type: 2}
@@ -4500,6 +4501,21 @@ MonoBehaviour:
   Force: 0
   Distance: 1.5
   LifeTime: 0.2
+--- !u!114 &114924429576763638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1985437641469034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e686b43856a6ef45bae70d9d4077124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cols: []
+  rigids: []
+  IsCultist: 0
+  IsBrute: 1
 --- !u!136 &136961245817386202
 CapsuleCollider:
   m_ObjectHideFlags: 1
