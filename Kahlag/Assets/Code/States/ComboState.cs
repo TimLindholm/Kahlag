@@ -15,10 +15,7 @@ public class ComboState : StateBehaviour
 
     private Rigidbody _rb;
 
-    //Attack
-    public Transform attackPos;
-    public Rigidbody meleeAttackColl;
-    private Rigidbody _meleeAttackColl;
+   
 
 
     UnityEngine.AI.NavMeshAgent agent;
@@ -89,7 +86,7 @@ public class ComboState : StateBehaviour
 
 
         //_meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1.5f);
         comboTarget.position = Context.Enemy.m_target.position;
 
 
@@ -134,7 +131,7 @@ public class ComboState : StateBehaviour
         {
             //float distCovered = (Time.time - startTime) * speed;
             //float fracJourney = distCovered / journeyLength;
-            comboTarget.position = Context.Enemy.m_target.position;
+            //comboTarget.position = Context.Enemy.m_target.position;
             transform.position = Vector3.Lerp(startPos.position, comboTarget.position, speed * Time.deltaTime);
             print("lerp");
         }    

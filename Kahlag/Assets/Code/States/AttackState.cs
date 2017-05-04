@@ -57,7 +57,17 @@ public class AttackState : StateBehaviour
 
         if (Context.Enemy.ActionTimer <= 0f)
         {
-           StateMachine.GoToState("MeleeSwing");               
+            Context.Enemy.RandomzieCultistAttack();
+            if (Context.Enemy.randomAttack == 0)
+            {
+                //Do attack1
+                StateMachine.GoToState("MeleeSwing");
+            }
+            else
+            {
+                //Do attack2
+                StateMachine.GoToState("DownSwing");
+            }
         }
         
         else if (!Context.Enemy.CanAttackPlayer())

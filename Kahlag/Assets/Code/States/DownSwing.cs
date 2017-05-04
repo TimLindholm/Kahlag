@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeSwingState : StateBehaviour
+public class DownSwing : StateBehaviour
 {
     public float m_actionTime;
     float m_timer = 0f;
@@ -13,13 +13,12 @@ public class MeleeSwingState : StateBehaviour
 
 
     private Rigidbody _rb;
-
- 
+  
 
 
     UnityEngine.AI.NavMeshAgent agent;
 
-    float attackCurve;
+    float downswingAttackCurve;
     public GameObject damagecoll;
 
 
@@ -34,16 +33,16 @@ public class MeleeSwingState : StateBehaviour
         comboTarget.position = Context.Enemy.m_target.position;
         startPos.position = transform.position;
         agent.Stop();
-       
-        m_timer = m_actionTime; 
+
+        m_timer = m_actionTime;
         Context.Enemy.RotateAroundTarget();
-    
+
         float cooldown = UnityEngine.Random.Range(MinCD, MaxCD);
 
-        Context.Enemy.anim.SetTrigger("MeleeAttack");
+        Context.Enemy.anim.SetTrigger("DownSwing");
         StartCoroutine(DamageCollActive());
         Context.Enemy.ActionTimer = cooldown;
-       
+
         //Perform Action
 
     }
@@ -62,18 +61,18 @@ public class MeleeSwingState : StateBehaviour
 
     private void Update()
     {
-        AttackCurve();
+        DownSwingCurve();
         AdjustSpeed();
 
         m_timer -= Time.deltaTime;
         //TEST
-        if(m_timer > 1f)
+        if (m_timer > 1f)
         {
             Context.Enemy.TakeAim();
         }
-      
+
         if (m_timer < 0)
-            
+
             StateMachine.GoToState("AttackState");
     }
 
@@ -90,14 +89,14 @@ public class MeleeSwingState : StateBehaviour
         yield return new WaitForSeconds(.3f);
         comboTarget.position = Context.Enemy.m_target.position;
         yield return new WaitForSeconds(.3f);
-        
+
         Context.Enemy.inAttack = false;
     }
 
-    public void AttackCurve()
+    public void DownSwingCurve()
     {
-        attackCurve = Context.Enemy.anim.GetFloat("attackCurve");
-        if (attackCurve > 0.5f)
+        downswingAttackCurve = Context.Enemy.anim.GetFloat("downswingAttackCurve");
+        if (downswingAttackCurve > 0.5f)
         {
             damagecoll.SetActive(true);
             print("Active");

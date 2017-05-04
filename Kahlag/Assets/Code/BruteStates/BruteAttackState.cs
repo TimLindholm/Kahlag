@@ -52,7 +52,7 @@ public class BruteAttackState : StateBehaviour
             //StateMachine.GoToState("Vertical");
 
 
-            Context.Enemy.RandomizeAttack();
+            Context.Enemy.RandomizeBruteAttack();
             // Execute attack based on nr.
             if (Context.Enemy.randomAttack == 0)
             {

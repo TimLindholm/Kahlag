@@ -47,6 +47,10 @@ public class Enemy : MonoBehaviour
 
     //Random Attack
     public int randomAttack;
+
+    private int downswing = 0;
+    private int meleeswing = 2;
+
     private int horizontal = 0;
     private int vertical = 3;
 
@@ -163,7 +167,7 @@ public class Enemy : MonoBehaviour
     public void TakeAim()
     {
         aimDirection.LookAt(m_target);
-        transform.rotation = Quaternion.Lerp(transform.rotation, aimDirection.rotation, TurnSmoothing * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, aimDirection.rotation, TurnSmoothing /2 * Time.deltaTime);
     }
 
 	public void MoveAwayFromTarget()
@@ -205,7 +209,12 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void RandomizeAttack()
+    public void RandomzieCultistAttack()
+    {
+        randomAttack = Random.Range(downswing, meleeswing);
+    }
+
+    public void RandomizeBruteAttack()
     {
         randomAttack = Random.Range(horizontal, vertical);
         //print(randomAttack);
