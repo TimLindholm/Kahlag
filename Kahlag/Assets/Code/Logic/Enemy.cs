@@ -243,6 +243,8 @@ public class Enemy : MonoBehaviour
                     if(HasDamageAnim==true)
                     {
                         anim.SetTrigger("TakeDamage");
+                        m_body.velocity = Vector3.zero;
+                        m_body.angularVelocity = Vector3.zero;
                     }
                    
                 }
@@ -252,6 +254,7 @@ public class Enemy : MonoBehaviour
                 if(Cam_Shake==true)
                 {
                     CameraShake.Instance.Shake(amplitude, duration);
+                   
                 }
                 
                 Debug.Log("Enemy Hit!");

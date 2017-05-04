@@ -2001,6 +2001,7 @@ GameObject:
   - component: {fileID: 114879426185625672}
   - component: {fileID: 114857547705639880}
   - component: {fileID: 95309898449173538}
+  - component: {fileID: 54042667004341166}
   m_Layer: 10
   m_Name: Brute
   m_TagString: Enemy
@@ -2434,7 +2435,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1971608222865378}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.012000084, y: 0.1670118, z: 1.5422802}
+  m_LocalPosition: {x: 0.012000084, y: 0.1670118, z: 1.76}
   m_LocalScale: {x: 4.3455644, y: 1.117012, z: 3.5477324}
   m_Children: []
   m_Father: {fileID: 4578185864126068}
@@ -2639,7 +2640,7 @@ Transform:
   m_GameObject: {fileID: 1489033893016978}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.20642948, y: -0.4351892, z: 3.2399998}
-  m_LocalScale: {x: 1.4902793, y: 1.045613, z: 4.156605}
+  m_LocalScale: {x: 1.4902793, y: 1.045613, z: 5.120735}
   m_Children: []
   m_Father: {fileID: 4578185864126068}
   m_RootOrder: 1
@@ -4057,6 +4058,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!54 &54042667004341166
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1985437641469034}
+  serializedVersion: 2
+  m_Mass: 50000
+  m_Drag: 5
+  m_AngularDrag: 0.5
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!54 &54433083708117364
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -4185,15 +4201,16 @@ MonoBehaviour:
   _right: 0.03
   _left: -0.03
   ActionTimer: 0
+  ComboCooldown: 0
   aimDirection: {fileID: 4782212323118718}
   VisionRadius: 60
   TurnSmoothing: 5
   anim: {fileID: 0}
   HasDamageAnim: 0
   Cam_Shake: 1
-  amplitude: 0.1
-  duration: 0.5
-  Health: 50
+  amplitude: 0.08
+  duration: 0.08
+  Health: 35
   IsDead: 0
   invulnerable: 0
   inAttack: 0
@@ -4294,7 +4311,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.2
-  m_Height: 2
+  m_Height: 2.3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: -0.35}
 --- !u!137 &137069294135236012
@@ -4871,7 +4888,7 @@ NavMeshAgent:
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1

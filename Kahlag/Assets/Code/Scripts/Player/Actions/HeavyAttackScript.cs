@@ -105,8 +105,10 @@ public class HeavyAttackScript : MonoBehaviour
         {
             transform.LookAt(_detectRef.EnemyToTarget);
         }
-        IsSwinging = true;
         anim.SetTrigger("HeavyAttackTrigger");
+        yield return new WaitForSeconds(.6f);
+        IsSwinging = true;
+        
         if (_detectRef.EnemyToTarget != null)
         {
             transform.LookAt(_detectRef.EnemyToTarget);
@@ -119,8 +121,7 @@ public class HeavyAttackScript : MonoBehaviour
     public void InAttackCombo()
     {
         if (_ir.HeavyAttack == true && IsSwinging == true)
-        {
-        
+        {     
             StartCoroutine(HeavyAttack());
         }
     }

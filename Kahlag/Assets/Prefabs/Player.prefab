@@ -687,7 +687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1261281804783406
 GameObject:
   m_ObjectHideFlags: 1
@@ -5618,7 +5618,7 @@ MonoBehaviour:
   IsHeavyAttacking: 0
   hAttackColl: {fileID: 54189507965836712, guid: 12830e3d4b7225142894f762a48f69fe,
     type: 2}
-  AttackTimer: 1.4
+  AttackTimer: 1.3
   _timer: 0
   attackPos: {fileID: 4943545809705746}
   attackColl: {fileID: 1209432671310894}
