@@ -2896,7 +2896,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1887344340519588}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 10.905637, y: 1, z: 26.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2908,7 +2908,7 @@ Transform:
   - {fileID: 4251806384166064}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -0.347, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4250831090651162
 Transform:
   m_ObjectHideFlags: 1
@@ -4797,7 +4797,7 @@ MonoBehaviour:
   _right: 0.03
   _left: -0.03
   ActionTimer: -0.02
-  ComboCooldown: 5
+  ComboCooldown: 0
   ChargeCooldown: 0
   aimDirection: {fileID: 4251806384166064}
   VisionRadius: 60
@@ -4808,7 +4808,7 @@ MonoBehaviour:
   amplitude: 0.05
   duration: 0.05
   CurrentHealth: 0
-  MaxHealth: 6
+  MaxHealth: 8
   IsDead: 0
   invulnerable: 0
   inAttack: 0
@@ -4914,7 +4914,7 @@ MonoBehaviour:
   damagecoll: {fileID: 1493187044456352}
   comboTarget: {fileID: 4492998376596982}
   startPos: {fileID: 4352485373974206}
-  speed: 0.5
+  speed: 0.75
 --- !u!114 &114874148822881144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4947,7 +4947,7 @@ MonoBehaviour:
   damagecoll: {fileID: 1493187044456352}
   comboTarget: {fileID: 4492998376596982}
   startPos: {fileID: 4352485373974206}
-  speed: 0.5
+  speed: 0.75
 --- !u!114 &114960401178205388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4960,7 +4960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: IdleState
-  IsPatrolling: 0
+  IsPatrolling: 1
 --- !u!135 &135759094692605204
 SphereCollider:
   m_ObjectHideFlags: 1

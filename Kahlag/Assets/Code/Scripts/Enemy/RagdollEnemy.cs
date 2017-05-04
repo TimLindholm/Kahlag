@@ -120,7 +120,7 @@ public class RagdollEnemy : MonoBehaviour
 
         if(IsCultist == true)
         {
-            Destroy(gameObject, .1f);
+            Destroy(gameObject);
             if (GetComponent<MeleeSwingState>())
             {
                 MeleeSwingState _meleeSwing = GetComponent<MeleeSwingState>();
