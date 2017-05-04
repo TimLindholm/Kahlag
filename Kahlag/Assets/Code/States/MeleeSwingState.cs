@@ -67,7 +67,7 @@ public class MeleeSwingState : StateBehaviour
 
         m_timer -= Time.deltaTime;
         //TEST
-        if(m_timer > 1f)
+        if(m_timer > 1.3f)
         {
             Context.Enemy.TakeAim();
         }
@@ -100,7 +100,7 @@ public class MeleeSwingState : StateBehaviour
         if (attackCurve > 0.5f)
         {
             damagecoll.SetActive(true);
-            print("Active");
+            //print("Active");
         }
         else
         {
@@ -114,17 +114,6 @@ public class MeleeSwingState : StateBehaviour
 
     public void AdjustSpeed()
     {
-        //comboAttackCurve = Context.Enemy.anim.GetFloat("comboAttackCurve");
-        //{
-        //    if(comboAttackCurve < 0.5f)
-        //    {
-        //        agent.speed = 0.1f;
-        //    }
-        //    else
-        //    {
-        //        agent.speed = 2f;
-        //    }
-        //}
 
         if (m_timer <= 1f)
         {

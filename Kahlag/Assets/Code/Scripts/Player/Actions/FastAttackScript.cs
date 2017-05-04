@@ -17,6 +17,11 @@ public class FastAttackScript : MonoBehaviour
     private Rigidbody _attackColl;
 
 
+
+    public GameObject attackColl;
+    private float fastAttackCurve;
+
+
     public float AttackTimer = 1;
     public float _timer;
 
@@ -24,6 +29,8 @@ public class FastAttackScript : MonoBehaviour
     
 
     private DetectEnemyScript _detectRef;
+
+
 	
 	void Start ()
     {
@@ -39,9 +46,28 @@ public class FastAttackScript : MonoBehaviour
 	void Update ()
     {
         UpdateFastAttack();
+        AttackCurve();
         HandleTimer();
         InAttackCombo();
         HandleCollider();
+    }
+
+    public void AttackCurve()
+    {
+        fastAttackCurve = anim.GetFloat("fastAttackCurve");
+        if (fastAttackCurve > 0.5f)
+        {
+            attackColl.SetActive(true);
+            print("Active");
+        }
+        else
+        {
+            if (attackColl.activeInHierarchy)
+            {
+                attackColl.SetActive(false);
+            }
+        }
+
     }
 
     public void UpdateFastAttack()
@@ -71,7 +97,7 @@ public class FastAttackScript : MonoBehaviour
         IsSwinging = true;
         anim.SetTrigger("FastAttackTrigger");
         yield return new WaitForSeconds(.2f);
-        _attackColl = Instantiate(fAttackColl, attackPos.transform.position, attackPos.transform.rotation);
+        //_attackColl = Instantiate(fAttackColl, attackPos.transform.position, attackPos.transform.rotation);
     }
 
 

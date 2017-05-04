@@ -40,7 +40,7 @@ public class ComboState : StateBehaviour
 
         m_timer -= Time.deltaTime;
         
-        if (m_timer > 1f)
+        if (m_timer > 2f)
         {
             Context.Enemy.TakeAim();
         }
@@ -86,7 +86,7 @@ public class ComboState : StateBehaviour
 
 
         //_meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         comboTarget.position = Context.Enemy.m_target.position;
 
 
@@ -101,7 +101,7 @@ public class ComboState : StateBehaviour
         if (comboAttackCurve > 0.5f)
         {
             damagecoll.SetActive(true);
-            print("Active");
+            //print("Active");
         }
         else
         {

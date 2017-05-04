@@ -34,7 +34,7 @@ public class DamageCollScript : MonoBehaviour
 
     public void Killmyself()
     {
-        Destroy(gameObject, LifeTime);
+        //Destroy(gameObject, LifeTime);
     }
 
 

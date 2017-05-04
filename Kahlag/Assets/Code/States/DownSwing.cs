@@ -25,7 +25,7 @@ public class DownSwing : StateBehaviour
     public Transform comboTarget;
     public Transform startPos;
 
-    public float speed = 1.0F;
+    public float speed = .5f;
 
     public override void OnEnter()
     {
@@ -66,7 +66,7 @@ public class DownSwing : StateBehaviour
 
         m_timer -= Time.deltaTime;
         //TEST
-        if (m_timer > 1f)
+        if (m_timer > 1.3f)
         {
             Context.Enemy.TakeAim();
         }
@@ -113,19 +113,9 @@ public class DownSwing : StateBehaviour
 
     public void AdjustSpeed()
     {
-        //comboAttackCurve = Context.Enemy.anim.GetFloat("comboAttackCurve");
-        //{
-        //    if(comboAttackCurve < 0.5f)
-        //    {
-        //        agent.speed = 0.1f;
-        //    }
-        //    else
-        //    {
-        //        agent.speed = 2f;
-        //    }
-        //}
 
-        if (m_timer <= 1f)
+
+        if (m_timer <= 1.2f)
         {
             //float distCovered = (Time.time - startTime) * speed;
             //float fracJourney = distCovered / journeyLength;

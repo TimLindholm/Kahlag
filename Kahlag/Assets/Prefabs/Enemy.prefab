@@ -2627,7 +2627,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1493187044456352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.11463642, y: 0.078999996, z: 1.177}
+  m_LocalPosition: {x: -0.11463642, y: 0.078999996, z: 1.01}
   m_LocalScale: {x: 1.0758575, y: 0.7554402, z: 1.1670557}
   m_Children: []
   m_Father: {fileID: 4242382726572358}
@@ -4456,7 +4456,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1493187044456352}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -4682,8 +4682,8 @@ MonoBehaviour:
   Key: DownSwing
   m_actionTime: 2
   MinCD: 2
-  MaxCD: 2.5
-  damagecoll: {fileID: 1891068752715072, guid: 5c1d6b73a4b56f14ba67f228c4a94d0c, type: 2}
+  MaxCD: 3
+  damagecoll: {fileID: 1493187044456352}
   comboTarget: {fileID: 4492998376596982}
   startPos: {fileID: 4352485373974206}
   speed: 0.5
@@ -4715,7 +4715,7 @@ MonoBehaviour:
   Key: MeleeSwing
   m_actionTime: 2
   MinCD: 2
-  MaxCD: 2.5
+  MaxCD: 3
   damagecoll: {fileID: 1493187044456352}
   comboTarget: {fileID: 4492998376596982}
   startPos: {fileID: 4352485373974206}

@@ -25,6 +25,10 @@ public class HeavyAttackScript : MonoBehaviour
     private DetectEnemyScript _detectRef;
     private PlayerHealthScript _healthRef;
 
+
+    public GameObject attackColl;
+    private float heavyAttackCurve;
+
     void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
@@ -41,11 +45,29 @@ public class HeavyAttackScript : MonoBehaviour
     void Update ()
     {
         UpdateHeavyAttack();
-        CheckIfSwinging();
+        AttackCurve();
         HandleTimer();
         InAttackCombo();
         HandleCollider();
         CheckInteruption();
+
+    }
+
+    public void AttackCurve()
+    {
+        heavyAttackCurve = anim.GetFloat("heavyAttackCurve");
+        if (heavyAttackCurve > 0.5f)
+        {
+            attackColl.SetActive(true);
+            print("Active");
+        }
+        else
+        {
+            if (attackColl.activeInHierarchy)
+            {
+                attackColl.SetActive(false);
+            }
+        }
 
     }
 
@@ -89,16 +111,16 @@ public class HeavyAttackScript : MonoBehaviour
         {
             transform.LookAt(_detectRef.EnemyToTarget);
         }
-        yield return new WaitForSeconds(1f);
-        if (_healthRef.Damaged == false)
-            _attackColl = Instantiate(hAttackColl, attackPos.transform.position, attackPos.transform.rotation);
+        yield return new WaitForSeconds(2f);
+        //if (_healthRef.Damaged == false)
+            //_attackColl = Instantiate(hAttackColl, attackPos.transform.position, attackPos.transform.rotation);
     }
 
     public void InAttackCombo()
     {
         if (_ir.HeavyAttack == true && IsSwinging == true)
         {
-            //StopCoroutine(FastAttack());
+        
             StartCoroutine(HeavyAttack());
         }
     }
@@ -115,30 +137,15 @@ public class HeavyAttackScript : MonoBehaviour
     {
         if (_timer > 0)
         {
-            //anim.applyRootMotion = true;
-            //FastAttackColl.SetActive(true);
+           
             IsHeavyAttacking = true;
-            //_actionRef.InAction = true;
+           
         }
         else
         {
-            //anim.applyRootMotion = false;
-            //_actionRef.InAction = false;
+         
             IsHeavyAttacking = false;
-            //FastAttackColl.SetActive(false);
             IsSwinging = false;
         }
-    }
-
-    public void CheckIfSwinging()
-    {
-        //if(IsHeavyAttacking == true)
-        //{
-        //    _actionRef.InAction = true;
-        //}
-        //else if(IsHeavyAttacking == false)
-        //{
-        //    _actionRef.InAction = false;
-        //}
     }
 }

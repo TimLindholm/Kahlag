@@ -355,24 +355,48 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves:
-      - name: HitBox
+      - name: fastAttackCurve
         curve:
           serializedVersion: 2
           curve:
           - serializedVersion: 2
             time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.4495575
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 0.52753776
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - serializedVersion: 2
-            time: 1
+            time: 0.80828816
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
-          preInfinity: 2
-          postInfinity: 2
+          - serializedVersion: 2
+            time: 0.8607098
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          preInfinity: 3
+          postInfinity: 3
           rotationOrder: 0
       events: []
       transformMask:
