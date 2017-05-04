@@ -16,6 +16,8 @@ public class RagdollEnemy : MonoBehaviour
     private Enemy enemy;
     private StateMachine _sm;
 
+    public Transform Body;
+
     //Cultist
     private CombatState _combat;
     private AttackState _attack;
@@ -33,9 +35,12 @@ public class RagdollEnemy : MonoBehaviour
     public bool IsCultist;
     public bool IsBrute;
 
+    public GameObject Weapon;
+
     // Use this for initialization
     void Start()
     {
+        
         anim = GetComponent<Animator>();
         rigids = GetComponentsInChildren<Rigidbody>();
         cols = GetComponentsInChildren<Collider>();
@@ -60,6 +65,8 @@ public class RagdollEnemy : MonoBehaviour
             _charge = GetComponent<ChargeState>();
 
         }
+
+        
         
          
         //_move = GetComponent<PlayerMovementScript>();
@@ -113,6 +120,7 @@ public class RagdollEnemy : MonoBehaviour
 
         if(IsCultist == true)
         {
+            Destroy(gameObject, .1f);
             if (GetComponent<MeleeSwingState>())
             {
                 MeleeSwingState _meleeSwing = GetComponent<MeleeSwingState>();
@@ -142,6 +150,11 @@ public class RagdollEnemy : MonoBehaviour
 
         if(IsBrute == true)
         {
+
+            //Weapon.transform.parent = null;
+            Destroy(Weapon);
+            Destroy(gameObject);
+
             if (GetComponent<HorizontalAttackState>())
             {
                 HorizontalAttackState _hor = GetComponent<HorizontalAttackState>();
@@ -188,7 +201,11 @@ public class RagdollEnemy : MonoBehaviour
         }
 
 
-       
+        Body.transform.parent = null;
+        
+
+
+
 
         //_move.enabled = false;
 
