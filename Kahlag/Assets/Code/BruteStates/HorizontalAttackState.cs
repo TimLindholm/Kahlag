@@ -86,7 +86,7 @@ public class HorizontalAttackState : StateBehaviour
         if (horizontalAttackCurve > 0.5f)
         {
             damagecoll.SetActive(true);
-            print("Active");
+            //print("Active");
         }
         else
         {

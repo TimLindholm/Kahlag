@@ -31,6 +31,9 @@ public class FastAttackScript : MonoBehaviour
     private DetectEnemyScript _detectRef;
 
 
+    public bool AutoLockOn;
+
+
 	
 	void Start ()
     {
@@ -58,7 +61,7 @@ public class FastAttackScript : MonoBehaviour
         if (fastAttackCurve > 0.5f)
         {
             attackColl.SetActive(true);
-            print("Active");
+            //print("Active");
         }
         else
         {
@@ -92,6 +95,7 @@ public class FastAttackScript : MonoBehaviour
 
         if(_detectRef.EnemyToTarget != null)
         {
+            if(AutoLockOn)
             transform.LookAt(_detectRef.EnemyToTarget);
         }
         IsSwinging = true;

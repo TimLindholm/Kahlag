@@ -29,6 +29,8 @@ public class HeavyAttackScript : MonoBehaviour
     public GameObject attackColl;
     private float heavyAttackCurve;
 
+    public bool AutoLockOn;
+
     void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
@@ -111,6 +113,7 @@ public class HeavyAttackScript : MonoBehaviour
         
         if (_detectRef.EnemyToTarget != null)
         {
+            if(AutoLockOn)
             transform.LookAt(_detectRef.EnemyToTarget);
         }
         yield return new WaitForSeconds(2f);
