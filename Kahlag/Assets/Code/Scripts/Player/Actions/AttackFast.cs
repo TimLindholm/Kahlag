@@ -23,6 +23,10 @@ public class AttackFast : MonoBehaviour
     public float HeavyAttackTimer = 1;
     public float _timer;
 
+    private PlayerStaminaScript _staminaRef;
+    public float FastCost = 1;
+    public float HeavyCost = 2;
+
   
   
 
@@ -31,6 +35,7 @@ public class AttackFast : MonoBehaviour
     void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
+        _staminaRef = GetComponent<PlayerStaminaScript>();
         _actionRef = GetComponent<PlayerActionScript>();
         anim = GetComponentInChildren<Animator>();
         _detectRef = GetComponent<DetectEnemyScript>();
@@ -48,12 +53,13 @@ public class AttackFast : MonoBehaviour
 
     public void UpdateFastAttack()
     {
-        if(_actionRef.InAction == false && _ir.FastAttack == true)
+        if(_actionRef.InAction == false && _ir.FastAttack == true && _staminaRef.CurrentStamina > FastCost)
         {      
             _timer = FastAttackTimer;
             InAttack = true;
             _actionRef.InAction = true;
             anim.SetTrigger("FastAttackTrigger");
+            _staminaRef.CurrentStamina -= FastCost; // <--- Stamina cost
 
             if (_detectRef.EnemyToTarget != null)
             {
@@ -65,12 +71,13 @@ public class AttackFast : MonoBehaviour
 
     public void UpdateHeavyAttack()
     {
-        if (_actionRef.InAction == false && _ir.HeavyAttack == true)
+        if (_actionRef.InAction == false && _ir.HeavyAttack == true && _staminaRef.CurrentStamina > HeavyCost)
         {
             _timer = HeavyAttackTimer;
             InAttack = true;
             _actionRef.InAction = true;
             anim.SetTrigger("HeavyAttackTrigger");
+            _staminaRef.CurrentStamina -= HeavyCost; // <--- Stamina cost
 
             if (_detectRef.EnemyToTarget != null)
             {
@@ -82,12 +89,12 @@ public class AttackFast : MonoBehaviour
 
     public void InCombo()
     {
-        if(_timer < .8f && _ir.FastAttack == true && InAttack == true)
+        if(_timer < .8f && _ir.FastAttack == true && InAttack == true && _staminaRef.CurrentStamina > FastCost)
         {
             _timer = FastAttackTimer;
             _actionRef.InAction = true;
             anim.SetTrigger("FastAttackTrigger");
-
+            _staminaRef.CurrentStamina -= FastCost; // <--- Stamina cost
 
             if (_detectRef.EnemyToTarget != null)
             {
@@ -96,11 +103,12 @@ public class AttackFast : MonoBehaviour
             }
         }
 
-        if(_timer < .8f && _ir.HeavyAttack == true && InAttack == true)
+        if(_timer < .8f && _ir.HeavyAttack == true && InAttack == true && _staminaRef.CurrentStamina > HeavyCost)
         {
             _timer = HeavyAttackTimer;
             _actionRef.InAction = true; 
             anim.SetTrigger("HeavyAttackTrigger");
+            _staminaRef.CurrentStamina -= HeavyCost; // <--- Stamina cost
 
             if (_detectRef.EnemyToTarget != null)
             {
@@ -145,7 +153,7 @@ public class AttackFast : MonoBehaviour
         if(_timer > 0)
         {
             _timer -= Time.deltaTime;
-            if(_timer < .4f)
+            if(_timer < .3f)
             {
                 _actionRef.InAction = false;
             }

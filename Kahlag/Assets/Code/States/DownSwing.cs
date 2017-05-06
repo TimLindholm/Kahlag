@@ -121,7 +121,7 @@ public class DownSwing : StateBehaviour
             //float fracJourney = distCovered / journeyLength;
             //comboTarget.position = Context.Enemy.m_target.position;
             transform.position = Vector3.Lerp(startPos.position, comboTarget.position, speed * Time.deltaTime);
-            print("lerp");
+            //print("lerp");
         }
     }
 }

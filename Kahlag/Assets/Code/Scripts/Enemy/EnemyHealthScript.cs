@@ -8,6 +8,10 @@ public class EnemyHealthScript : MonoBehaviour
 
     public float currentHealth;
 
+    private Enemy _enemyRef;
+
+    public float Damage;
+
 	
 	void Start ()
     {
@@ -23,6 +27,6 @@ public class EnemyHealthScript : MonoBehaviour
 
     void OnTriggerEnter()
     {
-
+        _enemyRef.TakeDamage(Damage);
     }
 }

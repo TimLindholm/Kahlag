@@ -59,6 +59,10 @@ public class Enemy : MonoBehaviour
 
 
     public bool EnteredCombat;
+    private PlayerStaminaScript _staminaRef;
+
+    //When the enemy dies, should it restore stamina to the player?
+    public bool FillStaminaOnDeath; // <----
 
 
     //Navmesh Testing
@@ -71,6 +75,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
 	{
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing       
+        _staminaRef = (PlayerStaminaScript)FindObjectOfType(typeof(PlayerStaminaScript));
         agent.autoBraking = false; //does not slow down 
         _rag = GetComponent<RagdollEnemy>();
         CurrentHealth = MaxHealth;
@@ -238,9 +243,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float Damage)
     {
         if (IsDead != true)
-        {
-            
-
+        {          
             if(invulnerable != true)
             {
                 //_score.DamageBonus += Damage;
@@ -248,7 +251,7 @@ public class Enemy : MonoBehaviour
                 {
                     if(HasDamageAnim==true)
                     {
-                        anim.SetTrigger("TakeDamage");
+                        //anim.SetTrigger("TakeDamage");
                         m_body.velocity = Vector3.zero;
                         m_body.angularVelocity = Vector3.zero;
                     }
@@ -256,6 +259,8 @@ public class Enemy : MonoBehaviour
                 }
 
                 agent.Stop();
+                m_body.velocity = Vector3.zero;
+                m_body.angularVelocity = Vector3.zero;
                 CurrentHealth -= Damage;
                 if(Cam_Shake==true)
                 {
@@ -264,6 +269,7 @@ public class Enemy : MonoBehaviour
                 }
                 
                 Debug.Log("Enemy Hit!");
+                //m_body.isKinematic = true;
                 Invoke("InvulnerableTimer", .2f);
                 invulnerable = true;
             }
@@ -273,9 +279,13 @@ public class Enemy : MonoBehaviour
         }
         if (CurrentHealth <= 0f && IsDead == false)
         {
-            
+
             //StaminaRef._stamina = StaminaRef.Stamina;
-            
+            if(FillStaminaOnDeath == true)
+            {
+                _staminaRef.FillStamina();
+            }
+   
             IsDead = true;
             m_body.isKinematic = true;
             m_body.constraints = RigidbodyConstraints.None;
@@ -288,6 +298,7 @@ public class Enemy : MonoBehaviour
     public void InvulnerableTimer()
     {
         //agent.Resume();
+        m_body.isKinematic = false;
         invulnerable = false;
     }
 

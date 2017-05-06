@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealthScript : MonoBehaviour
 {
@@ -19,15 +20,26 @@ public class PlayerHealthScript : MonoBehaviour
     public bool Damaged;
 
     private RagdollManager _rag;
-    
+    private PlayerActionScript _actionRef;
+
+    //UI
+    public Slider HealthSlider;
+    public Image Fill;
+
+    public Color colorStart;
+    public Color colorEnd;
+
 
     void Start ()
     {
         CurrentHealth = MaxHealth;
         _rb = GetComponent<Rigidbody>();
+        _actionRef = GetComponent<PlayerActionScript>();
         SetupAnimator();
         _rag = GetComponent<RagdollManager>();
 
+        colorStart = Color.black;
+        colorEnd = Color.red;
     }
 	
 	
@@ -35,13 +47,22 @@ public class PlayerHealthScript : MonoBehaviour
     {
 		if(Damaged == true)
         {
-            Invoke("IfDamaged", .8f);
+            Invoke("IfDamaged", .5f);
+           
         }
-	}
+
+        UpdateHealthBar();
+
+    }
+
+    private void UpdateHealthBar()
+    {
+        HealthSlider.value = CurrentHealth;
+        Fill.color = Color.Lerp(colorStart, colorEnd, Mathf.InverseLerp(0, MaxHealth, CurrentHealth));
+    }
 
     void IfDamaged()
-    {
-        
+    {         
             Damaged = false;
     }
 

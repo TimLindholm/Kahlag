@@ -19,16 +19,7 @@ public class PlayerActionScript : MonoBehaviour
 	
 	void Update ()
     {
-        //if(_fastRef.IsFastAttacking == true || _heavyRef.IsHeavyAttacking == true)
-        //{
-        //    InAction = true;
-        //}
-        //else
-        //{
-        //    InAction = false;
-        //}
-
-       
-        //Debug.Log(InAction);
+        //if(InAction)
+        ////transform.rootmotion
 	}
 }

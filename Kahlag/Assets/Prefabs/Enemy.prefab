@@ -4808,12 +4808,13 @@ MonoBehaviour:
   amplitude: 0.05
   duration: 0.05
   CurrentHealth: 0
-  MaxHealth: 8
+  MaxHealth: 10
   IsDead: 0
   invulnerable: 0
   inAttack: 0
   randomAttack: 0
   EnteredCombat: 0
+  FillStaminaOnDeath: 1
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -4910,7 +4911,7 @@ MonoBehaviour:
   Key: DownSwing
   m_actionTime: 1.7
   MinCD: 2
-  MaxCD: 3
+  MaxCD: 2.5
   damagecoll: {fileID: 1493187044456352}
   comboTarget: {fileID: 4492998376596982}
   startPos: {fileID: 4352485373974206}
@@ -4943,7 +4944,7 @@ MonoBehaviour:
   Key: MeleeSwing
   m_actionTime: 1.7
   MinCD: 2
-  MaxCD: 3
+  MaxCD: 2.5
   damagecoll: {fileID: 1493187044456352}
   comboTarget: {fileID: 4492998376596982}
   startPos: {fileID: 4352485373974206}
