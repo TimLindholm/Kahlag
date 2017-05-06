@@ -45,8 +45,8 @@ public class BruteAttackState : StateBehaviour
 
     void FixedUpdate()
     {
-        //Try to execute Action, else - MoveTowardsTarget!
-        Context.Enemy.RotateAroundTarget();
+        
+        
         if (Context.Enemy.ActionTimer <= 0f)
         {
             //StateMachine.GoToState("Vertical");
@@ -78,7 +78,9 @@ public class BruteAttackState : StateBehaviour
 
         else
         {
-            Context.Enemy.RotateAroundTarget();
+            //Context.Enemy.TakeAim();
+
+            Context.Enemy.RotateAroundTarget(); //<-- Rotates Around Target
         }
     }
 }

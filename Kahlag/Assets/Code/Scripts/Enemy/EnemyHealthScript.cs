@@ -19,4 +19,10 @@ public class EnemyHealthScript : MonoBehaviour
     {
 		
 	}
+
+
+    void OnTriggerEnter()
+    {
+
+    }
 }

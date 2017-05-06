@@ -146,15 +146,15 @@ public class Enemy : MonoBehaviour
         {
             if(randomDir > 0)
             {
-                randomDir = .03f;
+                randomDir = .015f;
             }
             else
             {
-                randomDir = -.03f;
+                randomDir = -.015f;
             }
             aimDirection.LookAt(m_target);
             transform.rotation = Quaternion.Lerp(transform.rotation, aimDirection.rotation, TurnSmoothing * Time.deltaTime);
-            transform.Translate(randomDir, 0f, 0f * Time.deltaTime / 200); // Fix this!
+            transform.Translate(randomDir, 0f, 0f * Time.deltaTime); // Fix this!
             anim.SetBool("Strafing", true);
 
         }

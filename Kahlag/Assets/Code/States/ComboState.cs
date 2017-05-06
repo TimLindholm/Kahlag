@@ -40,7 +40,7 @@ public class ComboState : StateBehaviour
 
         m_timer -= Time.deltaTime;
         
-        if (m_timer > 2f)
+        if (m_timer > 2.2f)
         {
             Context.Enemy.TakeAim();
         }

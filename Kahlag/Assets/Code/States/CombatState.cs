@@ -21,12 +21,8 @@ public class CombatState : StateBehaviour
 
     public override void OnExit()
     {
-        //Debug.Log("Exit Combat State");
         agent.Stop();
         agent.speed = 3;
-
-
-
     }
 
     public void Awake()

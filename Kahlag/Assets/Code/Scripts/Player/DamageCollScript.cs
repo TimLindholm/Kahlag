@@ -6,10 +6,11 @@ public class DamageCollScript : MonoBehaviour
 {
     public float Damage;
     public float Force;
+    public Transform target;
 
     public float Distance = 5f;
 
-    public float LifeTime = .2f;
+    //public float LifeTime = .2f;
 
     public AudioSource HitSound;
 
@@ -17,11 +18,13 @@ public class DamageCollScript : MonoBehaviour
 
     private Transform _transform;
 
+    public float Reach;
+
 
     void Start ()
     {
         _transform = transform;
-        Killmyself();
+        
         
 
     }
@@ -33,44 +36,51 @@ public class DamageCollScript : MonoBehaviour
         //CheckIfActive();
     }
 
-    public void Killmyself()
+    private void OnDrawGizmos()
     {
-        
-        //Destroy(gameObject, LifeTime);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, Reach);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, Reach);
     }
 
-
-    //private void CheckIfActive()
+    //public bool DamageEnemy()
     //{
-    //    if (_transform.gameObject.activeSelf)
+    //    //return Vector3.Distance(transform.position, m_target.position) < m_viewRange;
+    //    Vector3 targetDir = target.position - transform.position;
+       
+
+    //    return Vector3.Distance(target.transform.position, transform.position) < Reach;
+    //}
+
+    //public void Killmyself()
+    //{
+        
+      
+    //}
+
+
+
+    //private void DealDamage()
+    //{
+    //    Ray enemyCheck = new Ray(transform.position, transform.forward * Distance);
+    //    Debug.DrawRay(transform.position, transform.forward * Distance);
+    //    RaycastHit hit;
+
+    //    if (Physics.Raycast(enemyCheck, out hit) && hit.transform.tag == "Enemy")
     //    {
-    //        //Invoke("SetMyselfInactive", .2f);
+    //        Enemy enemyHealth = hit.transform.GetComponent<Enemy>();
+    //        //HitSound.Play();
+    //        if (enemyHealth != null)
+    //        {
+
+    //            print("Damage");
+    //            enemyHealth.TakeDamage(Damage);
+    //            //enemyHealth.KnockBack(-collision.contacts[0].normal * Force);
+    //        }
     //    }
     //}
-
-    //public void SetMyselfInactive()
-    //{
-    //    _transform.gameObject.SetActive(false);
-    //}
-    private void DealDamage()
-    {
-        Ray enemyCheck = new Ray(transform.position, transform.forward * Distance);
-        Debug.DrawRay(transform.position, transform.forward * Distance);
-        RaycastHit hit;
-
-        if (Physics.Raycast(enemyCheck, out hit) && hit.transform.tag == "Enemy")
-        {
-            Enemy enemyHealth = hit.transform.GetComponent<Enemy>();
-            //HitSound.Play();
-            if (enemyHealth != null)
-            {
-
-                print("Damage");
-                enemyHealth.TakeDamage(Damage);
-                //enemyHealth.KnockBack(-collision.contacts[0].normal * Force);
-            }
-        }
-    }
 
     //private void OnTriggerEnter(Collider coll)
     //{

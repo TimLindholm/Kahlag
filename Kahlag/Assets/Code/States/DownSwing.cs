@@ -66,7 +66,7 @@ public class DownSwing : StateBehaviour
 
         m_timer -= Time.deltaTime;
         //TEST
-        if (m_timer > 1.3f)
+        if (m_timer > 1.1f)
         {
             Context.Enemy.TakeAim();
         }
