@@ -22,6 +22,8 @@ public class InputScript : MonoBehaviour
 
     private PlayerHealthScript _healthRef;
 
+    public bool RestartLevel;
+
     //public Vector2 MoveAxis;
 
     void Start ()
@@ -49,6 +51,8 @@ public class InputScript : MonoBehaviour
 
             FastAttack = Input.GetKeyDown(KeyCode.JoystickButton1);
             HeavyAttack = Input.GetKeyDown(KeyCode.JoystickButton3);
+
+            RestartLevel = Input.GetKeyDown(KeyCode.JoystickButton6);
         }
 
 

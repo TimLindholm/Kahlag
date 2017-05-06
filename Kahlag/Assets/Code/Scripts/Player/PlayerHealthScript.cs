@@ -30,6 +30,15 @@ public class PlayerHealthScript : MonoBehaviour
     public Color colorEnd;
 
 
+    public Slider HealthRecoveryBar;
+    public Image recoveryFill;
+    public int HealthRecovery = 0;
+
+    
+    
+
+
+
     void Start ()
     {
         CurrentHealth = MaxHealth;
@@ -47,18 +56,35 @@ public class PlayerHealthScript : MonoBehaviour
     {
 		if(Damaged == true)
         {
-            Invoke("IfDamaged", .5f);
-           
+            Invoke("IfDamaged", .5f);           
         }
 
+        UpdateRecoveryBar();
         UpdateHealthBar();
+        GainHealth();
 
     }
+
+    public void GainHealth()
+    {
+        if(HealthRecovery == 10 && CurrentHealth < MaxHealth)
+        {
+            CurrentHealth += 1;
+            HealthRecovery = 0;
+        }
+    }
+
+
 
     private void UpdateHealthBar()
     {
         HealthSlider.value = CurrentHealth;
         Fill.color = Color.Lerp(colorStart, colorEnd, Mathf.InverseLerp(0, MaxHealth, CurrentHealth));
+    }
+
+    private void UpdateRecoveryBar()
+    {
+        HealthRecoveryBar.value = HealthRecovery;
     }
 
     void IfDamaged()

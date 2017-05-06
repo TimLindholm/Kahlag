@@ -36,7 +36,8 @@ public class CombatState : StateBehaviour
         
         if(CanCharge == true)
         {
-            if (Context.Enemy.ChargeCooldown <= 0f && Context.Enemy.inAttack != true)
+            //if (Context.Enemy.ChargeCooldown <= 0f && Context.Enemy.inAttack != true) 
+            if (Context.Enemy.ChargeCooldown <= 0f) 
             {
                 StateMachine.GoToState("ChargeState");
             }

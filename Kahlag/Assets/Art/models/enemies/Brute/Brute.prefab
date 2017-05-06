@@ -8576,6 +8576,8 @@ MonoBehaviour:
   inAttack: 0
   randomAttack: 0
   EnteredCombat: 0
+  FillStaminaOnDeath: 1
+  FillHealthOnHit: 1
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -8622,8 +8624,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: ChargeState
   m_actionTime: 1.8
-  MinCD: 0
-  MaxCD: 0
+  MinCD: 1.8
+  MaxCD: 1.8
   ChargeCD: 10
   ChargeDistance: 5
   ChargeCollider: {fileID: 1047259749945966}

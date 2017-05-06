@@ -60,9 +60,11 @@ public class Enemy : MonoBehaviour
 
     public bool EnteredCombat;
     private PlayerStaminaScript _staminaRef;
+    private PlayerHealthScript _healthRef;
 
     //When the enemy dies, should it restore stamina to the player?
     public bool FillStaminaOnDeath; // <----
+    public bool FillHealthOnHit;
 
 
     //Navmesh Testing
@@ -76,6 +78,7 @@ public class Enemy : MonoBehaviour
 	{
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing       
         _staminaRef = (PlayerStaminaScript)FindObjectOfType(typeof(PlayerStaminaScript));
+        _healthRef = (PlayerHealthScript)FindObjectOfType(typeof(PlayerHealthScript));
         agent.autoBraking = false; //does not slow down 
         _rag = GetComponent<RagdollEnemy>();
         CurrentHealth = MaxHealth;
@@ -258,6 +261,15 @@ public class Enemy : MonoBehaviour
                    
                 }
 
+
+                if(FillHealthOnHit == true)
+                {
+                    if(_healthRef.CurrentHealth < _healthRef.MaxHealth)
+                    {
+                        _healthRef.HealthRecovery += 1;
+                        
+                    }
+                }
                 agent.Stop();
                 m_body.velocity = Vector3.zero;
                 m_body.angularVelocity = Vector3.zero;

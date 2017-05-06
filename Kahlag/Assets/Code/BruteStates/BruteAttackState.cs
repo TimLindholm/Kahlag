@@ -46,6 +46,11 @@ public class BruteAttackState : StateBehaviour
     void FixedUpdate()
     {
         
+        //ChargeTest
+        if(Context.Enemy.ChargeCooldown <= 0f)
+        {
+            StateMachine.GoToState("ChargeState");
+        }
         
         if (Context.Enemy.ActionTimer <= 0f)
         {
