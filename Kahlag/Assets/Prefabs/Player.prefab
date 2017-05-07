@@ -4965,7 +4965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9769b973ba05bfd468e7e156d0f89fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 6
+  Damage: 5
   Force: 0
   target: {fileID: 0}
   HitSound: {fileID: 0}

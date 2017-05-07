@@ -64,6 +64,7 @@ public class DetectEnemyScript : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
+            
             distance = (transform.position - enemy.transform.position).sqrMagnitude;
             if (distance < nearestDistance)
             {

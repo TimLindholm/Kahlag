@@ -70,6 +70,7 @@ public class DamageCollScript : MonoBehaviour
         Quaternion HitRot = Quaternion.LookRotation(Vector3.forward, collisionHitRot);
 
         _spawnedBlood = Instantiate(Blood, SpawnPoint.position, SpawnPoint.rotation);
+        //_spawnedBlood = Instantiate(Blood, collision.contacts[0].normal, HitRot);
 
         if (enemyHealth != null)
         {

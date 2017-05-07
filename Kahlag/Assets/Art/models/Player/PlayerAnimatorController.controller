@@ -678,7 +678,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: FastAttack
-  m_Speed: 1.2
+  m_Speed: 1.4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101500317300633612}
@@ -779,7 +779,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: FastAttack2
-  m_Speed: 1.2
+  m_Speed: 1.4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101493932199872396}
@@ -951,16 +951,16 @@ AnimatorStateMachine:
     m_Position: {x: 480, y: 12, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102846939506866872}
-    m_Position: {x: 672, y: 348, z: 0}
+    m_Position: {x: 816, y: 276, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102304992407814620}
-    m_Position: {x: 912, y: 348, z: 0}
+    m_Position: {x: 1116, y: 276, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102130048531539830}
-    m_Position: {x: 672, y: 408, z: 0}
+    m_Position: {x: 804, y: 420, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102667611762672178}
-    m_Position: {x: 972, y: 432, z: 0}
+    m_Position: {x: 1056, y: 420, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101959329313974934}

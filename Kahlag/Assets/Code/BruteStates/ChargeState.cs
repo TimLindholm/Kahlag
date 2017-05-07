@@ -115,7 +115,7 @@ public class ChargeState : StateBehaviour
     public void AimCurve()
     {
         chargeAimCurve = Context.Enemy.anim.GetFloat("chargeAimCurve");
-        //Context.Enemy.TakeAim();
+        Context.Enemy.TakeAim();
         if (chargeAimCurve > 0.7f)
         {
            

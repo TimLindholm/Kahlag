@@ -67,6 +67,11 @@ public class Enemy : MonoBehaviour
     public bool FillHealthOnHit;
 
 
+
+    //Find player
+    private PlayerHealthScript _playerRef;
+
+
     //Navmesh Testing
     UnityEngine.AI.NavMeshAgent agent;
 
@@ -84,6 +89,9 @@ public class Enemy : MonoBehaviour
         CurrentHealth = MaxHealth;
         SetupAnimator(); //get anim component
         m_body = GetComponent<Rigidbody>();
+
+        _playerRef = (PlayerHealthScript)FindObjectOfType(typeof(PlayerHealthScript));
+        m_target = _playerRef.transform;
 	}
 
     void Update()
