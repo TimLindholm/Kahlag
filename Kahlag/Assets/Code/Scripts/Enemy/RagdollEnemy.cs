@@ -120,7 +120,7 @@ public class RagdollEnemy : MonoBehaviour
 
         if(IsCultist == true)
         {
-            Destroy(gameObject, .5f); // REMOVE .5f to make enemies fall to their knees instead of up in the air wieeee
+            Destroy(gameObject);
             if (GetComponent<MeleeSwingState>())
             {
                 MeleeSwingState _meleeSwing = GetComponent<MeleeSwingState>();
