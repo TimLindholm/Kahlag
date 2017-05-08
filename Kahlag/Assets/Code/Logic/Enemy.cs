@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -42,6 +43,12 @@ public class Enemy : MonoBehaviour
 
     public bool invulnerable;
     public bool inAttack;
+
+    //UI health
+    public Slider HealthSlider;
+    public Image Fill;
+
+
 
     private RagdollEnemy _rag;
 
@@ -97,7 +104,9 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         ActionCooldown();
+        UpdateHealthBar();
     }
+
     public void ActionCooldown()
     {
         if(ActionTimer >= 0f)
@@ -242,9 +251,15 @@ public class Enemy : MonoBehaviour
         //print(randomAttack);
     }
 
-    
-    
-    
+
+
+    private void UpdateHealthBar()
+    {
+        HealthSlider.value = CurrentHealth;
+        //Fill.color = Color.Lerp(colorStart, colorEnd, Mathf.InverseLerp(0, MaximumStamina, CurrentStamina));
+    }
+
+
     //Take Damage Related
     public void KnockBack(Vector3 Force)
     {
