@@ -4822,7 +4822,7 @@ MonoBehaviour:
   FastAttackTimer: 1
   HeavyAttackTimer: 1.6
   _timer: 0
-  FastCost: 3
+  FastCost: 2
   HeavyCost: 3
   AutoLockOn: 1
 --- !u!114 &114238433467434936
@@ -4907,7 +4907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaximumStamina: 10
   CurrentStamina: 0
-  RecoveryRate: 5
+  RecoveryRate: 2.5
   StaminaSlider: {fileID: 0}
   Fill: {fileID: 0}
   colorStart: {r: 0.057904415, g: 0.70594555, b: 0.875, a: 0}
@@ -4950,7 +4950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementRef: {fileID: 114268717330986748}
   StaminaRef: {fileID: 114522122458047966}
-  DashCost: 6
+  DashCost: 5
   DashSpeed: 90
   DashCooldown: 0
   aimDir: {fileID: 4002667448693424}
@@ -5014,6 +5014,7 @@ MonoBehaviour:
   HealthRecoveryBar: {fileID: 0}
   recoveryFill: {fileID: 0}
   HealthRecovery: 0
+  StaminaLossWhenHit: 3
 --- !u!135 &135408077691528032
 SphereCollider:
   m_ObjectHideFlags: 1

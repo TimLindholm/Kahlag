@@ -34,6 +34,10 @@ public class PlayerHealthScript : MonoBehaviour
     public Image recoveryFill;
     public int HealthRecovery = 0;
 
+    public int StaminaLossWhenHit = 3;
+
+    //Stamina ref
+    private PlayerStaminaScript _stamRef;
     
     
 
@@ -46,6 +50,7 @@ public class PlayerHealthScript : MonoBehaviour
         _actionRef = GetComponent<PlayerActionScript>();
         SetupAnimator();
         _rag = GetComponent<RagdollManager>();
+        _stamRef = GetComponent<PlayerStaminaScript>();
 
         colorStart = Color.black;
         colorEnd = Color.red;
@@ -109,6 +114,11 @@ public class PlayerHealthScript : MonoBehaviour
                 CancelInvoke("IfDamaged");
                 Damaged = true;
                 CurrentHealth -= Damage;
+                _stamRef.CurrentStamina -= StaminaLossWhenHit; //REDUCE STAMINA WHEN HIT
+                if(_stamRef.CurrentStamina < 0)
+                {
+                    _stamRef.CurrentStamina = 0;
+                }
                 //Debug.Log("Player Hit!");
                 StartCoroutine(InvulnerableTimer());
             }

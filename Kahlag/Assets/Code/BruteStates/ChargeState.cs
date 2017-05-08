@@ -123,7 +123,7 @@ public class ChargeState : StateBehaviour
             Context.Enemy.TakeAim();
         }
         chargeAttackCurve = Context.Enemy.anim.GetFloat("chargeAttackCurve");
-        if (chargeAttackCurve > 0.7f)
+        if (chargeAttackCurve > 0.9f)
         {
             ChargeCollider.SetActive(true);
             IsCharging = true;
