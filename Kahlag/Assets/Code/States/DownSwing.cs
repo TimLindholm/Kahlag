@@ -99,7 +99,7 @@ public class DownSwing : StateBehaviour
         if (downswingAttackCurve > 0.5f)
         {
             damagecoll.SetActive(true);
-            print("Active");
+            //print("Active");
         }
         else
         {

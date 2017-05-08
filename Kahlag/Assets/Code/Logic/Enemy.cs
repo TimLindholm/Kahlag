@@ -248,7 +248,9 @@ public class Enemy : MonoBehaviour
     //Take Damage Related
     public void KnockBack(Vector3 Force)
     {
+   
         m_body.AddForce(Force);
+     
     }
 
     public void TakeDamage(float Damage)
@@ -270,7 +272,7 @@ public class Enemy : MonoBehaviour
                 }
 
 
-                if(FillHealthOnHit == true)
+                if(FillHealthOnHit == true) // <---- Get health when damaging
                 {
                     if(_healthRef.CurrentHealth < _healthRef.MaxHealth)
                     {
@@ -279,13 +281,13 @@ public class Enemy : MonoBehaviour
                     }
                 }
                 agent.Stop();
-                m_body.velocity = Vector3.zero;
-                m_body.angularVelocity = Vector3.zero;
+                //m_body.velocity = Vector3.zero;
+                //m_body.angularVelocity = Vector3.zero;
                 CurrentHealth -= Damage;
+    
                 if(Cam_Shake==true)
                 {
-                    CameraShake.Instance.Shake(amplitude, duration);
-                   
+                    CameraShake.Instance.Shake(amplitude, duration);                  
                 }
                 
                 Debug.Log("Enemy Hit!");

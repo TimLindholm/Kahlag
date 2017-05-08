@@ -39,48 +39,50 @@ public class DamageCollScript : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, Reach);
     }
 
-    public void DealDamage()
+    public void OnTriggerEnter(Collider target)
     {
-        Ray enemyCheck = new Ray(transform.position, transform.forward / Distance);
-        Debug.DrawRay(transform.position, transform.forward * Distance);
-        RaycastHit hit;
-
-        //if (Physics.SphereCast(transform.position, Reach, transform.forward, out hit) && hit.transform.tag == "Enemy")
-        if (Physics.SphereCast(enemyCheck, Reach, out hit) && hit.transform.tag == "Enemy")
+        if (target.tag == "Enemy")
         {
-            //enemyToDamage = GameObject.FindGameObjectWithTag("Enemy");
-            enemyToDamage = hit.transform;
-            _enemyHealth = enemyToDamage.GetComponent<Enemy>();
+            //Enemy enemyHealth = target.collider.GetComponent<Enemy>();
+            //Enemy enemyHealth = GetComponent<Enemy>();
+            Enemy enemyHealth = target.GetComponent<Enemy>();
+            
+            print("EnemyHit");
+            
+            if (enemyHealth != null)
+            {
 
-            print("Damage");
-            _enemyHealth.TakeDamage(Damage);
+                //print("Damage");
+                enemyHealth.TakeDamage(Damage);
+                Debug.Log("Damage");
+                enemyHealth.KnockBack(-transform.forward * Force);
 
-            //enemyToDamage = null;
+            }
         }
     }
 
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Enemy enemyHealth = collision.collider.GetComponent<Enemy>();
-        //HitSound.Play();
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Enemy enemyHealth = collision.collider.GetComponent<Enemy>();
+    //    //HitSound.Play();
 
-        Vector3 collisionHitRot = collision.contacts[0].normal;
-        Quaternion HitRot = Quaternion.LookRotation(Vector3.forward, collisionHitRot);
+    //    Vector3 collisionHitRot = collision.contacts[0].normal;
+    //    Quaternion HitRot = Quaternion.LookRotation(Vector3.forward, collisionHitRot);
 
-        _spawnedBlood = Instantiate(Blood, SpawnPoint.position, SpawnPoint.rotation);
-        //_spawnedBlood = Instantiate(Blood, collision.contacts[0].normal, HitRot);
+    //    _spawnedBlood = Instantiate(Blood, SpawnPoint.position, SpawnPoint.rotation);
+    //    //_spawnedBlood = Instantiate(Blood, collision.contacts[0].normal, HitRot);
 
-        if (enemyHealth != null)
-        {
+    //    if (enemyHealth != null)
+    //    {
 
-            //print("Damage");
-            enemyHealth.TakeDamage(Damage);
-            enemyHealth.KnockBack(-collision.contacts[0].normal * Force);
+    //        //print("Damage");
+    //        enemyHealth.TakeDamage(Damage);
+    //        enemyHealth.KnockBack(-collision.contacts[0].normal * Force);
 
            
-        }
-    }
+    //    }
+    //}
 
 }

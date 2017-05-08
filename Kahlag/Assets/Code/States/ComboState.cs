@@ -122,7 +122,7 @@ public class ComboState : StateBehaviour
         {
             
             transform.position = Vector3.Lerp(startPos.position, comboTarget.position, speed * Time.deltaTime);
-            print("lerp");
+            //print("lerp");
         }    
     }
 
