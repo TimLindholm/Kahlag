@@ -28,11 +28,15 @@ public class PlayerMovementScript : MonoBehaviour
     public Vector3 DashDirection;
     public Transform aimDirection;
 
+    public AudioClip footsteps;
+
     //Animation
     private Animator anim;
 
 
     private PlayerActionScript _actionRef;
+
+    public AudioSource stepSound;
 
 
     //Lock-on testing
@@ -51,6 +55,8 @@ public class PlayerMovementScript : MonoBehaviour
     }
 	
 	
+  
+
 	void Update ()
     {
         if(_actionRef.InAction == false)
@@ -63,10 +69,15 @@ public class PlayerMovementScript : MonoBehaviour
             {
                 Rotate(_ir.RotationX, _ir.RotationY);
             }
+
             //Move(_ir.MoveAxis);
         }        
     }
 
+    void PlayStepSound()
+    {
+        stepSound.Play();
+    }
 
 
     void ConvertMoveInputAndPassToAnimator(Vector3 moveInput)
