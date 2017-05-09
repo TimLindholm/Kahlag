@@ -74,6 +74,7 @@ public class Enemy : MonoBehaviour
     public bool FillHealthOnHit;
 
 
+    public bool TakingDamage;
 
     //Find player
     private PlayerHealthScript _playerRef;
@@ -177,11 +178,14 @@ public class Enemy : MonoBehaviour
             {
                 randomDir = -.015f;
             }
-            aimDirection.LookAt(m_target);
-            transform.rotation = Quaternion.Lerp(transform.rotation, aimDirection.rotation, TurnSmoothing * Time.deltaTime);
-            transform.Translate(randomDir, 0f, 0f * Time.deltaTime); // Fix this!
-            anim.SetBool("Strafing", true);
 
+            if(TakingDamage != true)
+            {
+                aimDirection.LookAt(m_target);
+                transform.rotation = Quaternion.Lerp(transform.rotation, aimDirection.rotation, TurnSmoothing * Time.deltaTime);
+                transform.Translate(randomDir, 0f, 0f * Time.deltaTime); // Fix this!
+                anim.SetBool("Strafing", true);
+            }          
         }
         //else
         //{
@@ -240,7 +244,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void RandomzieCultistAttack()
+    public void RandomizeCultistAttack()
     {
         randomAttack = Random.Range(downswing, meleeswing);
     }
@@ -274,30 +278,58 @@ public class Enemy : MonoBehaviour
         {          
             if(invulnerable != true)
             {
-                //_score.DamageBonus += Damage;
-                if(inAttack != true)
+                if (HasDamageAnim == true)
                 {
-                    if(HasDamageAnim==true)
+                    TakingDamage = true;
+                    if (Damage > 1)
                     {
-                        //anim.SetTrigger("TakeDamage");
+                        agent.Stop();
+                        Invoke("StartMovingAgain", 1.3f);
+                        anim.SetTrigger("TakeHeavyDamage");
+                        ActionTimer = 1.5f;
+                        print("heavyDamage");
                         m_body.velocity = Vector3.zero;
                         m_body.angularVelocity = Vector3.zero;
-                    }
-                   
-                }
-
-
-                if(FillHealthOnHit == true) // <---- Get health when damaging
-                {
-                    if(_healthRef.CurrentHealth < _healthRef.MaxHealth)
-                    {
-                        _healthRef.HealthRecovery += 1;
                         
                     }
+
+                    if (inAttack != true)
+                    {
+                        if(HasDamageAnim==true)
+                        {
+                            anim.SetTrigger("TakeDamage");
+                            //ActionTimer -= 1;
+                            //if(ActionTimer <= 0)
+                            //{
+                            //    ActionTimer = 0;
+                            //}
+                            m_body.velocity = Vector3.zero;
+                            m_body.angularVelocity = Vector3.zero;
+                        }
+                    }          
                 }
+
+                if (FillHealthOnHit == true) // <---- Get health when damaging
+                {
+                    if (_healthRef.CurrentHealth < _healthRef.MaxHealth)
+                    {
+                        if(Damage > 1)
+                        {
+                            _healthRef.HealthRecovery += 3f;
+                            _healthRef._timer = _healthRef.DecayTimer;
+                        }
+                     
+                        else
+                        {
+                            _healthRef.HealthRecovery += 1.5f;
+                            _healthRef._timer = _healthRef.DecayTimer;
+                        }
+                    }
+                }
+
+                Invoke("StartRotatingAgain", 1f);
+
                 agent.Stop();
-                //m_body.velocity = Vector3.zero;
-                //m_body.angularVelocity = Vector3.zero;
                 CurrentHealth -= Damage;
     
                 if(Cam_Shake==true)
@@ -310,9 +342,6 @@ public class Enemy : MonoBehaviour
                 Invoke("InvulnerableTimer", .2f);
                 invulnerable = true;
             }
-
-            
-
         }
         if (CurrentHealth <= 0f && IsDead == false)
         {
@@ -339,7 +368,15 @@ public class Enemy : MonoBehaviour
         invulnerable = false;
     }
 
+    void StartMovingAgain()
+    {
+        agent.Resume();
+    }
 
+    void StartRotatingAgain()
+    {
+        TakingDamage = false;
+    }
 
     //Anim Related
     void SetupAnimator()

@@ -8491,8 +8491,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.9999999, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.90991104, y: 1.9999998, z: 1.1956121}
+  m_Center: {x: -0.045044336, y: -0.0000016050375, z: -0.04575573}
 --- !u!65 &65232461640822838
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -8684,9 +8684,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224104214441022918}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 25
+  m_MaxValue: 35
   m_WholeNumbers: 0
-  m_Value: 25
+  m_Value: 35
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8795,7 +8795,7 @@ MonoBehaviour:
   amplitude: 0.08
   duration: 0.08
   CurrentHealth: 0
-  MaxHealth: 25
+  MaxHealth: 35
   IsDead: 0
   invulnerable: 0
   inAttack: 0
@@ -8805,6 +8805,7 @@ MonoBehaviour:
   EnteredCombat: 0
   FillStaminaOnDeath: 1
   FillHealthOnHit: 1
+  TakingDamage: 0
   waypoints:
   - {fileID: 0}
   - {fileID: 0}

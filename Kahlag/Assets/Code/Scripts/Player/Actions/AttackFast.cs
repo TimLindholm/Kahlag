@@ -27,6 +27,13 @@ public class AttackFast : MonoBehaviour
     public float FastCost = 1;
     public float HeavyCost = 2;
 
+
+    //Particle
+    public GameObject SwingParticle1;
+
+    private float fastParticleCurve;
+    private float heavyParticleCurve;
+
   
   
 
@@ -47,6 +54,7 @@ public class AttackFast : MonoBehaviour
         UpdateFastAttack();
         UpdateHeavyAttack();
         HandleCollider();
+        HandleParticle();
         HandleTimer();
         InCombo();
     }
@@ -124,13 +132,13 @@ public class AttackFast : MonoBehaviour
         fastAttackCurve = anim.GetFloat("fastAttackCurve");
         if (fastAttackCurve > 0.5f)
         {
-            fastAttackColl.SetActive(true);       
+            fastAttackColl.SetActive(true);         
         }
         else
         {
             if (fastAttackColl.activeInHierarchy)
             {
-                fastAttackColl.SetActive(false);                
+                fastAttackColl.SetActive(false);            
             }
         }
 
@@ -138,15 +146,51 @@ public class AttackFast : MonoBehaviour
         if (heavyAttackCurve > 0.5f)
         {
             heavyAttackColl.SetActive(true);
+           
         }
         else
         {
             if (heavyAttackColl.activeInHierarchy)
             {
-                heavyAttackColl.SetActive(false);
+                heavyAttackColl.SetActive(false);              
             }
         }
     }
+
+
+    public void HandleParticle()
+    {
+        fastParticleCurve = anim.GetFloat("fastParticleCurve");
+        if (fastParticleCurve > 0.1f)
+        {
+  
+            SwingParticle1.SetActive(true);
+        }
+        else
+        {
+            if (SwingParticle1.activeInHierarchy)
+            {
+            
+                SwingParticle1.SetActive(false);
+            }
+        }
+
+        heavyParticleCurve = anim.GetFloat("heavyParticleCurve");
+        if (heavyParticleCurve > 0.1f)
+        {
+          
+            SwingParticle1.SetActive(true);
+        }
+        else
+        {
+            if (SwingParticle1.activeInHierarchy)
+            {
+               
+                SwingParticle1.SetActive(false);
+            }
+        }
+    }
+
     
     public void HandleTimer()
     {

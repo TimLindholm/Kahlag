@@ -57,7 +57,7 @@ public class AttackState : StateBehaviour
 
         if (Context.Enemy.ActionTimer <= 0f)
         {
-            Context.Enemy.RandomzieCultistAttack();
+            Context.Enemy.RandomizeCultistAttack();
             if (Context.Enemy.randomAttack == 0)
             {
                 //Do attack1

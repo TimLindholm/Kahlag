@@ -29,10 +29,15 @@ public class PlayerHealthScript : MonoBehaviour
     public Color colorStart;
     public Color colorEnd;
 
-
+    //Health Recovery
     public Slider HealthRecoveryBar;
     public Image recoveryFill;
-    public int HealthRecovery = 0;
+    public float HealthRecovery = 0;
+    private int _currentHealthRecovery;
+
+    public float DecayRate;
+    public float  DecayTimer = 3;
+    public float  _timer;
 
     public int StaminaLossWhenHit = 3;
 
@@ -67,16 +72,35 @@ public class PlayerHealthScript : MonoBehaviour
         UpdateRecoveryBar();
         UpdateHealthBar();
         GainHealth();
+        DecayOverTime();
 
     }
 
     public void GainHealth()
     {
-        if(HealthRecovery == 10 && CurrentHealth < MaxHealth)
+        if(HealthRecovery >= 10 && CurrentHealth < MaxHealth)
         {
             CurrentHealth += 1;
             HealthRecovery = 0;
         }
+    }
+
+    public void DecayOverTime()
+    {
+        if(HealthRecovery >= 0)
+        {
+            if (_timer > 0)
+            {
+                _timer -= Time.deltaTime;
+
+            }
+
+            if (_timer <= 0)
+            {
+                HealthRecovery -= DecayRate * Time.deltaTime;
+            }
+        }
+
     }
 
 

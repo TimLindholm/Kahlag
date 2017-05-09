@@ -88,7 +88,7 @@ public class DownSwing : StateBehaviour
         //_meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
         yield return new WaitForSeconds(.3f);
         comboTarget.position = Context.Enemy.m_target.position;
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(1f);
 
         Context.Enemy.inAttack = false;
     }

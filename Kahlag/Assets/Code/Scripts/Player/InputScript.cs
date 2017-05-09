@@ -52,8 +52,9 @@ public class InputScript : MonoBehaviour
             FastAttack = Input.GetKeyDown(KeyCode.JoystickButton1);
             HeavyAttack = Input.GetKeyDown(KeyCode.JoystickButton3);
 
-            RestartLevel = Input.GetKeyDown(KeyCode.JoystickButton6);
+            
         }
+        RestartLevel = Input.GetKeyDown(KeyCode.JoystickButton6);
 
 
     }
