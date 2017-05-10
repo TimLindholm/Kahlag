@@ -335,7 +335,7 @@ ModelImporter:
     - serializedVersion: 16
       name: HitCombo 02
       takeName: Take 001
-      firstFrame: 12
+      firstFrame: 13
       lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0

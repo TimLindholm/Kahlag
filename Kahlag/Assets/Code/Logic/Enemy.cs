@@ -315,13 +315,13 @@ public class Enemy : MonoBehaviour
                     {
                         if(Damage > 1)
                         {
-                            _healthRef.HealthRecovery += 3f;
+                            _healthRef.HealthRecovery += 4f;
                             _healthRef._timer = _healthRef.DecayTimer;
                         }
                      
                         else
                         {
-                            _healthRef.HealthRecovery += 1.5f;
+                            _healthRef.HealthRecovery += 2.5f;
                             _healthRef._timer = _healthRef.DecayTimer;
                         }
                     }

@@ -18,6 +18,8 @@ public class InputScript : MonoBehaviour
     public bool FastAttack;
     public bool HeavyAttack;
 
+    public float HeavyAttackFloat;
+
     public Vector2 MoveAxis;
 
     private PlayerHealthScript _healthRef;
@@ -44,13 +46,14 @@ public class InputScript : MonoBehaviour
             RotationX = Input.GetAxis("RotationX");
             RotationY = Input.GetAxis("RotationY");
 
+            HeavyAttackFloat = Input.GetAxis("HeavyAttack");
 
 
-            Dash = Input.GetKeyDown(KeyCode.Joystick1Button5);
+            Dash = Input.GetKeyDown(KeyCode.Joystick1Button1);
             //LockOn = Input.GetKeyDown(KeyCode.Joystick1Button4);
 
-            FastAttack = Input.GetKeyDown(KeyCode.JoystickButton1);
-            HeavyAttack = Input.GetKeyDown(KeyCode.JoystickButton3);
+            FastAttack = Input.GetKeyDown(KeyCode.JoystickButton5);
+            HeavyAttack = Input.GetKeyDown(KeyCode.JoystickButton4);
 
             
         }

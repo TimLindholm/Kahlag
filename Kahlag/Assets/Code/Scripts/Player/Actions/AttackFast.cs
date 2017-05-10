@@ -93,6 +93,23 @@ public class AttackFast : MonoBehaviour
                     transform.LookAt(_detectRef.EnemyToTarget);
             }
         }
+        
+
+        //FLOAT
+        if (_actionRef.InAction == false && _ir.HeavyAttackFloat < -0.5 && _staminaRef.CurrentStamina > HeavyCost)
+        {
+            _timer = HeavyAttackTimer;
+            InAttack = true;
+            _actionRef.InAction = true;
+            anim.SetTrigger("HeavyAttackTrigger");
+            _staminaRef.CurrentStamina -= HeavyCost; // <--- Stamina cost
+
+            if (_detectRef.EnemyToTarget != null)
+            {
+                if (AutoLockOn)
+                    transform.LookAt(_detectRef.EnemyToTarget);
+            }
+        }
     }
 
     public void InCombo()
@@ -111,7 +128,7 @@ public class AttackFast : MonoBehaviour
             }
         }
 
-        if(_timer < .8f && _ir.HeavyAttack == true && InAttack == true && _staminaRef.CurrentStamina > HeavyCost)
+        if(_timer < .8f &&  _ir.HeavyAttackFloat < -0.5 && InAttack == true && _staminaRef.CurrentStamina > HeavyCost)
         {
             _timer = HeavyAttackTimer;
             _actionRef.InAction = true; 
@@ -124,7 +141,23 @@ public class AttackFast : MonoBehaviour
                     transform.LookAt(_detectRef.EnemyToTarget);
             }
         }
-    
+
+        if (_timer < .8f && _ir.HeavyAttack == true && InAttack == true && _staminaRef.CurrentStamina > HeavyCost)
+        {
+            _timer = HeavyAttackTimer;
+            _actionRef.InAction = true;
+            anim.SetTrigger("HeavyAttackTrigger");
+            _staminaRef.CurrentStamina -= HeavyCost; // <--- Stamina cost
+
+            if (_detectRef.EnemyToTarget != null)
+            {
+                if (AutoLockOn)
+                    transform.LookAt(_detectRef.EnemyToTarget);
+            }
+        }
+
+
+
     }
 
     public void HandleCollider()

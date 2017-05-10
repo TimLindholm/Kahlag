@@ -5197,8 +5197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: DownSwing
   m_actionTime: 1.7
-  MinCD: 2
-  MaxCD: 2.5
+  MinCD: 2.2
+  MaxCD: 3.2
   damagecoll: {fileID: 1493187044456352}
   comboTarget: {fileID: 4492998376596982}
   startPos: {fileID: 4352485373974206}
@@ -5242,8 +5242,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: MeleeSwing
   m_actionTime: 1.7
-  MinCD: 2
-  MaxCD: 2.5
+  MinCD: 2.2
+  MaxCD: 3.2
   damagecoll: {fileID: 1493187044456352}
   comboTarget: {fileID: 4492998376596982}
   startPos: {fileID: 4352485373974206}

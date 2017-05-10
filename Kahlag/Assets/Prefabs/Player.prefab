@@ -5200,8 +5200,8 @@ MonoBehaviour:
   HealthRecoveryBar: {fileID: 0}
   recoveryFill: {fileID: 0}
   HealthRecovery: 0
-  DecayRate: 0.25
-  DecayTimer: 3.5
+  DecayRate: 0.8
+  DecayTimer: 2
   _timer: 0
   StaminaLossWhenHit: 2
 --- !u!135 &135408077691528032
