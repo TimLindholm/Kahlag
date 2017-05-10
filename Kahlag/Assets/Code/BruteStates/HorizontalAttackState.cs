@@ -17,10 +17,14 @@ public class HorizontalAttackState : StateBehaviour
     private Rigidbody _rb;
 
 
+    
+
     //Attack
     public Transform attackPos;
     public Rigidbody meleeAttackColl;
     private Rigidbody _meleeAttackColl;
+
+    public GameObject AttackVFX;
 
     UnityEngine.AI.NavMeshAgent agent;
 
@@ -60,11 +64,24 @@ public class HorizontalAttackState : StateBehaviour
         Context.Enemy.anim.SetTrigger("Horizontal");
         StartCoroutine(DamageCollActive());
         Context.Enemy.ActionTimer = cooldown;
+        Invoke("SetVFXActive", 1f);
+        Invoke("DeactiveVFX", 1.6f);
     }
 
     public override void OnExit()
     {
         Context.Enemy.inAttack = false;
+        AttackVFX.SetActive(false);
+    }
+
+    public void SetVFXActive()
+    {
+        AttackVFX.SetActive(true);
+    }
+
+    public void DeactiveVFX()
+    {
+        AttackVFX.SetActive(false);
     }
 
     IEnumerator DamageCollActive()

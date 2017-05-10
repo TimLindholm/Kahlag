@@ -398,7 +398,7 @@ ModelImporter:
           preInfinity: 3
           postInfinity: 3
           rotationOrder: 0
-      - name: fastParticleCurve
+      - name: fastParticleCurve1
         curve:
           serializedVersion: 2
           curve:

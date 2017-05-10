@@ -22,6 +22,8 @@ public class VerticalAttackState : StateBehaviour
     public Rigidbody meleeAttackColl;
     private Rigidbody _meleeAttackColl;
 
+    public GameObject AttackVFX;
+
     UnityEngine.AI.NavMeshAgent agent;
 
     float attackCurve;
@@ -59,11 +61,24 @@ public class VerticalAttackState : StateBehaviour
         Context.Enemy.anim.SetTrigger("Vertical");
         StartCoroutine(DamageCollActive());
         Context.Enemy.ActionTimer = cooldown;
+        Invoke("SetVFXActive", .6f);
+        Invoke("DeactiveVFX", 1.3f);
     }
 
     public override void OnExit()
     {
         Context.Enemy.inAttack = false;
+        AttackVFX.SetActive(false);
+    }
+
+    public void SetVFXActive()
+    {
+        AttackVFX.SetActive(true);
+    }
+
+    public void DeactiveVFX()
+    {
+        AttackVFX.SetActive(false);
     }
 
     IEnumerator DamageCollActive()

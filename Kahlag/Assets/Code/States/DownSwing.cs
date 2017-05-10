@@ -13,8 +13,8 @@ public class DownSwing : StateBehaviour
 
 
     private Rigidbody _rb;
-  
 
+    public GameObject AttackVFX;
 
     UnityEngine.AI.NavMeshAgent agent;
 
@@ -42,6 +42,7 @@ public class DownSwing : StateBehaviour
         Context.Enemy.anim.SetTrigger("DownSwing");
         StartCoroutine(DamageCollActive());
         Context.Enemy.ActionTimer = cooldown;
+        AttackVFX.SetActive(true);
 
         //Perform Action
 
@@ -51,6 +52,8 @@ public class DownSwing : StateBehaviour
     {
         //Context.Enemy.anim.SetBool("MeleeSwing", false);
         Context.Enemy.inAttack = false;
+        AttackVFX.SetActive(false);
+
     }
 
     private void Awake()

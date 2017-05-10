@@ -14,8 +14,9 @@ public class MeleeSwingState : StateBehaviour
 
     private Rigidbody _rb;
 
- 
 
+
+    public GameObject AttackVFX;
 
     UnityEngine.AI.NavMeshAgent agent;
 
@@ -43,7 +44,8 @@ public class MeleeSwingState : StateBehaviour
         Context.Enemy.anim.SetTrigger("MeleeAttack");
         StartCoroutine(DamageCollActive());
         Context.Enemy.ActionTimer = cooldown;
-       
+        AttackVFX.SetActive(true);
+
         //Perform Action
 
     }
@@ -52,6 +54,7 @@ public class MeleeSwingState : StateBehaviour
     {
         //Context.Enemy.anim.SetBool("MeleeSwing", false);
         Context.Enemy.inAttack = false;
+        AttackVFX.SetActive(false);
     }
 
     private void Awake()

@@ -15,8 +15,8 @@ public class ComboState : StateBehaviour
 
     private Rigidbody _rb;
 
-   
 
+    public GameObject AttackVFX;
 
     UnityEngine.AI.NavMeshAgent agent;
 
@@ -68,6 +68,8 @@ public class ComboState : StateBehaviour
         Context.Enemy.ActionTimer = cooldown;
         Context.Enemy.ComboCooldown = ComboCD;
 
+        AttackVFX.SetActive(true);
+
 
     }
 
@@ -75,6 +77,7 @@ public class ComboState : StateBehaviour
     {
         Context.Enemy.inAttack = false;
         damagecoll.SetActive(false);
+        AttackVFX.SetActive(false);
     }
 
     IEnumerator DamageCollActive()

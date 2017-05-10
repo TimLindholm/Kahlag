@@ -29,9 +29,12 @@ public class AttackFast : MonoBehaviour
 
 
     //Particle
-    public GameObject SwingParticle1;
+    public GameObject FastParticle1;
+    public GameObject FastParticle2;
+    public GameObject HeavyParticle1;
 
-    private float fastParticleCurve;
+    private float fastParticleCurve1;
+    private float fastParticleCurve2;
     private float heavyParticleCurve;
 
   
@@ -193,35 +196,66 @@ public class AttackFast : MonoBehaviour
 
     public void HandleParticle()
     {
-        fastParticleCurve = anim.GetFloat("fastParticleCurve");
-        if (fastParticleCurve > 0.1f)
+
+        if(InAttack == true)
         {
-  
-            SwingParticle1.SetActive(true);
+            FastParticle1.SetActive(true);
+            FastParticle2.SetActive(true);
+            //HeavyParticle1.SetActive(false);
         }
         else
         {
-            if (SwingParticle1.activeInHierarchy)
-            {
-            
-                SwingParticle1.SetActive(false);
-            }
+            FastParticle1.SetActive(false);
+            FastParticle2.SetActive(false);
+            //HeavyParticle1.SetActive(false);
         }
 
-        heavyParticleCurve = anim.GetFloat("heavyParticleCurve");
-        if (heavyParticleCurve > 0.1f)
-        {
-          
-            SwingParticle1.SetActive(true);
-        }
-        else
-        {
-            if (SwingParticle1.activeInHierarchy)
-            {
-               
-                SwingParticle1.SetActive(false);
-            }
-        }
+
+    //    fastParticleCurve1 = anim.GetFloat("fastParticleCurve1");
+    //    if (fastParticleCurve1 > 0.1f)
+    //    {
+
+    //        FastParticle1.SetActive(true);
+    //    }
+    //    else
+    //    {
+    //        if (FastParticle1.activeInHierarchy)
+    //        {
+
+    //            FastParticle1.SetActive(false);
+    //        }
+    //    }
+
+
+    //    fastParticleCurve2 = anim.GetFloat("fastParticleCurve2");
+    //    if (fastParticleCurve2 > 0.1f)
+    //    {
+
+    //        FastParticle2.SetActive(true);
+    //    }
+    //    else
+    //    {
+    //        if (FastParticle2.activeInHierarchy)
+    //        {
+
+    //            FastParticle2.SetActive(false);
+    //        }
+    //    }
+
+    //    heavyParticleCurve = anim.GetFloat("heavyParticleCurve");
+    //    if (heavyParticleCurve > 0.1f)
+    //    {
+
+    //        HeavyParticle1.SetActive(true);
+    //    }
+    //    else
+    //    {
+    //        if (HeavyParticle1.activeInHierarchy)
+    //        {
+
+    //            HeavyParticle1.SetActive(false);
+    //        }
+    //    }
     }
 
     
