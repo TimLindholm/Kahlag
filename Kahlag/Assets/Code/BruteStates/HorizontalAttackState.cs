@@ -65,7 +65,7 @@ public class HorizontalAttackState : StateBehaviour
         StartCoroutine(DamageCollActive());
         Context.Enemy.ActionTimer = cooldown;
         Invoke("SetVFXActive", 1f);
-        Invoke("DeactiveVFX", 1.6f);
+        Invoke("DeactiveVFX", 1.5f);
     }
 
     public override void OnExit()

@@ -70,6 +70,9 @@ public class AttackFast : MonoBehaviour
             InAttack = true;
             _actionRef.InAction = true;
             anim.SetTrigger("FastAttackTrigger");
+            //FastParticle1.SetActive(true);
+            //FastParticle2.SetActive(true);
+            
             _staminaRef.CurrentStamina -= FastCost; // <--- Stamina cost
 
             if (_detectRef.EnemyToTarget != null)
@@ -193,69 +196,112 @@ public class AttackFast : MonoBehaviour
         }
     }
 
+    public void ActivateVFX()
+    {
+        FastParticle1.SetActive(true);
+        FastParticle2.SetActive(true);
+    }
+
+    public void DeactivateVFX()
+    {
+        FastParticle1.SetActive(false);
+        FastParticle2.SetActive(false);
+    }
 
     public void HandleParticle()
     {
 
-        if(InAttack == true)
+        fastParticleCurve1 = anim.GetFloat("fastParticleCurve1");
+        if (fastParticleCurve1 > 0.1f)
         {
             FastParticle1.SetActive(true);
-            FastParticle2.SetActive(true);
-            //HeavyParticle1.SetActive(false);
-        }
-        else
+            Invoke("DeactivateVFX", .5f);
+        }   
+
+        fastParticleCurve2 = anim.GetFloat("fastParticleCurve2");
+        if (fastParticleCurve2 > 0.1f)
         {
-            FastParticle1.SetActive(false);
-            FastParticle2.SetActive(false);
-            //HeavyParticle1.SetActive(false);
+            FastParticle2.SetActive(true);
+            Invoke("DeactivateVFX", .5f);
         }
 
 
-    //    fastParticleCurve1 = anim.GetFloat("fastParticleCurve1");
-    //    if (fastParticleCurve1 > 0.1f)
-    //    {
-
-    //        FastParticle1.SetActive(true);
-    //    }
-    //    else
-    //    {
-    //        if (FastParticle1.activeInHierarchy)
-    //        {
-
-    //            FastParticle1.SetActive(false);
-    //        }
-    //    }
 
 
-    //    fastParticleCurve2 = anim.GetFloat("fastParticleCurve2");
-    //    if (fastParticleCurve2 > 0.1f)
-    //    {
+        //if (_ir.FastAttack == true)
+        //{
+        //    CancelInvoke("DeactivateVFX");
+        //    FastParticle1.SetActive(true);
+        //    FastParticle2.SetActive(true);
+        //    Invoke("DeactivateVFX", .5f);            
+        //}
 
-    //        FastParticle2.SetActive(true);
-    //    }
-    //    else
-    //    {
-    //        if (FastParticle2.activeInHierarchy)
-    //        {
+        if (_ir.HeavyAttackFloat < -.5f)
+        {
+            CancelInvoke("DeactivateVFX");
+            Invoke("ActivateVFX", .6f);
+            Invoke("DeactivateVFX", 1f);
+        }
 
-    //            FastParticle2.SetActive(false);
-    //        }
-    //    }
+        //if(InAttack == true)
+        //{
+        //    FastParticle1.SetActive(true);
+        //    FastParticle2.SetActive(true);
+        //    //HeavyParticle1.SetActive(false);
+        //}
+        //else
+        //{
+        //    FastParticle1.SetActive(false);
+        //    FastParticle2.SetActive(false);
+        //    //HeavyParticle1.SetActive(false);
+        //}
 
-    //    heavyParticleCurve = anim.GetFloat("heavyParticleCurve");
-    //    if (heavyParticleCurve > 0.1f)
-    //    {
 
-    //        HeavyParticle1.SetActive(true);
-    //    }
-    //    else
-    //    {
-    //        if (HeavyParticle1.activeInHierarchy)
-    //        {
+        //    fastParticleCurve1 = anim.GetFloat("fastParticleCurve1");
+        //    if (fastParticleCurve1 > 0.1f)
+        //    {
 
-    //            HeavyParticle1.SetActive(false);
-    //        }
-    //    }
+        //        FastParticle1.SetActive(true);
+        //    }
+        //    else
+        //    {
+        //        if (FastParticle1.activeInHierarchy)
+        //        {
+
+        //            FastParticle1.SetActive(false);
+        //        }
+        //    }
+
+
+        //    fastParticleCurve2 = anim.GetFloat("fastParticleCurve2");
+        //    if (fastParticleCurve2 > 0.1f)
+        //    {
+
+        //        FastParticle2.SetActive(true);
+        //    }
+        //    else
+        //    {
+        //        if (FastParticle2.activeInHierarchy)
+        //        {
+
+        //            FastParticle2.SetActive(false);
+        //        }
+        //    }
+
+        //    heavyParticleCurve = anim.GetFloat("heavyParticleCurve");
+        //    if (heavyParticleCurve > 0.1f)
+        //    {
+
+        //        HeavyParticle1.SetActive(true);
+        //    }
+        //    else
+        //    {
+        //        if (HeavyParticle1.activeInHierarchy)
+        //        {
+
+        //            HeavyParticle1.SetActive(false);
+        //        }
+        //    }
     }
 
     
