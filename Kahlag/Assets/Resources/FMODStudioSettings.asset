@@ -14,7 +14,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   SourceProjectPath: 
-  SourceBankPath: FmodBuild
+  SourceBankPath: FmodBuild\Desktop
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
