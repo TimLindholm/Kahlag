@@ -21,6 +21,9 @@ public class PlayerDashScript : MonoBehaviour
 
     private Animator anim;
 
+
+    public bool SetPlayerInActionDuringDash;
+
     void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
@@ -38,13 +41,28 @@ public class PlayerDashScript : MonoBehaviour
 
     private void PlayerDash()
     {
-        if (_ir.Dash == true && StaminaRef.CurrentStamina >= DashCost && _actionRef.InAction == false)
+        if(SetPlayerInActionDuringDash == true)
         {
-            ApplyForce();
-            StaminaRef.CurrentStamina -= DashCost;
-            StartCoroutine(DashActionTimer());
-            //Debug.Log("Dashing");
+            if (_ir.Dash == true && StaminaRef.CurrentStamina >= DashCost && _actionRef.InAction == false)
+            {
+                ApplyForce();
+                StaminaRef.CurrentStamina -= DashCost;
+                StartCoroutine(DashActionTimer());
+                //Debug.Log("Dashing");
+            }
         }
+        else
+        {
+            if (_ir.Dash == true && StaminaRef.CurrentStamina >= DashCost)
+            {
+                ApplyForce();
+                StaminaRef.CurrentStamina -= DashCost;
+                //StartCoroutine(DashActionTimer());
+                //Debug.Log("Dashing");
+            }
+        }
+
+
     }
     private void ApplyForce()
     {

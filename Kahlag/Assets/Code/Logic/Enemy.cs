@@ -95,6 +95,8 @@ public class Enemy : MonoBehaviour
         agent.autoBraking = false; //does not slow down 
         _rag = GetComponent<RagdollEnemy>();
         CurrentHealth = MaxHealth;
+        HealthSlider.maxValue = MaxHealth;
+        HealthSlider.value = MaxHealth;
         SetupAnimator(); //get anim component
         m_body = GetComponent<Rigidbody>();
 
@@ -137,7 +139,6 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, m_attackRage);
 	}
 
-    
 	public bool CanSeePlayer()
 	{
         //return Vector3.Distance(transform.position, m_target.position) < m_viewRange;
@@ -237,7 +238,6 @@ public class Enemy : MonoBehaviour
        
     }
 
-
     public void RandomizeRotation()
     {
         randomDir = Random.Range(_left, _right);
@@ -255,16 +255,12 @@ public class Enemy : MonoBehaviour
         //print(randomAttack);
     }
 
-
-
     private void UpdateHealthBar()
     {
         HealthSlider.value = CurrentHealth;
         //Fill.color = Color.Lerp(colorStart, colorEnd, Mathf.InverseLerp(0, MaximumStamina, CurrentStamina));
     }
 
-
-    //Take Damage Related
     public void KnockBack(Vector3 Force)
     {
    
@@ -281,7 +277,7 @@ public class Enemy : MonoBehaviour
                 if (HasDamageAnim == true)
                 {
                     TakingDamage = true;
-                    if (Damage > 1)
+                    if (Damage > 2)
                     {
                         agent.Stop();
                         Invoke("StartMovingAgain", 1.3f);
@@ -321,7 +317,7 @@ public class Enemy : MonoBehaviour
                      
                         else
                         {
-                            _healthRef.HealthRecovery += 2.5f;
+                            _healthRef.HealthRecovery += 2f;
                             _healthRef._timer = _healthRef.DecayTimer;
                         }
                     }
@@ -371,14 +367,13 @@ public class Enemy : MonoBehaviour
     void StartMovingAgain()
     {
         agent.Resume();
-    }
+    } //Invoked
 
     void StartRotatingAgain()
     {
         TakingDamage = false;
-    }
+    } //Invoked
 
-    //Anim Related
     void SetupAnimator()
     {
         anim = GetComponentInChildren<Animator>();

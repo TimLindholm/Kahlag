@@ -5054,7 +5054,7 @@ MonoBehaviour:
   amplitude: 0.05
   duration: 0.05
   CurrentHealth: 0
-  MaxHealth: 8
+  MaxHealth: 10
   IsDead: 0
   invulnerable: 0
   inAttack: 0

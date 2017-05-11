@@ -4872,11 +4872,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1209432671310894}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7805209, y: 1, z: 0.52888894}
-  m_Center: {x: -0.01682221, y: 0, z: -0.23555303}
+  m_Size: {x: 0.8632328, y: 1, z: 0.5799204}
+  m_Center: {x: -0.009144444, y: 0, z: -0.21003711}
 --- !u!82 &82314860790952006
 AudioSource:
   m_ObjectHideFlags: 1
@@ -5487,7 +5487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9769b973ba05bfd468e7e156d0f89fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
+  Damage: 2
   Force: 500
   target: {fileID: 0}
   HitSound: {fileID: 0}
@@ -5687,12 +5687,12 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1209432671310894}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5533477
+  m_Radius: 0.36816844
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.26}
 --- !u!136 &136323791851393128
 CapsuleCollider:
   m_ObjectHideFlags: 1

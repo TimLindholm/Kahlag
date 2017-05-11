@@ -36,6 +36,7 @@ public class ChargeState : StateBehaviour
     float chargeAttackCurve;
     public bool IsCharging;
 
+    public bool TurnInCharge;
 
     UnityEngine.AI.NavMeshAgent agent;
 
@@ -77,7 +78,7 @@ public class ChargeState : StateBehaviour
 
         if (m_timer > 2f)
         {
-            //Context.Enemy.TakeAim();
+            Context.Enemy.TakeAim();
         }
 
         if (m_timer < 0)
@@ -88,27 +89,10 @@ public class ChargeState : StateBehaviour
 
     IEnumerator ChargeCollActive()
     {
-        //yield return new WaitForSeconds(.2f);
-
-        //TEST
-
-        //yield return new WaitForSeconds(.7f);
-
-
-        //_meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
-        //yield return new WaitForSeconds(.5f);
-        startPos.position = transform.position;
-        //chargeTarget.position = Context.Enemy.m_target.position;
-
-        chargeTarget.Translate(0, 0, ChargeDistance);
-
-        
-        //chargeTarget.position = new Vector3(0, 0, 5f);
-
-
         yield return new WaitForSeconds(1f);
-
-        //Context.Enemy.inAttack = false;
+        startPos.position = transform.position;
+        chargeTarget.Translate(0, 0, ChargeDistance);
+        yield return new WaitForSeconds(1f);
     }
 
 
@@ -118,9 +102,8 @@ public class ChargeState : StateBehaviour
         Context.Enemy.TakeAim();
         if (chargeAimCurve > 0.7f)
         {
-           
-            //print("Aiming");
-            Context.Enemy.TakeAim();
+            //if (TurnInCharge)
+            //    Context.Enemy.TakeAim();
         }
         chargeAttackCurve = Context.Enemy.anim.GetFloat("chargeAttackCurve");
         if (chargeAttackCurve > 0.9f)

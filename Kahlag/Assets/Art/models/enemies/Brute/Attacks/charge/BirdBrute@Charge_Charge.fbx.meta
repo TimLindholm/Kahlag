@@ -336,14 +336,14 @@ ModelImporter:
             outSlope: 0
             tangentMode: 0
           - serializedVersion: 2
-            time: 0.092510685
-            value: 1.0002835
+            time: 0.030010685
+            value: 0.9939944
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - serializedVersion: 2
-            time: 0.6756268
-            value: 1.00625
+            time: 0.92146015
+            value: 0.9936719
             inSlope: 0
             outSlope: 0
             tangentMode: 0
