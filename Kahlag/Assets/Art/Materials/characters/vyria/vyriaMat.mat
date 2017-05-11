@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: vyriaMat
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: b965f82ca09623c41afded17f5d27c27, type: 3}
   m_ShaderKeywords: _EMISSION _NORMALMAP
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -69,6 +69,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecGlossMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
         name: _BumpScale
@@ -82,6 +88,9 @@ Material:
     - first:
         name: _DstBlend
       second: 0
+    - first:
+        name: _Gloss
+      second: 0.5
     - first:
         name: _GlossMapScale
       second: 1
@@ -98,6 +107,9 @@ Material:
         name: _Mode
       second: 0
     - first:
+        name: _NormalIntensity
+      second: 1
+    - first:
         name: _OcclusionStrength
       second: 1
     - first:
@@ -107,11 +119,17 @@ Material:
         name: _SmoothnessTextureChannel
       second: 0
     - first:
+        name: _SpecIntensity
+      second: 0.2
+    - first:
         name: _SpecularHighlights
       second: 1
     - first:
         name: _SrcBlend
       second: 1
+    - first:
+        name: _Transparency
+      second: 0.5
     - first:
         name: _UVSec
       second: 0
@@ -123,5 +141,11 @@ Material:
         name: _Color
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
+        name: _Diffusecolor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _Speccolor
+      second: {r: 1, g: 1, b: 1, a: 1}
