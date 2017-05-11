@@ -61,3 +61,9 @@ Assets/Plugins/Android/assets/oculussig_*.meta
 Assets/Scenes/Pidgey/Replays/replaytemp-*
 Assets/Resources/Dialog/LineDefinitions.csv
 Assets/Resources/Dialog/LineDefinitions.csv.meta
+
+Kahlag/Assets/FMODStudioCache.asset
+Kahlag/Assets/StreamingAssets/*.bank
+Kahlag/Assets/StreamingAssets/*.meta
+Kahlag/fmod.log
+Kahlag/fmod_editor.log
