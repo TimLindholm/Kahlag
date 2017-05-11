@@ -8537,8 +8537,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2783326, y: 1.9999998, z: 1.1243808}
-  m_Center: {x: 0.04987803, y: 0, z: 0.04038151}
+  m_Size: {x: 1.4211729, y: 1.9999998, z: 1.1243808}
+  m_Center: {x: 0.12129831, y: 0, z: 0.040380754}
 --- !u!65 &65431522797598860
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -9021,7 +9021,7 @@ MonoBehaviour:
   SwingCollider: {fileID: 1432891698205472}
   chargeTarget: {fileID: 4633989114634334}
   startPos: {fileID: 4624417824664286}
-  ChargeSpeed: 1.5
+  ChargeSpeed: 2
   IsCharging: 0
   TurnInCharge: 1
 --- !u!114 &114857547705639880
