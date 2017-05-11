@@ -133,10 +133,15 @@ public class PlayerMovementScript : MonoBehaviour
             //Vector3 newPosition = _rb.position;
             Vector3 newPosition = _transform.position;
 
-            newPosition += new Vector3(_ir.Horizontal * _moveSpeedAdjustment * Time.deltaTime, 0f, 0f);
-            newPosition += new Vector3(0f, 0f, _ir.Vertical * _moveSpeedAdjustment * Time.deltaTime);
+          //  newPosition += new Vector3(_ir.Horizontal * _moveSpeedAdjustment * Time.deltaTime, 0f, 0f);
+         //   newPosition += new Vector3(0f, 0f, _ir.Vertical * _moveSpeedAdjustment * Time.deltaTime);
 
-            
+            var joystick = new Vector3(_ir.Horizontal, 0f, _ir.Vertical);
+            if (joystick.magnitude > 1f)
+                joystick.Normalize();
+
+            newPosition += joystick * _moveSpeedAdjustment * Time.deltaTime;
+
             //Clamp MovementSpeed!
 
             //Vector3 walkDirection = (newPosition - _rb.position).normalized;

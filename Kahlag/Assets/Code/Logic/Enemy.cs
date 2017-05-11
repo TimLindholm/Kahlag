@@ -351,7 +351,8 @@ public class Enemy : MonoBehaviour
             IsDead = true;
             m_body.isKinematic = true;
             m_body.constraints = RigidbodyConstraints.None;
-            _rag.RagdollCharacter();
+            var force = -(aimDirection.rotation * Vector3.forward) * 10 + Vector3.up * 3; 
+            _rag.RagdollCharacter(force);
             _rag.CloseAllComponents();
             Debug.Log("ENEMY DEAD!");
         }

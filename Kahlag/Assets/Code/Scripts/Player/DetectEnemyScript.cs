@@ -48,32 +48,47 @@ public class DetectEnemyScript : MonoBehaviour
     {
 
         //Debug.Log(EnemyToTarget, transform);
-        RaycastHit hit;
-        if (Physics.SphereCast(transform.position, DetectionRadius, transform.forward, out hit) && hit.transform.tag == "Enemy")
-        {
+        /*   RaycastHit hit;
+           if (Physics.SphereCast(transform.position, DetectionRadius, transform.forward, out hit) && hit.transform.tag == "Enemy")
+           {
 
-            //print("Enemy Found");
-            //AddEnemyToArray();
-            enemies = GameObject.FindGameObjectsWithTag("Enemy");
+               //print("Enemy Found");
+               //AddEnemyToArray();
+               enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        }
+           }
 
+
+           float distance = 3f;
+           float nearestDistance = 50f;
+
+           foreach (GameObject enemy in enemies)
+           {
+
+               distance = (transform.position - enemy.transform.position).sqrMagnitude;
+               if (distance < nearestDistance)
+               {
+                   nearestDistance = distance;
+                   EnemyToTarget = enemy.transform;
+               }
+           }*/
 
         float distance = 3f;
         float nearestDistance = 50f;
 
-        foreach (GameObject enemy in enemies)
+        var colliders = Physics.OverlapSphere(transform.position, DetectionRadius);
+        foreach (var collider in colliders)
         {
-            
-            distance = (transform.position - enemy.transform.position).sqrMagnitude;
-            if (distance < nearestDistance)
+            if (collider.tag == "Enemy")
             {
-                nearestDistance = distance;
-                EnemyToTarget = enemy.transform;
+                distance = (transform.position - collider.transform.position).sqrMagnitude;
+                if (distance < nearestDistance)
+                {
+                    nearestDistance = distance;
+                    EnemyToTarget = collider.transform;
+                }
             }
         }
-
-
 
         //foreach (GameObject enemy in enemies)
         //{

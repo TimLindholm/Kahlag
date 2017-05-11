@@ -88,7 +88,7 @@ public class RagdollEnemy : MonoBehaviour
         }
     }
 
-    public void RagdollCharacter()
+    public void RagdollCharacter(Vector3 impulse)
     {
         if (!goRagdoll)
         {
@@ -98,6 +98,8 @@ public class RagdollEnemy : MonoBehaviour
                 if (rig.gameObject.layer == 9)
                 {
                     rig.isKinematic = false;
+                    rig.AddForce(impulse * Random.Range(0.7f, 1f), ForceMode.Impulse);
+                    
                 }
             }
 
@@ -152,7 +154,7 @@ public class RagdollEnemy : MonoBehaviour
         {
 
             //Weapon.transform.parent = null;
-            Destroy(Weapon);
+            //Destroy(Weapon);
             Destroy(gameObject);
 
             if (GetComponent<HorizontalAttackState>())
