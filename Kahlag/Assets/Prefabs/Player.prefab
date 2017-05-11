@@ -4875,8 +4875,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8632328, y: 1, z: 0.5799204}
-  m_Center: {x: -0.009144444, y: 0, z: -0.21003711}
+  m_Size: {x: 0.8632328, y: 1, z: 0.6435662}
+  m_Center: {x: -0.009144444, y: 0, z: -0.17821537}
 --- !u!82 &82314860790952006
 AudioSource:
   m_ObjectHideFlags: 1
@@ -5463,7 +5463,7 @@ MonoBehaviour:
   WallMask:
     serializedVersion: 2
     m_Bits: 0
-  MoveSpeed: 11
+  MoveSpeed: 10
   TurnSmoothing: 10
   _moveSpeedAdjustment: 0
   newDir: {x: 0, y: 0, z: 0}
@@ -5520,7 +5520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaximumStamina: 10
   CurrentStamina: 0
-  RecoveryRate: 2.5
+  RecoveryRate: 3
   StaminaSlider: {fileID: 0}
   Fill: {fileID: 0}
   colorStart: {r: 0.057904415, g: 0.70594555, b: 0.875, a: 0}
@@ -5591,6 +5591,7 @@ MonoBehaviour:
   DashSpeed: 90
   DashCooldown: 0
   aimDir: {fileID: 4002667448693424}
+  SetPlayerInActionDuringDash: 0
 --- !u!114 &114864213531371550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5651,7 +5652,7 @@ MonoBehaviour:
   HealthRecoveryBar: {fileID: 0}
   recoveryFill: {fileID: 0}
   HealthRecovery: 0
-  DecayRate: 0.8
+  DecayRate: 1
   DecayTimer: 2
   _timer: 0
   StaminaLossWhenHit: 2
