@@ -9013,11 +9013,6 @@ MonoBehaviour:
   startPos: {fileID: 4624417824664286}
   ChargeSpeed: 2
   IsCharging: 0
-  BossGrowlEvent: event:/Boss/Growl
-  BossGroundImpactEvent: event:/Boss/Impact_Ground
-  BossVerticalSwooshEvent: event:/Boss/Attack_Vertical
-  BossHorizontalSwooshEvent: event:/Boss/Attack_Horizontal
-  BossFootEvent: event:/Boss/Boss_Footsteps
   TurnInCharge: 1
 --- !u!114 &114857547705639880
 MonoBehaviour:

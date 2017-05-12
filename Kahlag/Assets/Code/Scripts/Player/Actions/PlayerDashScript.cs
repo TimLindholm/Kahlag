@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
 
 public class PlayerDashScript : MonoBehaviour
 {
@@ -24,16 +23,6 @@ public class PlayerDashScript : MonoBehaviour
 
 
     public bool SetPlayerInActionDuringDash;
-
-    [FMODUnity.EventRef]
-    public string VyriaDashEvent;
-    FMOD.Studio.EventInstance Vyria_Dash;
-
-    void VyriaDash()
-    {
-        Vyria_Dash = FMODUnity.RuntimeManager.CreateInstance(VyriaDashEvent);
-        Vyria_Dash.start();
-    }
 
     void Start ()
     {

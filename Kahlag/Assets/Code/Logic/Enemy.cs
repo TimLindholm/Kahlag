@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using FMODUnity;
 
 public class Enemy : MonoBehaviour
 {
@@ -88,18 +87,6 @@ public class Enemy : MonoBehaviour
     int currentWP = 0;
     public float accuracyWP;
 
-    [FMODUnity.EventRef]
-    public string CultistAttackEvent;
-    FMOD.Studio.EventInstance Cultist_Attack;
-
-    [FMODUnity.EventRef]
-    public string CultistTakeDamageEvent;
-    FMOD.Studio.EventInstance Cultist_Impacts;
-
-    [FMODUnity.EventRef]
-    public string CultistFootEvent;
-    FMOD.Studio.EventInstance Cultist_Footsteps;
-
     private void Awake()
 	{
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing       
@@ -116,25 +103,6 @@ public class Enemy : MonoBehaviour
         _playerRef = (PlayerHealthScript)FindObjectOfType(typeof(PlayerHealthScript));
         m_target = _playerRef.transform;
 	}
-
-    void Cultist_Swing()
-    {
-        Cultist_Attack = FMODUnity.RuntimeManager.CreateInstance(CultistAttackEvent);
-        Cultist_Attack.start();
-    }
-
-    void Cultist_Foot()
-    {
-        Cultist_Footsteps = FMODUnity.RuntimeManager.CreateInstance(CultistFootEvent);
-        Cultist_Footsteps.start();
-    }
-    
-    
-    //void CultistImpact()
-    // {
-    //   Cultist_Impacts = FMODUnity.RuntimeManager.CreateInstance(CultistTakeDamageEvent);
-    //   Cultist_Impacts.start();
-    //}
 
     void Update()
     {
@@ -297,6 +265,7 @@ public class Enemy : MonoBehaviour
     {
    
         m_body.AddForce(Force);
+     
     }
 
     public void TakeDamage(float Damage)
@@ -305,9 +274,6 @@ public class Enemy : MonoBehaviour
         {          
             if(invulnerable != true)
             {
-                Cultist_Impacts = FMODUnity.RuntimeManager.CreateInstance(CultistTakeDamageEvent);
-                Cultist_Impacts.start();
-
                 if (HasDamageAnim == true)
                 {
                     TakingDamage = true;

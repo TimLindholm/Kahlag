@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
 
 public class ChargeState : StateBehaviour
 {
@@ -37,26 +36,6 @@ public class ChargeState : StateBehaviour
     float chargeAttackCurve;
     public bool IsCharging;
 
-    [FMODUnity.EventRef]
-    public string BossGrowlEvent;
-    FMOD.Studio.EventInstance Growl;
-
-    [FMODUnity.EventRef]
-    public string BossGroundImpactEvent;
-    FMOD.Studio.EventInstance Impact_Ground;
-
-    [FMODUnity.EventRef]
-    public string BossVerticalSwooshEvent;
-    FMOD.Studio.EventInstance Attack_Vertical;
-
-    [FMODUnity.EventRef]
-    public string BossHorizontalSwooshEvent;
-    FMOD.Studio.EventInstance Attack_Horizontal;
-
-    [FMODUnity.EventRef]
-    public string BossFootEvent;
-    FMOD.Studio.EventInstance Boss_Footsteps;
-
     public bool TurnInCharge;
 
     UnityEngine.AI.NavMeshAgent agent;
@@ -81,36 +60,7 @@ public class ChargeState : StateBehaviour
         Context.Enemy.inAttack = false;
         ChargeCollider.SetActive(false);
     }
-
-    void Boss_Growl()
-    {
-        Growl = FMODUnity.RuntimeManager.CreateInstance(BossGrowlEvent);
-        Growl.start();
-    }
-
-    void Boss_Ground_Impact()
-    {
-        Impact_Ground = FMODUnity.RuntimeManager.CreateInstance(BossGroundImpactEvent);
-        Impact_Ground.start();
-    }
-
-    void Boss_Swoosh_Vertical()
-    {
-        Attack_Vertical = FMODUnity.RuntimeManager.CreateInstance(BossVerticalSwooshEvent);
-        Attack_Vertical.start();
-    }
-
-    void Boss_Swoosh_Horizontal()
-    {
-        Attack_Horizontal = FMODUnity.RuntimeManager.CreateInstance(BossHorizontalSwooshEvent);
-        Attack_Horizontal.start();
-    }
-
-    void Boss_Foot()
-    {
-        Boss_Footsteps = FMODUnity.RuntimeManager.CreateInstance(BossFootEvent);
-        Boss_Footsteps.start();
-    }
+  
 
     void Awake ()
     {
