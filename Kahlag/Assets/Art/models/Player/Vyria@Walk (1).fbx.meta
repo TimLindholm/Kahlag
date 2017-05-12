@@ -358,7 +358,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.01904995
+      - time: 0.04787198
         functionName: Footstep
         data: VyriaFootEvent
         objectReferenceParameter: {instanceID: 0}

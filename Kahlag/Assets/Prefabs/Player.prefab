@@ -5415,6 +5415,8 @@ MonoBehaviour:
   FastParticle1: {fileID: 1897420014613472}
   FastParticle2: {fileID: 1166354016407358}
   HeavyParticle1: {fileID: 1218990472337668}
+  VyriaFastEvent: event:/Player Vyria/Vyria_Attack_Fast
+  VyriaHeavyEvent: event:/Player Vyria/Vyria_Attack_Heavy
   AutoLockOn: 1
 --- !u!114 &114071313619583610
 MonoBehaviour:

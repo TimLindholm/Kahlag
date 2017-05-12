@@ -44,7 +44,6 @@ public class PlayerMovementScript : MonoBehaviour
     void Footstep()
     {
         FMODUnity.RuntimeManager.PlayOneShot(VyriaFootEvent, GetComponent<Transform>().position);
-        Vyria_Footsteps.start();
     }
 
     void Start ()

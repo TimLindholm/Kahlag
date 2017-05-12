@@ -37,10 +37,27 @@ public class AttackFast : MonoBehaviour
     private float fastParticleCurve2;
     private float heavyParticleCurve;
 
-  
-  
+    [FMODUnity.EventRef]
+    public string VyriaFastEvent;
+    FMOD.Studio.EventInstance Vyria_Attack_Fast;
+
+    [FMODUnity.EventRef]
+    public string VyriaHeavyEvent;
+    FMOD.Studio.EventInstance Vyria_Attack_Heavy;
+
 
     public bool AutoLockOn;
+
+    void VyriaFast()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(VyriaFastEvent, GetComponent<Transform>().position);
+          
+    }
+
+    void VyriaHeavy()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(VyriaHeavyEvent, GetComponent<Transform>().position);
+    }
 
     void Start ()
     {

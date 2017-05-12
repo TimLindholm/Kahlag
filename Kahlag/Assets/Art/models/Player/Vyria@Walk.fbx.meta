@@ -321,21 +321,10 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
-      in configuration does not match rotation in animation file\nVyria@Walk\nClip
-      'Take 001' has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'Hip'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Spine01'
-      has translation animation that will be discarded.\n\t'Spine02' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'FaceRoot'
-      has translation animation that will be discarded.\n\t'L_Upper_HelperJoint' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'L_lower_HelperJoint'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'L_Foot01'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R_Upper_HelperJoint'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R_lower_HelperJoint'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R_Foot01'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -368,7 +357,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.028391168
+        functionName: Footstep
+        data: VyriaFootEvent
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5270088
+        functionName: Footstep
+        data: VyriaFootEvent
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
