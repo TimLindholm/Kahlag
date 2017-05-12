@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -41,6 +43,16 @@ public class PlayerMovementScript : MonoBehaviour
 
     //Lock-on testing
     public bool UsingLockOn;
+
+    [FMODUnity.EventRef]
+    public string vyriafootEvent;
+    FMOD.Studio.EventInstance Vyria_Footsteps;
+
+    void Footstep()
+    {
+        Vyria_Footsteps = FMODUnity.RuntimeManager.CreateInstance(vyriafootEvent);
+        Vyria_Footsteps.start();
+    }
 
     void Start ()
     {

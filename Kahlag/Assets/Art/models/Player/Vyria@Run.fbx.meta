@@ -321,6 +321,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -356,19 +358,17 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.014732142
-        functionName: PlayStepSound
-        data: 
-        objectReferenceParameter: {fileID: 8300000, guid: 65f6f485a4c086b40a401b9cf6c88d05,
-          type: 3}
+      - time: 0.052587032
+        functionName: Footstep
+        data: vyriafootEvent
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.5413388
-        functionName: PlayStepSound
-        data: 
-        objectReferenceParameter: {fileID: 8300000, guid: 65f6f485a4c086b40a401b9cf6c88d05,
-          type: 3}
+      - time: 0.52241135
+        functionName: Footstep
+        data: vyriafootEvent
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

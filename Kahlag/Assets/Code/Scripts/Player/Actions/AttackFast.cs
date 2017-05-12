@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+
 
 public class AttackFast : MonoBehaviour
 {
@@ -37,8 +39,26 @@ public class AttackFast : MonoBehaviour
     private float fastParticleCurve2;
     private float heavyParticleCurve;
 
-  
-  
+    [FMODUnity.EventRef]
+    public string vyriafastattackEvent;
+    FMOD.Studio.EventInstance Vyria_Attack_Fast;
+
+    [FMODUnity.EventRef]
+    public string vyriaheavyattackEvent;
+    FMOD.Studio.EventInstance Vyria_Attack_Heavy;
+
+    void Attack_Fast()
+    {
+        Vyria_Attack_Fast = FMODUnity.RuntimeManager.CreateInstance(vyriafastattackEvent);
+        Vyria_Attack_Fast.start();
+    }
+
+    void Vyria_Heavy()
+    {
+        Vyria_Attack_Heavy = FMODUnity.RuntimeManager.CreateInstance(vyriaheavyattackEvent);
+        Vyria_Attack_Heavy.start();
+    }
+
 
     public bool AutoLockOn;
 
