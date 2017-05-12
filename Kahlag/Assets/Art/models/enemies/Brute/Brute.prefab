@@ -8678,7 +8678,7 @@ TrailRenderer:
   m_Time: 0.2
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 1.5
+    widthMultiplier: 1
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -8688,9 +8688,15 @@ TrailRenderer:
         inSlope: 0
         outSlope: 0
         tangentMode: 0
+      - serializedVersion: 2
+        time: 0.99999475
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
@@ -8724,7 +8730,7 @@ TrailRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.01
   m_Autodestruct: 0
 --- !u!114 &114016513306697296
 MonoBehaviour:
