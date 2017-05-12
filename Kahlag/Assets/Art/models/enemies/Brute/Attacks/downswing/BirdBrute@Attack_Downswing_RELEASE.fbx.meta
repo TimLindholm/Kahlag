@@ -354,8 +354,8 @@ ModelImporter:
           rotationOrder: 0
       events:
       - time: 0.26668778
-        functionName: NewEvent
-        data: 
+        functionName: Boss_Vertical_Swoosh
+        data: BossSwooshVerticalEvent
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
