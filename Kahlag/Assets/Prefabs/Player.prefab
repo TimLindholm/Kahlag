@@ -5455,7 +5455,7 @@ MonoBehaviour:
   WallMask:
     serializedVersion: 2
     m_Bits: 0
-  MoveSpeed: 11
+  MoveSpeed: 12
   TurnSmoothing: 10
   _moveSpeedAdjustment: 0
   newDir: {x: 0, y: 0, z: 0}
@@ -5644,7 +5644,7 @@ MonoBehaviour:
   HealthRecoveryBar: {fileID: 0}
   recoveryFill: {fileID: 0}
   HealthRecovery: 0
-  DecayRate: 1
+  DecayRate: 1.2
   DecayTimer: 2
   _timer: 0
   StaminaLossWhenHit: 2

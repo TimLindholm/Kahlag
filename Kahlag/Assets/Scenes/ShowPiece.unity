@@ -7848,45 +7848,35 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114609276038709036, guid: 4ccdc6e79b2814c4280a5e2e78447c73,
-        type: 2}
-      propertyPath: m_target
-      value: 
-      objectReference: {fileID: 1798905212}
-    - target: {fileID: 114016513306697296, guid: 4ccdc6e79b2814c4280a5e2e78447c73,
-        type: 2}
-      propertyPath: main_camera
-      value: 
-      objectReference: {fileID: 74295339}
-    - target: {fileID: 223310173971858418, guid: 4ccdc6e79b2814c4280a5e2e78447c73,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 74295339}
     - target: {fileID: 114892306716793996, guid: 4ccdc6e79b2814c4280a5e2e78447c73,
         type: 2}
       propertyPath: root
       value: 
       objectReference: {fileID: 830321641}
+    - target: {fileID: 223310173971858418, guid: 4ccdc6e79b2814c4280a5e2e78447c73,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 74295339}
+    - target: {fileID: 114016513306697296, guid: 4ccdc6e79b2814c4280a5e2e78447c73,
+        type: 2}
+      propertyPath: main_camera
+      value: 
+      objectReference: {fileID: 74295339}
+    - target: {fileID: 114609276038709036, guid: 4ccdc6e79b2814c4280a5e2e78447c73,
+        type: 2}
+      propertyPath: m_target
+      value: 
+      objectReference: {fileID: 1798905212}
     - target: {fileID: 224705988786936138, guid: 4ccdc6e79b2814c4280a5e2e78447c73,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224705988786936138, guid: 4ccdc6e79b2814c4280a5e2e78447c73,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114609276038709036, guid: 4ccdc6e79b2814c4280a5e2e78447c73,
-        type: 2}
-      propertyPath: MaxHealth
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224104214441022918, guid: 4ccdc6e79b2814c4280a5e2e78447c73,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ccdc6e79b2814c4280a5e2e78447c73, type: 2}
@@ -10062,16 +10052,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114522122458047966, guid: b72adb7ab87d57146909cf5de3224bb2,
-        type: 2}
-      propertyPath: StaminaSlider
-      value: 
-      objectReference: {fileID: 58445476}
-    - target: {fileID: 114522122458047966, guid: b72adb7ab87d57146909cf5de3224bb2,
-        type: 2}
-      propertyPath: Fill
-      value: 
-      objectReference: {fileID: 2052998303}
     - target: {fileID: 114975614473112720, guid: b72adb7ab87d57146909cf5de3224bb2,
         type: 2}
       propertyPath: HealthSlider
@@ -10092,6 +10072,16 @@ Prefab:
       propertyPath: recoveryFill
       value: 
       objectReference: {fileID: 1087215395}
+    - target: {fileID: 114522122458047966, guid: b72adb7ab87d57146909cf5de3224bb2,
+        type: 2}
+      propertyPath: StaminaSlider
+      value: 
+      objectReference: {fileID: 58445476}
+    - target: {fileID: 114522122458047966, guid: b72adb7ab87d57146909cf5de3224bb2,
+        type: 2}
+      propertyPath: Fill
+      value: 
+      objectReference: {fileID: 2052998303}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b72adb7ab87d57146909cf5de3224bb2, type: 2}
   m_IsPrefabParent: 0

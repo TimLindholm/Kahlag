@@ -309,7 +309,7 @@ public class Enemy : MonoBehaviour
                 {
                     if (_healthRef.CurrentHealth < _healthRef.MaxHealth)
                     {
-                        if(Damage > 1)
+                        if(Damage > 3)
                         {
                             _healthRef.HealthRecovery += 3.5f;
                             _healthRef._timer = _healthRef.DecayTimer;
