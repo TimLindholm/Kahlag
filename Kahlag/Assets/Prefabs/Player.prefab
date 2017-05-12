@@ -5465,8 +5465,7 @@ MonoBehaviour:
   Direction: {fileID: 4740210974452364}
   DashDirection: {x: 0, y: 0, z: 0}
   aimDirection: {fileID: 4740210974452364}
-  footsteps: {fileID: 0}
-  stepSound: {fileID: 82314860790952006}
+  VyriaFootEvent: event:/Player Vyria/Vyria_Footsteps
   UsingLockOn: 0
 --- !u!114 &114349002107181736
 MonoBehaviour:
@@ -5584,6 +5583,7 @@ MonoBehaviour:
   DashCooldown: 0
   aimDir: {fileID: 4002667448693424}
   SetPlayerInActionDuringDash: 0
+  VyriaDashEvent: event:/Player Vyria/Vyria_Dash
 --- !u!114 &114864213531371550
 MonoBehaviour:
   m_ObjectHideFlags: 1

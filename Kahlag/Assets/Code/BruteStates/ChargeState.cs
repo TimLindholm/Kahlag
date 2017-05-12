@@ -19,8 +19,25 @@ public class ChargeState : StateBehaviour
 
     public float ChargeDistance = 6;
 
+    [FMODUnity.EventRef]
+    public string BossGrowlEvent;
+    FMOD.Studio.EventInstance Growl;
 
-    
+    [FMODUnity.EventRef]
+    public string BossGroundImpactEvent;
+    FMOD.Studio.EventInstance Impact_Ground;
+
+    [FMODUnity.EventRef]
+    public string BossVerticalSwooshEvent;
+    FMOD.Studio.EventInstance Attack_Vertical;
+
+    [FMODUnity.EventRef]
+    public string BossHorizontalSwooshEvent;
+    FMOD.Studio.EventInstance Attack_Horizontal;
+
+    [FMODUnity.EventRef]
+    public string BossFootEvent;
+    FMOD.Studio.EventInstance Boss_Footsteps;
 
     float comboAttackCurve;
     public GameObject ChargeCollider;
@@ -60,7 +77,31 @@ public class ChargeState : StateBehaviour
         Context.Enemy.inAttack = false;
         ChargeCollider.SetActive(false);
     }
-  
+
+    void Boss_Growl()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(BossGrowlEvent,GetComponent<Transform>().position);
+    }
+
+    void Boss_Ground_Impact()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(BossGroundImpactEvent, GetComponent<Transform>().position);
+    }
+
+    void Boss_Swoosh_Vertical()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(BossVerticalSwooshEvent, GetComponent<Transform>().position);
+    }
+
+    void Boss_Swoosh_Horizontal()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(BossHorizontalSwooshEvent, GetComponent<Transform>().position);
+    }
+
+    void Boss_Foot()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(BossFootEvent, GetComponent<Transform>().position);
+    }
 
     void Awake ()
     {

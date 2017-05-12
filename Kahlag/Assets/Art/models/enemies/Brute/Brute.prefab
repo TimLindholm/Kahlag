@@ -8933,6 +8933,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   accuracyWP: 0.1
+  CultistAttackEvent: 
+  CultistTakeDamageEvent: 
+  CultistFootEvent: 
 --- !u!114 &114684616017618122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9007,6 +9010,11 @@ MonoBehaviour:
   MaxCD: 1.8
   ChargeCD: 10
   ChargeDistance: 5
+  BossGrowlEvent: event:/Boss/Growl
+  BossGroundImpactEvent: event:/Boss/Impact_Ground
+  BossVerticalSwooshEvent: event:/Boss/Attack_Vertical
+  BossHorizontalSwooshEvent: event:/Boss/Attack_Horizontal
+  BossFootEvent: event:/Boss/Boss_Footsteps
   ChargeCollider: {fileID: 1047259749945966}
   SwingCollider: {fileID: 1432891698205472}
   chargeTarget: {fileID: 4633989114634334}
