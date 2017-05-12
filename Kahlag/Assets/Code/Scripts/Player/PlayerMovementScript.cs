@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -28,19 +29,23 @@ public class PlayerMovementScript : MonoBehaviour
     public Vector3 DashDirection;
     public Transform aimDirection;
 
-    public AudioClip footsteps;
-
     //Animation
     private Animator anim;
 
+    [FMODUnity.EventRef]
+    public string VyriaFootEvent;
+    FMOD.Studio.EventInstance Vyria_Footsteps;
 
     private PlayerActionScript _actionRef;
 
-    public AudioSource stepSound;
-
-
     //Lock-on testing
     public bool UsingLockOn;
+
+    void Footstep()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(VyriaFootEvent, GetComponent<Transform>().position);
+        Vyria_Footsteps.start();
+    }
 
     void Start ()
     {
@@ -53,9 +58,6 @@ public class PlayerMovementScript : MonoBehaviour
 
         anim = GetComponentInChildren<Animator>();
     }
-	
-	
-  
 
 	void Update ()
     {
@@ -72,11 +74,6 @@ public class PlayerMovementScript : MonoBehaviour
 
             //Move(_ir.MoveAxis);
         }        
-    }
-
-    void PlayStepSound()
-    {
-        stepSound.Play();
     }
 
 

@@ -290,7 +290,7 @@ ModelImporter:
     4300032: Legs
     4300034: Belt
     4300036: Torso
-    7400000: Take 001
+    7400000: Walk (1)
     9500000: //RootNode
     13700000: Arms
     13700002: Bandage01
@@ -321,6 +321,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -331,7 +333,315 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk (1)
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.01904995
+        functionName: Footstep
+        data: VyriaFootEvent
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5185192
+        functionName: Footstep
+        data: VyriaFootEvent
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Meshes
+        weight: 1
+      - path: Meshes/Material01
+        weight: 1
+      - path: Meshes/Material01/Arms
+        weight: 1
+      - path: Meshes/Material01/Bandage01
+        weight: 1
+      - path: Meshes/Material01/Bandage02
+        weight: 1
+      - path: Meshes/Material01/Belt
+        weight: 1
+      - path: Meshes/Material01/Book
+        weight: 1
+      - path: Meshes/Material01/Coat_legs
+        weight: 1
+      - path: Meshes/Material01/Coat_shoulder
+        weight: 1
+      - path: Meshes/Material01/Feather_LowerArm
+        weight: 1
+      - path: Meshes/Material01/Feather_Upperarm
+        weight: 1
+      - path: Meshes/Material01/FeatherHead
+        weight: 1
+      - path: Meshes/Material01/Flask1
+        weight: 1
+      - path: Meshes/Material01/Legs
+        weight: 1
+      - path: Meshes/Material01/Torso
+        weight: 1
+      - path: Meshes/Material02
+        weight: 1
+      - path: Meshes/Material02/Eyes_low
+        weight: 1
+      - path: Meshes/Material02/Hair
+        weight: 1
+      - path: Meshes/Material02/Hairstrand
+        weight: 1
+      - path: Meshes/Material02/Head_low
+        weight: 1
+      - path: Meshes/Material02/Teeth_Lower
+        weight: 1
+      - path: Meshes/Material02/Teeth_Upper
+        weight: 1
+      - path: RootCTRL
+        weight: 1
+      - path: RootCTRL/Root
+        weight: 1
+      - path: RootCTRL/Root/Pelvis
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/BookJoint
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Chest
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Index01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Index01/L_Index02
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Index01/L_Index02/L_Index03
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Index01/L_Index02/L_Index03/L_Index04
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Middlefinger01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Middlefinger01/L_Middlefinger02
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Middlefinger01/L_Middlefinger02/L_Middlefinger03
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Middlefinger01/L_Middlefinger02/L_Middlefinger03/L_Middlefinger04
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Pinkie01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Pinkie01/L_Pinkie02
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Pinkie01/L_Pinkie02/L_Pinkie03
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Pinkie01/L_Pinkie02/L_Pinkie03/L_Pinkie04
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Thumb01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Thumb01/L_Thumb02
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/L_Shoulder/L_Arm_Upper/L_Upper_Helperbone/L_Arm_lower/L_Arm_Wrist/L_hand/L_Thumb01/L_Thumb02/L_Thumb03
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/Braid_root
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/Braid_root/Braid01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/Braid_root/Braid01/Braid02
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/Braid_root/Braid01/Braid02/Braid03
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/Braid_root/Braid01/Braid02/Braid03/Braid04
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/Braid_root/Braid01/Braid02/Braid03/Braid04/Braid05
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/Braid_root/Braid01/Braid02/Braid03/Braid04/Braid05/Braid06
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/Braid_root/Braid01/Braid02/Braid03/Braid04/Braid05/Braid06/Braid07
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/Braid_root/Braid01/Braid02/Braid03/Braid04/Braid05/Braid06/Braid07/Braid08
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/FaceRoot
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/FaceRoot/Jaw01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/FaceRoot/Jaw01/Jaw02
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/L_Eye
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/L_Eyebrow_mid
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/L_Eyebrow_Side
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/L_Eyelid_LOW
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/L_Eyelid_Up
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/L_LIP_corner
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/L_LIP_HI
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/L_LIP_LOW
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/L_Lipside_Low
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/L_Lipside_up
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/L_Nostril
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/LipMid_LOW
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/LipMid_UP
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/R_Eye
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/R_Eyebrow_mid
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/R_Eyebrow_Side
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/R_Eyelid_LOW
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/R_Eyelid_Up
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/R_LIP_corner
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/R_LIP_HI
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/R_LIP_LOW
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/R_Lipside_Low
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/R_Lipside_up
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/Neck/Head/R_Nostril
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Chest
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Index01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Index01/R_Index02
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Index01/R_Index02/R_Index03
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Index01/R_Index02/R_Index03/R_Index04
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Middlefinger01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Middlefinger01/R_Middlefinger02
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Middlefinger01/R_Middlefinger02/R_Middlefinger03
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Middlefinger01/R_Middlefinger02/R_Middlefinger03/R_Middlefinger04
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Pinkie01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Pinkie01/R_Pinkie02
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Pinkie01/R_Pinkie02/R_Pinkie03
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Pinkie01/R_Pinkie02/R_Pinkie03/R_Pinkie04
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Ringfinger01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Ringfinger01/R_Ringfinger02
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Ringfinger01/R_Ringfinger02/R_Ringfinger03
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Ringfinger01/R_Ringfinger02/R_Ringfinger03/R_Ringfinger04
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Thumb01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Thumb01/R_Thumb02
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/Hip/Spine01/Spine02/Spine03/Chest/R_Shoulder/R_Arm_Upper/R_Upper_Helperbone/R_Arm_lower/R_Arm_Wrist/R_hand/R_Thumb01/R_Thumb02/R_Thumb03
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/L_Leg_Upper
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/L_Leg_Upper/L_Upper_HelperJoint
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/L_Leg_Upper/L_Upper_HelperJoint/L_Leg_lower
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/L_Leg_Upper/L_Upper_HelperJoint/L_Leg_lower/L_lower_HelperJoint
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/L_Leg_Upper/L_Upper_HelperJoint/L_Leg_lower/L_lower_HelperJoint/L_Leg_Ankle
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/L_Leg_Upper/L_Upper_HelperJoint/L_Leg_lower/L_lower_HelperJoint/L_Leg_Ankle/L_Foot01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/L_Leg_Upper/L_Upper_HelperJoint/L_Leg_lower/L_lower_HelperJoint/L_Leg_Ankle/L_Foot01/L_Foot02
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/R_Leg_Upper
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/R_Leg_Upper/R_Upper_HelperJoint
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/R_Leg_Upper/R_Upper_HelperJoint/R_Leg_lower
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/R_Leg_Upper/R_Upper_HelperJoint/R_Leg_lower/R_lower_HelperJoint
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/R_Leg_Upper/R_Upper_HelperJoint/R_Leg_lower/R_lower_HelperJoint/R_Leg_Ankle
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/R_Leg_Upper/R_Upper_HelperJoint/R_Leg_lower/R_lower_HelperJoint/R_Leg_Ankle/R_Foot01
+        weight: 1
+      - path: RootCTRL/Root/Pelvis/R_Leg_Upper/R_Upper_HelperJoint/R_Leg_lower/R_lower_HelperJoint/R_Leg_Ankle/R_Foot01/R_Foot02
+        weight: 1
+      - path: RootCTRL/Root/Weapon_joint
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
