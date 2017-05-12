@@ -88,12 +88,12 @@ public class ChargeState : StateBehaviour
         FMODUnity.RuntimeManager.PlayOneShot(BossGroundImpactEvent, GetComponent<Transform>().position);
     }
 
-    void Boss_Swoosh_Vertical()
+    void Boss_Vertical_Swoosh()
     {
         FMODUnity.RuntimeManager.PlayOneShot(BossVerticalSwooshEvent, GetComponent<Transform>().position);
     }
 
-    void Boss_Swoosh_Horizontal()
+    void Boss_Horizontal_Swoosh()
     {
         FMODUnity.RuntimeManager.PlayOneShot(BossHorizontalSwooshEvent, GetComponent<Transform>().position);
     }

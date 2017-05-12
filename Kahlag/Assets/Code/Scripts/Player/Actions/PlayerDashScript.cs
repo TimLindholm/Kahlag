@@ -31,8 +31,8 @@ public class PlayerDashScript : MonoBehaviour
 
     void VyriaDash()
     {
-        Vyria_Dash = FMODUnity.RuntimeManager.CreateInstance(VyriaDashEvent);
-        Vyria_Dash.start();
+        FMODUnity.RuntimeManager.PlayOneShot(VyriaDashEvent, GetComponent<Transform>().position);
+
     }
 
     void Start ()
