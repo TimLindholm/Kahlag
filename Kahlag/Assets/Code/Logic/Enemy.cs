@@ -49,7 +49,14 @@ public class Enemy : MonoBehaviour
     public Slider HealthSlider;
     public Image Fill;
 
+    public GameObject hitParticle;
+    private GameObject _spawnedParticle;
+    public Transform particleSpawnPoint;
 
+
+    //check if cultist or brute
+    public bool IsCultist;
+    public bool IsBrute;
 
     private RagdollEnemy _rag;
 
@@ -303,7 +310,11 @@ public class Enemy : MonoBehaviour
         {          
             if(invulnerable != true)
             {
-                FMODUnity.RuntimeManager.PlayOneShot(CultistTakeDamageEvent, GetComponent<Transform>().position);
+                if(IsCultist == true)
+                {
+                    FMODUnity.RuntimeManager.PlayOneShot(CultistTakeDamageEvent, GetComponent<Transform>().position);
+                }
+                
 
                 if (HasDamageAnim == true)
                 {
@@ -358,8 +369,9 @@ public class Enemy : MonoBehaviour
 
                 agent.Stop();
                 CurrentHealth -= Damage;
-    
-                if(Cam_Shake==true)
+                _spawnedParticle = Instantiate(hitParticle, particleSpawnPoint.position, particleSpawnPoint.rotation);
+
+                if (Cam_Shake==true)
                 {
                     CameraShake.Instance.Shake(amplitude, duration);                  
                 }

@@ -8724,7 +8724,7 @@ TrailRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.01
   m_Autodestruct: 0
 --- !u!114 &114016513306697296
 MonoBehaviour:
@@ -8924,6 +8924,10 @@ MonoBehaviour:
   inAttack: 0
   HealthSlider: {fileID: 114417878801611956}
   Fill: {fileID: 114913712607840604}
+  hitParticle: {fileID: 0}
+  particleSpawnPoint: {fileID: 0}
+  IsCultist: 0
+  IsBrute: 1
   randomAttack: 0
   EnteredCombat: 0
   FillStaminaOnDeath: 1

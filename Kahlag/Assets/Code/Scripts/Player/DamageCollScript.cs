@@ -57,7 +57,7 @@ public class DamageCollScript : MonoBehaviour
                 Debug.Log("Damage");
                 enemyHealth.KnockBack(-transform.forward * Force);
 
-                _spawnedBlood = Instantiate(Blood, SpawnPoint.position, SpawnPoint.rotation);
+                //_spawnedBlood = Instantiate(Blood, SpawnPoint.position, SpawnPoint.rotation);
                 //_spawnedBlood = Instantiate(Blood, collision.contacts[0].normal, HitRot);
 
             }
