@@ -9048,7 +9048,7 @@ MonoBehaviour:
   MinCD: 1.8
   MaxCD: 1.8
   ChargeCD: 10
-  ChargeDistance: 5
+  ChargeDistance: 4
   BossGrowlEvent: event:/Boss/Growl
   BossGroundImpactEvent: event:/Boss/Impact_Ground
   BossVerticalSwooshEvent: event:/Boss/Attack_Vertical
@@ -9058,7 +9058,7 @@ MonoBehaviour:
   SwingCollider: {fileID: 1432891698205472}
   chargeTarget: {fileID: 4633989114634334}
   startPos: {fileID: 4624417824664286}
-  ChargeSpeed: 2
+  ChargeSpeed: 1.75
   IsCharging: 0
   TurnInCharge: 1
   Cam_Shake: 1

@@ -124,7 +124,7 @@ public class ChargeState : StateBehaviour
 
         m_timer -= Time.deltaTime;
 
-        if (m_timer > 2f)
+        if (m_timer > .5f)
         {
             Context.Enemy.TakeAim();
         }
@@ -147,11 +147,11 @@ public class ChargeState : StateBehaviour
     public void AimCurve()
     {
         chargeAimCurve = Context.Enemy.anim.GetFloat("chargeAimCurve");
-        Context.Enemy.TakeAim();
+        //Context.Enemy.TakeAim();
         if (chargeAimCurve > 0.7f)
         {
             //if (TurnInCharge)
-            //    Context.Enemy.TakeAim();
+            //Context.Enemy.TakeAim();
         }
         chargeAttackCurve = Context.Enemy.anim.GetFloat("chargeAttackCurve");
         if (chargeAttackCurve > 0.9f)
