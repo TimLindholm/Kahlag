@@ -368,8 +368,8 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.36230513
-        functionName: Boss_Growl
-        data: BossGrowlEvent
+        functionName: Boss_Growl_Short
+        data: BossGrowlShortEvent
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0

@@ -24,6 +24,10 @@ public class ChargeState : StateBehaviour
     FMOD.Studio.EventInstance Growl;
 
     [FMODUnity.EventRef]
+    public string BossGrowlShortEvent;
+    FMOD.Studio.EventInstance Growl_Short;
+
+    [FMODUnity.EventRef]
     public string BossGroundImpactEvent;
     FMOD.Studio.EventInstance Impact_Ground;
 
@@ -88,6 +92,11 @@ public class ChargeState : StateBehaviour
     void Boss_Growl()
     {
         FMODUnity.RuntimeManager.PlayOneShot(BossGrowlEvent,GetComponent<Transform>().position);
+    }
+
+    void Boss_Growl_Short()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(BossGrowlShortEvent, GetComponent<Transform>().position);
     }
 
     void Boss_Ground_Impact()

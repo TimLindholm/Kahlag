@@ -359,7 +359,7 @@ ModelImporter:
           postInfinity: 3
           rotationOrder: 0
       events:
-      - time: 0.22020592
+      - time: 0.17919645
         functionName: Boss_Growl
         data: BossGrowlEvent
         objectReferenceParameter: {instanceID: 0}

@@ -5719,7 +5719,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1956189938902490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.36392945, y: -0.4351883, z: 5.4499993}
+  m_LocalPosition: {x: 0.36392945, y: -0.04, z: 5.4499993}
   m_LocalScale: {x: 1.5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 4578185864126068}
@@ -9050,6 +9050,7 @@ MonoBehaviour:
   ChargeCD: 10
   ChargeDistance: 4
   BossGrowlEvent: event:/Boss/Growl
+  BossGrowlShortEvent: event:/Boss/Growl_Short
   BossGroundImpactEvent: event:/Boss/Impact_Ground
   BossVerticalSwooshEvent: event:/Boss/Attack_Vertical
   BossHorizontalSwooshEvent: event:/Boss/Attack_Horizontal
