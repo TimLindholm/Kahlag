@@ -4169,6 +4169,7 @@ GameObject:
   - component: {fileID: 95309898449173538}
   - component: {fileID: 54042667004341166}
   - component: {fileID: 114924429576763638}
+  - component: {fileID: 114985418968242464}
   m_Layer: 10
   m_Name: Brute
   m_TagString: Enemy
@@ -9198,6 +9199,28 @@ MonoBehaviour:
   IsCultist: 0
   IsBrute: 1
   Weapon: {fileID: 1908991571982644}
+--- !u!114 &114985418968242464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1985437641469034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Boss/Boss_Breathing
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1.9999999
+  OverrideMaxDistance: 10
 --- !u!135 &135639763726775812
 SphereCollider:
   m_ObjectHideFlags: 1
