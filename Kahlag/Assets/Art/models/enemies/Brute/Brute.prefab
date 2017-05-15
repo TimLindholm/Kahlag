@@ -233,7 +233,6 @@ GameObject:
   - component: {fileID: 114040907060560322}
   - component: {fileID: 54442577459963298}
   - component: {fileID: 65111668148173950}
-  - component: {fileID: 136307735287777248}
   m_Layer: 12
   m_Name: ChargeDamageCollider
   m_TagString: Untagged
@@ -4890,7 +4889,7 @@ Transform:
   m_LocalScale: {x: 4.2344303, y: 1.117012, z: 3.21292}
   m_Children: []
   m_Father: {fileID: 4578185864126068}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 4.031, z: 0}
 --- !u!4 &4200825381589332
 Transform:
@@ -5723,7 +5722,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 4578185864126068}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4438617094027068
 Transform:
@@ -6264,8 +6263,8 @@ Transform:
   - {fileID: 4569387880714404}
   - {fileID: 4624417824664286}
   - {fileID: 4633989114634334}
-  - {fileID: 4199894821460648}
   - {fileID: 4436987941504302}
+  - {fileID: 4199894821460648}
   - {fileID: 4304752871167154}
   - {fileID: 4144325749466218}
   - {fileID: 4776936173571478}
@@ -8558,8 +8557,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.90991104, y: 1.9999998, z: 1.302974}
-  m_Center: {x: -0.045044336, y: -0.0000016050375, z: 0.007925213}
+  m_Size: {x: 1.051373, y: 1.9999998, z: 1.4696643}
+  m_Center: {x: -0.09424571, y: -0.0000015961307, z: 0.09126973}
 --- !u!65 &65232461640822838
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -9288,19 +9287,6 @@ CapsuleCollider:
   m_Height: 51.403492
   m_Direction: 1
   m_Center: {x: 3.4, y: -1.09, z: 0}
---- !u!136 &136307735287777248
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1047259749945966}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.0000038146973, z: 0}
 --- !u!136 &136344195675873412
 CapsuleCollider:
   m_ObjectHideFlags: 1
