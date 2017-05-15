@@ -43,8 +43,13 @@ public class PlayerHealthScript : MonoBehaviour
 
     //Stamina ref
     private PlayerStaminaScript _stamRef;
-    
-    
+
+    //feedback related
+    public bool Cam_Shake = true;
+    public float amplitude = 0.1f;
+    public float duration = 0.3f;
+
+
 
 
 
@@ -138,6 +143,7 @@ public class PlayerHealthScript : MonoBehaviour
                 CancelInvoke("IfDamaged");
                 Damaged = true;
                 CurrentHealth -= Damage;
+                Feedback();
                 _stamRef.CurrentStamina -= StaminaLossWhenHit; //REDUCE STAMINA WHEN HIT
                 if(_stamRef.CurrentStamina < 0)
                 {
@@ -158,6 +164,15 @@ public class PlayerHealthScript : MonoBehaviour
         }
 
     }
+
+    public void Feedback()
+    {
+        if (Cam_Shake == true)
+        {
+            CameraShake.Instance.Shake(amplitude, duration);
+        }
+    }
+
 
     IEnumerator InvulnerableTimer()
     {

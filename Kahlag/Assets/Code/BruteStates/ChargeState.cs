@@ -57,6 +57,12 @@ public class ChargeState : StateBehaviour
 
     UnityEngine.AI.NavMeshAgent agent;
 
+
+    //VFX and shake
+    public bool Cam_Shake = true;
+    public float amplitude = 0.1f;
+    public float duration = 0.3f;
+
     public override void OnEnter()
     {
         Context.Enemy.inAttack = true;
@@ -67,6 +73,7 @@ public class ChargeState : StateBehaviour
         StartCoroutine(ChargeCollActive());
         Context.Enemy.ActionTimer = cooldown;
         Context.Enemy.ChargeCooldown = ChargeCD;
+        Invoke("Feedback", .4f);
         //Context.Enemy.ChargeCooldown = ChargeCD; ---- ADD ChargeCooldown to Enemy Script
 
     }
@@ -181,5 +188,13 @@ public class ChargeState : StateBehaviour
 
         //agent.SetDestination(chargeTarget.position);
         //Vector3 relDirection = transform.InverseTransformDirection(agent.desiredVelocity);
+    }
+
+    public void Feedback()
+    {     
+        if (Cam_Shake == true)
+        {
+            CameraShake.Instance.Shake(amplitude, duration);
+        }
     }
 }

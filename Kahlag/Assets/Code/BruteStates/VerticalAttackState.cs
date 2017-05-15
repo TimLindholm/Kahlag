@@ -30,6 +30,16 @@ public class VerticalAttackState : StateBehaviour
     public GameObject damagecoll;
 
 
+    //VFX and Shake
+    public GameObject groundSmashParticle;
+    private GameObject _spawnedParticle;
+    public Transform spawnPoint;
+
+    public bool Cam_Shake = true;
+    public float amplitude = 0.1f;
+    public float duration = 0.3f;
+
+
     private void Awake()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing    
@@ -94,7 +104,7 @@ public class VerticalAttackState : StateBehaviour
 
 
         yield return new WaitForSeconds(.3f);
-       
+        Invoke("Feedback", .8f);
         Context.Enemy.inAttack = false;
     }
 
@@ -103,7 +113,7 @@ public class VerticalAttackState : StateBehaviour
         attackCurve = Context.Enemy.anim.GetFloat("attackCurve");
         if (attackCurve > 0.5f)
         {
-            damagecoll.SetActive(true);
+            damagecoll.SetActive(true);         
             
             //print("Active");
         }
@@ -115,6 +125,15 @@ public class VerticalAttackState : StateBehaviour
             }
         }
 
+    }
+
+    public void Feedback()
+    {
+        _spawnedParticle = Instantiate(groundSmashParticle, spawnPoint.position, spawnPoint.rotation);
+        if (Cam_Shake == true)
+        {
+            CameraShake.Instance.Shake(amplitude, duration);
+        }
     }
 
 }

@@ -369,7 +369,7 @@ public class Enemy : MonoBehaviour
 
                 agent.Stop();
                 CurrentHealth -= Damage;
-                _spawnedParticle = Instantiate(hitParticle, particleSpawnPoint.position, particleSpawnPoint.rotation);
+                //_spawnedParticle = Instantiate(hitParticle, particleSpawnPoint.position, particleSpawnPoint.rotation);
 
                 if (Cam_Shake==true)
                 {

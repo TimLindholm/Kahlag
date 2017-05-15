@@ -5650,6 +5650,9 @@ MonoBehaviour:
   DecayTimer: 2
   _timer: 0
   StaminaLossWhenHit: 2
+  Cam_Shake: 1
+  amplitude: 0.1
+  duration: 0.1
 --- !u!135 &135408077691528032
 SphereCollider:
   m_ObjectHideFlags: 1
