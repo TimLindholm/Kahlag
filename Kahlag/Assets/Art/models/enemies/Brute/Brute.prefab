@@ -8557,8 +8557,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.051373, y: 1.9999998, z: 1.4696643}
-  m_Center: {x: -0.09424571, y: -0.0000015961307, z: 0.09126973}
+  m_Size: {x: 1.1695931, y: 1.9999998, z: 1.674007}
+  m_Center: {x: -0.075200774, y: -0.0000015961307, z: 0.19344096}
 --- !u!65 &65232461640822838
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -8569,8 +8569,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4211729, y: 1.9999998, z: 1.1243808}
-  m_Center: {x: 0.12129831, y: 0, z: 0.040380754}
+  m_Size: {x: 1.4211729, y: 1.9999998, z: 1.2837924}
+  m_Center: {x: 0.12129831, y: 0, z: -0.039325394}
 --- !u!65 &65431522797598860
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -9046,8 +9046,8 @@ MonoBehaviour:
   m_actionTime: 1.8
   MinCD: 1.8
   MaxCD: 1.8
-  ChargeCD: 10
-  ChargeDistance: 4
+  ChargeCD: 8
+  ChargeDistance: 5
   BossGrowlEvent: event:/Boss/Growl
   BossGrowlShortEvent: event:/Boss/Growl_Short
   BossGroundImpactEvent: event:/Boss/Impact_Ground
