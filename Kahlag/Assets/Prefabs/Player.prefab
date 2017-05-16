@@ -5653,6 +5653,7 @@ MonoBehaviour:
   Cam_Shake: 1
   amplitude: 0.1
   duration: 0.1
+  VyriaTakeDamageEvent: event:/Player Vyria/Vyria_Impacts
 --- !u!135 &135408077691528032
 SphereCollider:
   m_ObjectHideFlags: 1
