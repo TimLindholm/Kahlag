@@ -49,10 +49,7 @@ public class VerticalAttackState : StateBehaviour
     private void Update()
     {
         AttackCurve();
-
-
         m_timer -= Time.deltaTime;
-        //TEST
         if (m_timer > 1.15f)
         {      
                 Context.Enemy.TakeAim();
@@ -81,28 +78,9 @@ public class VerticalAttackState : StateBehaviour
         AttackVFX.SetActive(false);
     }
 
-    public void SetVFXActive()
-    {
-        AttackVFX.SetActive(true);
-    }
-
-    public void DeactiveVFX()
-    {
-        AttackVFX.SetActive(false);
-    }
 
     IEnumerator DamageCollActive()
     {
-        //yield return new WaitForSeconds(.2f);
-
-        //TEST
-      
-        //yield return new WaitForSeconds(.7f);
-        //_meleeAttackColl = Instantiate(meleeAttackColl, attackPos.transform.position, attackPos.transform.rotation);
-
-
-
-
         yield return new WaitForSeconds(.3f);
         Invoke("Feedback", .8f);
         Context.Enemy.inAttack = false;
@@ -114,8 +92,7 @@ public class VerticalAttackState : StateBehaviour
         if (attackCurve > 0.5f)
         {
             damagecoll.SetActive(true);         
-            
-            //print("Active");
+           
         }
         else
         {
@@ -134,6 +111,16 @@ public class VerticalAttackState : StateBehaviour
         {
             CameraShake.Instance.Shake(amplitude, duration);
         }
+    }
+
+    public void SetVFXActive()
+    {
+        AttackVFX.SetActive(true);
+    }
+
+    public void DeactiveVFX()
+    {
+        AttackVFX.SetActive(false);
     }
 
 }

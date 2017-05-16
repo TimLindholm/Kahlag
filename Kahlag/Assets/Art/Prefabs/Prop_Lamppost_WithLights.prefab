@@ -163,6 +163,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33062427593267798
 MeshFilter:
@@ -195,7 +196,7 @@ Light:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1941392450936688}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.63655895, g: 0.64705884, b: 0.5709343, a: 1}
   m_Intensity: 4
@@ -220,6 +221,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!108 &108673140003895600
@@ -229,7 +232,7 @@ Light:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1092595232840576}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.60408217, g: 0.625, b: 0.47334558, a: 1}
   m_Intensity: 4
@@ -254,6 +257,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &114342041180537734
@@ -267,9 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b536e216bbd27d458fd574b3bcccea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 3
-  speed: 0.7
-  MakeSourceStationary: 0
+  scale: 2.59
+  speed: 1.2
+  MakeSourceStationary: 1
   positionOffset: 1.5
 --- !u!114 &114939371081273796
 MonoBehaviour:
@@ -282,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b536e216bbd27d458fd574b3bcccea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 3
-  speed: 0.7
-  MakeSourceStationary: 0
+  scale: 2.59
+  speed: 1.2
+  MakeSourceStationary: 1
   positionOffset: 2
