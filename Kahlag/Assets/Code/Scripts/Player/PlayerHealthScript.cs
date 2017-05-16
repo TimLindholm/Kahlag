@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class PlayerHealthScript : MonoBehaviour
 {
@@ -49,7 +50,9 @@ public class PlayerHealthScript : MonoBehaviour
     public float amplitude = 0.1f;
     public float duration = 0.3f;
 
-
+    [FMODUnity.EventRef]
+    public string VyriaTakeDamageEvent;
+    FMOD.Studio.EventInstance Vyria_Impacts;
 
 
 
@@ -138,14 +141,18 @@ public class PlayerHealthScript : MonoBehaviour
             
             if (IsDead != true)
             {
-                //_score.DamageBonus += Damage;
+                //_score.DamageBonus += Damage;                
                 anim.SetTrigger("TakeDamage");
                 CancelInvoke("IfDamaged");
                 Damaged = true;
                 CurrentHealth -= Damage;
                 Feedback();
-                _stamRef.CurrentStamina -= StaminaLossWhenHit; //REDUCE STAMINA WHEN HIT
-                if(_stamRef.CurrentStamina < 0)
+                _stamRef.CurrentStamina -= StaminaLossWhenHit;
+                {
+                    FMODUnity.RuntimeManager.PlayOneShot(VyriaTakeDamageEvent, GetComponent<Transform>().position);
+                }
+                //REDUCE STAMINA WHEN HIT
+                if (_stamRef.CurrentStamina < 0)
                 {
                     _stamRef.CurrentStamina = 0;
                 }
