@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1559844333989324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6843853, y: 0.33501685, z: -4.025015}
+  m_LocalPosition: {x: 4.3197527, y: 48.14, z: -17.136003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,3 +56,10 @@ MonoBehaviour:
   RotationX: 0
   RotationY: 0
   Dash: 0
+  LockOn: 0
+  FastAttack: 0
+  HeavyAttack: 0
+  HeavyAttackFloat: 0
+  MoveAxis: {x: 0, y: 0}
+  RestartLevel: 0
+  gameMaster: {fileID: 0}

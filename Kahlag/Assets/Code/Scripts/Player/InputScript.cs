@@ -25,6 +25,9 @@ public class InputScript : MonoBehaviour
     private PlayerHealthScript _healthRef;
 
     public bool RestartLevel;
+ 
+
+    public GameMaster gameMaster;
 
     //public Vector2 MoveAxis;
 
@@ -38,25 +41,29 @@ public class InputScript : MonoBehaviour
     {
         if(_healthRef.IsDead == false)
         {
-            MoveAxis = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            if(gameMaster.GameStarted == true)
+            {
+                MoveAxis = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-            Horizontal = Input.GetAxis("Horizontal");
-            Vertical = Input.GetAxis("Vertical");
+                Horizontal = Input.GetAxis("Horizontal");
+                Vertical = Input.GetAxis("Vertical");
 
-            RotationX = Input.GetAxis("RotationX");
-            RotationY = Input.GetAxis("RotationY");
+                RotationX = Input.GetAxis("RotationX");
+                RotationY = Input.GetAxis("RotationY");
 
-            HeavyAttackFloat = Input.GetAxis("HeavyAttack");
+                HeavyAttackFloat = Input.GetAxis("HeavyAttack");
 
 
-            Dash = Input.GetKeyDown(KeyCode.Joystick1Button1);
-            //LockOn = Input.GetKeyDown(KeyCode.Joystick1Button4);
+                Dash = Input.GetKeyDown(KeyCode.Joystick1Button1);
+                //LockOn = Input.GetKeyDown(KeyCode.Joystick1Button4);
 
-            FastAttack = Input.GetKeyDown(KeyCode.JoystickButton5);
-            HeavyAttack = Input.GetKeyDown(KeyCode.JoystickButton4);
+                FastAttack = Input.GetKeyDown(KeyCode.JoystickButton5);
+                HeavyAttack = Input.GetKeyDown(KeyCode.JoystickButton4);
 
-            
+            }
         }
+
+
         RestartLevel = Input.GetKeyDown(KeyCode.JoystickButton6);
 
 
