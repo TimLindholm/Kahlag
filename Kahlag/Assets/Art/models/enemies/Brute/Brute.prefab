@@ -8936,7 +8936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 0}
-  m_viewRange: 6
+  m_viewRange: 7
   m_attackRage: 4.5
   randomDir: 0
   _right: 0.03
@@ -8945,7 +8945,7 @@ MonoBehaviour:
   ComboCooldown: 0
   ChargeCooldown: 0
   aimDirection: {fileID: 4782212323118718}
-  VisionRadius: 60
+  VisionRadius: 90
   TurnSmoothing: 5
   anim: {fileID: 0}
   HasDamageAnim: 0
