@@ -316,7 +316,6 @@ public class Enemy : MonoBehaviour
             if (collider.tag == "Enemy")
             {              
                 var enemy = collider.GetComponent<Enemy>();
-                enemy.IsAlerted = true;
                 enemy.Invoke("IamAlerted", AlertTimer);                                 
             }
         }
