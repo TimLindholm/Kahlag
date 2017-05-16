@@ -14,14 +14,17 @@ public class CombatState : StateBehaviour
     {
         //Debug.Log("Enter Combat State");
         agent.speed = 4;
-        agent.Resume();
+    
+        agent.isStopped = false;
         Context.Enemy.EnteredCombat = true;
+
+        Context.Enemy.Alert(); // Alerts nearby allies
 
     }
 
     public override void OnExit()
     {
-        agent.Stop();
+        agent.isStopped = true;
         agent.speed = 3;
     }
 

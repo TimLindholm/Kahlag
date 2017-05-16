@@ -20,7 +20,8 @@ public class IdleState : StateBehaviour
 	public override void OnExit()
 	{
         //Debug.Log("Exit Idle State");
-        agent.Stop();
+   
+        agent.isStopped = true;
     }
 
     public void Start()
@@ -32,7 +33,8 @@ public class IdleState : StateBehaviour
 	{
 		if (Context.Enemy.CanSeePlayer())
 		{
-            agent.Stop();
+            
+            agent.isStopped = true;
             StateMachine.GoToState("CombatState"); 
 		}
 		else
@@ -43,7 +45,14 @@ public class IdleState : StateBehaviour
 
         if(Context.Enemy.CurrentHealth < Context.Enemy.MaxHealth)
         {
-            agent.Stop();
+            
+            agent.isStopped = true;
+            StateMachine.GoToState("CombatState");
+        }
+
+        if(Context.Enemy.IAmAlerted == true)
+        {
+            agent.isStopped = true;
             StateMachine.GoToState("CombatState");
         }
 	}

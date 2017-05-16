@@ -47,32 +47,6 @@ public class DetectEnemyScript : MonoBehaviour
     public void LookForEnemy()
     {
 
-        //Debug.Log(EnemyToTarget, transform);
-        /*   RaycastHit hit;
-           if (Physics.SphereCast(transform.position, DetectionRadius, transform.forward, out hit) && hit.transform.tag == "Enemy")
-           {
-
-               //print("Enemy Found");
-               //AddEnemyToArray();
-               enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-           }
-
-
-           float distance = 3f;
-           float nearestDistance = 50f;
-
-           foreach (GameObject enemy in enemies)
-           {
-
-               distance = (transform.position - enemy.transform.position).sqrMagnitude;
-               if (distance < nearestDistance)
-               {
-                   nearestDistance = distance;
-                   EnemyToTarget = enemy.transform;
-               }
-           }*/
-
         float distance = 3f;
         float nearestDistance = 50f;
 

@@ -87,6 +87,10 @@ public class Enemy : MonoBehaviour
     //Find player
     private PlayerHealthScript _playerRef;
 
+    //Alert allies
+    public float AlertRadius = 6f;
+    public GameObject allies;
+    public bool IAmAlerted;
 
     //Navmesh Testing
     UnityEngine.AI.NavMeshAgent agent;
@@ -304,6 +308,19 @@ public class Enemy : MonoBehaviour
         m_body.AddForce(Force);
     }
 
+    public void Alert()
+    {
+        var colliders = Physics.OverlapSphere(transform.position, AlertRadius);
+        foreach (var collider in colliders)
+        {
+            if (collider.tag == "Enemy")
+            {              
+                var enemy = collider.GetComponent<Enemy>();
+                enemy.IAmAlerted = true;                                    
+            }
+        }
+    }
+
     public void TakeDamage(float Damage)
     {
         if (IsDead != true)
@@ -321,7 +338,8 @@ public class Enemy : MonoBehaviour
                     TakingDamage = true;
                     if (Damage > 2)
                     {
-                        agent.Stop();
+                       
+                        agent.isStopped = true;
                         Invoke("StartMovingAgain", 1.3f);
                         anim.SetTrigger("TakeHeavyDamage");
                         ActionTimer = 1.5f;
@@ -336,11 +354,6 @@ public class Enemy : MonoBehaviour
                         if(HasDamageAnim==true)
                         {
                             anim.SetTrigger("TakeDamage");
-                            //ActionTimer -= 1;
-                            //if(ActionTimer <= 0)
-                            //{
-                            //    ActionTimer = 0;
-                            //}
                             m_body.velocity = Vector3.zero;
                             m_body.angularVelocity = Vector3.zero;
                         }
@@ -367,7 +380,8 @@ public class Enemy : MonoBehaviour
 
                 Invoke("StartRotatingAgain", 1f);
 
-                agent.Stop();
+                
+                agent.isStopped = true;
                 CurrentHealth -= Damage;
                 if(IsCultist == true)
                 {
@@ -380,8 +394,8 @@ public class Enemy : MonoBehaviour
                     CameraShake.Instance.Shake(amplitude, duration);                  
                 }
                 
+
                 Debug.Log("Enemy Hit!");
-                //m_body.isKinematic = true;
                 Invoke("InvulnerableTimer", .2f);
                 invulnerable = true;
             }
@@ -412,10 +426,10 @@ public class Enemy : MonoBehaviour
         invulnerable = false;
     }
 
-    void StartMovingAgain()
-    {
-        agent.Resume();
-    } //Invoked
+    void StartMovingAgain()//Invoked
+    {    
+        agent.isStopped = false;
+    } 
 
     void StartRotatingAgain()
     {
