@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e432f6e6247180f41af06a075cf48c3f
-timeCreated: 1494970185
+timeCreated: 1494971151
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -51,7 +51,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Normal_Intensity
       value:
-        scalar[0]: 2.9
+        scalar[0]: 2
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -68,7 +68,7 @@ SubstanceImporter:
       texEnvs:
       - _BumpMap:
           texture: {instanceID: 0}
-          scale: {x: 20, y: 2}
+          scale: {x: 20, y: 20}
           offset: {x: 0, y: 0}
       - _DetailAlbedoMap:
           texture: {instanceID: 0}
@@ -92,7 +92,7 @@ SubstanceImporter:
           offset: {x: 0, y: 0}
       - _MetallicGlossMap:
           texture: {instanceID: 0}
-          scale: {x: 20, y: 2}
+          scale: {x: 20, y: 20}
           offset: {x: 0, y: 0}
       - _OcclusionMap:
           texture: {instanceID: 0}
@@ -100,14 +100,14 @@ SubstanceImporter:
           offset: {x: 0, y: 0}
       - _ParallaxMap:
           texture: {instanceID: 0}
-          scale: {x: 20, y: 2}
+          scale: {x: 20, y: 20}
           offset: {x: 0, y: 0}
       floats:
       - _BumpScale: 1
       - _Cutoff: 0.5
       - _DetailNormalMapScale: 1
       - _DstBlend: 0
-      - _GlossMapScale: 1
+      - _GlossMapScale: 0.753
       - _Glossiness: 0.5
       - _GlossyReflections: 1
       - _Metallic: 0
