@@ -256,7 +256,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
     startSize:
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -722,8 +722,8 @@ ParticleSystem:
     m_BurstCount: 1
     m_Bursts:
     - time: 0
-      minCount: 14
-      maxCount: 18
+      minCount: 39
+      maxCount: 39
       cycleCount: 1
       repeatInterval: 0.05
   SizeModule:
@@ -989,7 +989,7 @@ ParticleSystem:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 60716
+        atime0: 24865
         atime1: 65535
         atime2: 65535
         atime3: 0

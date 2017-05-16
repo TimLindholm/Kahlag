@@ -8,6 +8,7 @@ public class RagdollEnemy : MonoBehaviour
 
     public Collider[] cols;
     public Rigidbody[] rigids;
+    SkinnedMeshRenderer[] smr;
     Animator anim;
     bool goRagdoll;
 
@@ -48,6 +49,7 @@ public class RagdollEnemy : MonoBehaviour
         _sm = GetComponent<StateMachine>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing 
         _combat = GetComponent<CombatState>();
+        smr = GetComponentsInChildren<SkinnedMeshRenderer>();
 
         if (IsCultist == true)
         {           
@@ -111,6 +113,13 @@ public class RagdollEnemy : MonoBehaviour
                 }
             }
             goRagdoll = true;
+
+            foreach (var mesh in smr)
+            {
+                var bounds = mesh.localBounds;
+                bounds.extents = Vector3.one * 20;
+                mesh.localBounds = bounds;
+            }
         }
 
     }

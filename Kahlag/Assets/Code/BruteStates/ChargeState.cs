@@ -156,7 +156,7 @@ public class ChargeState : StateBehaviour
     public void AimCurve()
     {
         chargeAimCurve = Context.Enemy.anim.GetFloat("chargeAimCurve");
-        //Context.Enemy.TakeAim();
+      
         if (chargeAimCurve > 0.7f)
         {
             //if (TurnInCharge)
@@ -185,7 +185,7 @@ public class ChargeState : StateBehaviour
 
     public void ChargingForward()
     {
-        if(m_timer <= .8f)
+        if(m_timer < .6f)
         {
             transform.position = Vector3.Lerp(startPos.position, chargeTarget.position, ChargeSpeed * Time.deltaTime);
             //agent.Resume();
