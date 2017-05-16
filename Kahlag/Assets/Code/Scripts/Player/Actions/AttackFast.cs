@@ -213,17 +213,7 @@ public class AttackFast : MonoBehaviour
         }
     }
 
-    public void ActivateVFX()
-    {
-        FastParticle1.SetActive(true);
-        FastParticle2.SetActive(true);
-    }
 
-    public void DeactivateVFX()
-    {
-        FastParticle1.SetActive(false);
-        FastParticle2.SetActive(false);
-    }
 
     public void HandleParticle()
     {
@@ -243,82 +233,12 @@ public class AttackFast : MonoBehaviour
         }
 
 
-
-
-        //if (_ir.FastAttack == true)
-        //{
-        //    CancelInvoke("DeactivateVFX");
-        //    FastParticle1.SetActive(true);
-        //    FastParticle2.SetActive(true);
-        //    Invoke("DeactivateVFX", .5f);            
-        //}
-
         if (_ir.HeavyAttackFloat < -.5f)
         {
             CancelInvoke("DeactivateVFX");
-            Invoke("ActivateVFX", .6f);
+            Invoke("HeavyVFX", .6f);
             Invoke("DeactivateVFX", 1f);
         }
-
-        //if(InAttack == true)
-        //{
-        //    FastParticle1.SetActive(true);
-        //    FastParticle2.SetActive(true);
-        //    //HeavyParticle1.SetActive(false);
-        //}
-        //else
-        //{
-        //    FastParticle1.SetActive(false);
-        //    FastParticle2.SetActive(false);
-        //    //HeavyParticle1.SetActive(false);
-        //}
-
-
-        //    fastParticleCurve1 = anim.GetFloat("fastParticleCurve1");
-        //    if (fastParticleCurve1 > 0.1f)
-        //    {
-
-        //        FastParticle1.SetActive(true);
-        //    }
-        //    else
-        //    {
-        //        if (FastParticle1.activeInHierarchy)
-        //        {
-
-        //            FastParticle1.SetActive(false);
-        //        }
-        //    }
-
-
-        //    fastParticleCurve2 = anim.GetFloat("fastParticleCurve2");
-        //    if (fastParticleCurve2 > 0.1f)
-        //    {
-
-        //        FastParticle2.SetActive(true);
-        //    }
-        //    else
-        //    {
-        //        if (FastParticle2.activeInHierarchy)
-        //        {
-
-        //            FastParticle2.SetActive(false);
-        //        }
-        //    }
-
-        //    heavyParticleCurve = anim.GetFloat("heavyParticleCurve");
-        //    if (heavyParticleCurve > 0.1f)
-        //    {
-
-        //        HeavyParticle1.SetActive(true);
-        //    }
-        //    else
-        //    {
-        //        if (HeavyParticle1.activeInHierarchy)
-        //        {
-
-        //            HeavyParticle1.SetActive(false);
-        //        }
-        //    }
     }
 
     
@@ -338,5 +258,22 @@ public class AttackFast : MonoBehaviour
             _actionRef.InAction = false;
             InAttack = false;
         }
+    }
+
+    public void ActivateVFX()
+    {
+        FastParticle1.SetActive(true);
+        FastParticle2.SetActive(true);
+    }
+
+    public void HeavyVFX()
+    {
+        FastParticle1.SetActive(true);
+    }
+
+    public void DeactivateVFX()
+    {
+        FastParticle1.SetActive(false);
+        FastParticle2.SetActive(false);
     }
 }

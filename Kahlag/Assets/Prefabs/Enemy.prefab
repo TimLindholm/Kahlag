@@ -5443,8 +5443,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: MeleeSwing
   m_actionTime: 1.7
-  MinCD: 2.2
-  MaxCD: 3.2
+  MinCD: 2
+  MaxCD: 2.8
   AttackVFX: {fileID: 1761336147672000}
   damagecoll: {fileID: 1493187044456352}
   comboTarget: {fileID: 4492998376596982}
