@@ -54,7 +54,8 @@ public class CombatState : StateBehaviour
 
         if (Context.Enemy.CanAttackPlayer())
         {
-            agent.Stop();
+           
+            agent.isStopped = true;
             StateMachine.GoToState("AttackState"); 
         }
 

@@ -89,8 +89,8 @@ public class Enemy : MonoBehaviour
 
     //Alert allies
     public float AlertRadius = 6f;
-    public GameObject allies;
-    public bool IAmAlerted;
+    public float AlertTimer = 2f;
+    public bool IsAlerted;
 
     //Navmesh Testing
     UnityEngine.AI.NavMeshAgent agent;
@@ -316,7 +316,8 @@ public class Enemy : MonoBehaviour
             if (collider.tag == "Enemy")
             {              
                 var enemy = collider.GetComponent<Enemy>();
-                enemy.IAmAlerted = true;                                    
+                enemy.IsAlerted = true;
+                enemy.Invoke("IamAlerted", AlertTimer);                                 
             }
         }
     }
@@ -424,6 +425,11 @@ public class Enemy : MonoBehaviour
         //agent.Resume();
         m_body.isKinematic = false;
         invulnerable = false;
+    }
+
+    public void IamAlerted()
+    {
+        IsAlerted = true;
     }
 
     void StartMovingAgain()//Invoked

@@ -50,7 +50,7 @@ public class IdleState : StateBehaviour
             StateMachine.GoToState("CombatState");
         }
 
-        if(Context.Enemy.IAmAlerted == true)
+        if(Context.Enemy.IsAlerted == true)
         {
             agent.isStopped = true;
             StateMachine.GoToState("CombatState");
