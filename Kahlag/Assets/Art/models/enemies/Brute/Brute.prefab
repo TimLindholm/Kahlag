@@ -8936,7 +8936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 0}
-  m_viewRange: 10
+  m_viewRange: 6
   m_attackRage: 4.5
   randomDir: 0
   _right: 0.03

@@ -70,7 +70,8 @@ public class ChargeState : StateBehaviour
     public override void OnEnter()
     {
         Context.Enemy.inAttack = true;
-        agent.Stop();
+        //agent.Stop();
+        agent.isStopped = true;
         m_timer = m_actionTime;
         float cooldown = UnityEngine.Random.Range(MinCD, MaxCD);
         Context.Enemy.anim.SetTrigger("ChargeAttack");
