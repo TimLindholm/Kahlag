@@ -109,8 +109,16 @@ public class Enemy : MonoBehaviour
     FMOD.Studio.EventInstance Cultist_Impacts;
 
     [FMODUnity.EventRef]
+    public string BossTakeDamageEvent;
+    FMOD.Studio.EventInstance Boss_Impacts;
+
+    [FMODUnity.EventRef]
     public string CultistFootEvent;
     FMOD.Studio.EventInstance Cultist_Footsteps;
+
+    [FMODUnity.EventRef]
+    public string BossDeathEvent;
+    FMOD.Studio.EventInstance Growl_Death;
 
     private void Awake()
 	{
@@ -338,7 +346,12 @@ public class Enemy : MonoBehaviour
                 {
                     FMODUnity.RuntimeManager.PlayOneShot(CultistTakeDamageEvent, GetComponent<Transform>().position);
                 }
-                
+
+                if (IsBrute == true)
+                {
+                    FMODUnity.RuntimeManager.PlayOneShot(BossTakeDamageEvent, GetComponent<Transform>().position);
+                }
+
 
                 if (HasDamageAnim == true)
                 {
@@ -417,6 +430,11 @@ public class Enemy : MonoBehaviour
             }
    
             IsDead = true;
+            if(IsBrute==true)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(BossDeathEvent, GetComponent<Transform>().position);
+            }
+
             m_body.isKinematic = true;
             m_body.constraints = RigidbodyConstraints.None;
             var force = -(aimDirection.rotation * Vector3.forward) * 10 + Vector3.up * 3; 

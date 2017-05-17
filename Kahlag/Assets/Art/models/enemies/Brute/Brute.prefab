@@ -8954,7 +8954,7 @@ MonoBehaviour:
   amplitude: 0.08
   duration: 0.08
   CurrentHealth: 0
-  MaxHealth: 40
+  MaxHealth: 3
   IsDead: 0
   invulnerable: 0
   inAttack: 0
@@ -8979,7 +8979,9 @@ MonoBehaviour:
   accuracyWP: 0.1
   CultistAttackEvent: 
   CultistTakeDamageEvent: 
+  BossTakeDamageEvent: event:/Boss/Boss_Impacts
   CultistFootEvent: 
+  BossDeathEvent: event:/Boss/Growl_Death
 --- !u!114 &114684616017618122
 MonoBehaviour:
   m_ObjectHideFlags: 1
