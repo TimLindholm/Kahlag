@@ -230,7 +230,7 @@ public class AttackFast : MonoBehaviour
         fastParticleCurve2 = anim.GetFloat("fastParticleCurve2");
         if (fastParticleCurve2 > 0.1f)
         {
-            FastParticle2.SetActive(true);
+            //FastParticle2.SetActive(true);
             Invoke("DeactivateVFX", .5f);
         }
 
