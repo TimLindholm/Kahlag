@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour
     //UI health
     public Slider HealthSlider;
     public Image Fill;
+    public GameObject EnemyHealth;
 
     public GameObject hitParticle;
     private GameObject _spawnedParticle;
@@ -126,7 +127,12 @@ public class Enemy : MonoBehaviour
 
         _playerRef = (PlayerHealthScript)FindObjectOfType(typeof(PlayerHealthScript));
         m_target = _playerRef.transform;
-	}
+
+        //Hide UI when at full health
+        EnemyHealth.SetActive(false);
+
+
+    }
 
     void Cultist_Swing()
     {
@@ -324,7 +330,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float Damage)
     {
         if (IsDead != true)
-        {          
+        {
+            EnemyHealth.SetActive(true); // activate healthbar
             if(invulnerable != true)
             {
                 if(IsCultist == true)

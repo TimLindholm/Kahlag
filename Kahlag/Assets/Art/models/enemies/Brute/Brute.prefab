@@ -8959,6 +8959,7 @@ MonoBehaviour:
   inAttack: 0
   HealthSlider: {fileID: 114417878801611956}
   Fill: {fileID: 114913712607840604}
+  EnemyHealth: {fileID: 1832724803344812}
   hitParticle: {fileID: 0}
   particleSpawnPoint: {fileID: 0}
   IsCultist: 0
