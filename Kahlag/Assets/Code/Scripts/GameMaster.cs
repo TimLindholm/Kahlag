@@ -18,11 +18,16 @@ public class GameMaster : MonoBehaviour
     public bool PressedStart;
 
     private InputScript _ir;
+
+
+    public GameObject bossPercussion;
 	
 
 	void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
+        //bossPercussion.SetActive(false);
+        //bossPercussion.SetActive(true);
         if(GameStarted==false && PressedStart==false)
         {
             gameCamera.position = menuPosition.position;

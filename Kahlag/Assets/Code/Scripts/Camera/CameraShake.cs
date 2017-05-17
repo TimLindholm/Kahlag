@@ -10,12 +10,15 @@ public class CameraShake : MonoBehaviour
     public float _amplitude = 0.1f;
 
     private Vector3 initialPos;
+    public Transform originPos;
     private bool IsShaking;
 
     void Start()
     {
         Instance = this;
-        initialPos = transform.localPosition;
+        //initialPos = transform.localPosition;
+        initialPos = originPos.localPosition;
+        
     }
 
     public void Shake(float amplitude, float duration)

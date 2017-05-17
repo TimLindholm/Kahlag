@@ -185,10 +185,12 @@ public class AttackFast : MonoBehaviour
 
     public void HandleCollider()
     {
+        
         fastAttackCurve = anim.GetFloat("fastAttackCurve");
         if (fastAttackCurve > 0.5f)
         {
-            fastAttackColl.SetActive(true);         
+            fastAttackColl.SetActive(true);
+            print("whatuuup");
         }
         else
         {
