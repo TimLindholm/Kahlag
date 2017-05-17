@@ -9215,7 +9215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event: event:/Boss/Boss_Breathing
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 12
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0
