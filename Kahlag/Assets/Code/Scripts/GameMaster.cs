@@ -15,6 +15,7 @@ public class GameMaster : MonoBehaviour
     public GameObject TitleText;
 
     public bool GameStarted;
+    public bool PressedStart;
 
     private InputScript _ir;
 	
@@ -22,17 +23,26 @@ public class GameMaster : MonoBehaviour
 	void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
-        gameCamera.position = menuPosition.position;
-        gameCamera.rotation = menuPosition.rotation;
-        Invoke("FadeIn", 2f);
+        if(GameStarted==false && PressedStart==false)
+        {
+            gameCamera.position = menuPosition.position;
+            gameCamera.rotation = menuPosition.rotation;
+            print("Started");
+        }
+   
+        //Invoke("FadeIn", 2f);
 	}
 	
 	
 	void Update ()
     {
-		if(_ir.StartGame == true)
+        if(PressedStart == false && GameStarted == false)
         {
-            StartCoroutine(StartTheGame());
+            if (_ir.StartGame == true)
+            {
+                StartCoroutine(StartTheGame());
+                PressedStart = true;
+            }
         }
 	}
 
@@ -65,6 +75,7 @@ public class GameMaster : MonoBehaviour
         gameCamera.rotation = gameplayPosition.rotation;
         yield return new WaitForSeconds(2f);
         fadeScript.ShouldFading = true;
+        
         GameStarted = true;
     }
 
