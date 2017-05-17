@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class GameMaster : MonoBehaviour
@@ -26,7 +27,9 @@ public class GameMaster : MonoBehaviour
     public GameObject PlayerUI;
 
     public PlayerHealthScript healthRef;
+
     public GameObject GameOverText;
+    private Color White;
 
     public bool PlayerHasFailed;
 	
@@ -34,9 +37,11 @@ public class GameMaster : MonoBehaviour
 	void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
-        //bossPercussion.SetActive(false);
+
+   
+          //bossPercussion.SetActive(false);
         //bossPercussion.SetActive(true);
-        if(GameStarted==false && PressedStart==false)
+        if (GameStarted==false && PressedStart==false)
         {
             gameCamera.position = menuPosition.position;
             gameCamera.rotation = menuPosition.rotation;
@@ -77,9 +82,10 @@ public class GameMaster : MonoBehaviour
     }
     IEnumerator GameOver()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         //Fade in GameOverText
         GameOverText.SetActive(true);
+        yield return new WaitForSeconds(2f);     
         FadeOut();
         yield return new WaitForSeconds(5f);
         //Fade out GameOverText
