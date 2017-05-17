@@ -22,8 +22,8 @@ public class GameMaster : MonoBehaviour
 	void Start ()
     {
         _ir = (InputScript)FindObjectOfType(typeof(InputScript));
-        //gameCamera.position = menuPosition.position;
-        //gameCamera.rotation = menuPosition.rotation;
+        gameCamera.position = menuPosition.position;
+        gameCamera.rotation = menuPosition.rotation;
         Invoke("FadeIn", 2f);
 	}
 	
@@ -61,8 +61,8 @@ public class GameMaster : MonoBehaviour
         fadeScript.ShouldFading = false;
         yield return new WaitForSeconds(2f);
         TitleText.SetActive(false);
-        //gameCamera.position = gameplayPosition.position;
-        //gameCamera.rotation = gameplayPosition.rotation;
+        gameCamera.position = gameplayPosition.position;
+        gameCamera.rotation = gameplayPosition.rotation;
         yield return new WaitForSeconds(2f);
         fadeScript.ShouldFading = true;
         GameStarted = true;

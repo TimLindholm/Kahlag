@@ -15,17 +15,13 @@ public class EnemyDamageScript : MonoBehaviour
 
     public bool Collided;
 
+    public bool BruteCollider;
+
     void Start ()
     {
         _playerHealth = (PlayerHealthScript)FindObjectOfType(typeof(PlayerHealthScript));
-        Killmyself();
         coll = GetComponent<BoxCollider>();
 
-    }
-
-    public void Killmyself()
-    {
-        //Destroy(gameObject, LifeTime);
     }
 
 
@@ -33,9 +29,7 @@ public class EnemyDamageScript : MonoBehaviour
     {
         if (target.tag == "Player")
         {
-            //Enemy enemyHealth = target.collider.GetComponent<Enemy>();
-            //Enemy enemyHealth = GetComponent<Enemy>();
-            Enemy enemyHealth = target.GetComponent<Enemy>();
+            //Enemy enemyHealth = target.GetComponent<Enemy>();
             PlayerHealthScript _playerHealth = target.GetComponent<PlayerHealthScript>();
             print("EnemyHit");
 
@@ -47,30 +41,28 @@ public class EnemyDamageScript : MonoBehaviour
                 _playerHealth.KnockBack(-transform.forward * Force);
                 Invoke("Trigger", .5f);
                 coll.isTrigger = false;               
-                //_spawnedBlood = Instantiate(Blood, SpawnPoint.position, SpawnPoint.rotation);
-                //_spawnedBlood = Instantiate(Blood, collision.contacts[0].normal, HitRot);
-
             }
         }
+
+        if(BruteCollider == true)
+        {
+            if (target.tag == "Enemy")
+            {       
+                var enemyHealth = target.GetComponent<Enemy>();
+                if(enemyHealth != null)
+                {
+                    if(enemyHealth.IsBrute == false)
+                    {
+                        enemyHealth.TakeDamage(10);
+                    }             
+                }           
+            }
+        }
+
     }
 
     public void Trigger()
     {
         coll.isTrigger = true;
     }
-
-
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    _playerHealth = collision.collider.GetComponent<PlayerHealthScript>();
-    //    //HitSound.Play();
-    //    if (_playerHealth != null)
-    //    {
-
-    //        //print("Damage");
-    //        _playerHealth.TakeDamage(Damage);
-    //        _playerHealth.KnockBack(-collision.contacts[0].normal * Force);
-    //    }
-    //}
 }
