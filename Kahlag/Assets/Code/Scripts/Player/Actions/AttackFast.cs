@@ -265,7 +265,7 @@ public class AttackFast : MonoBehaviour
     public void ActivateVFX()
     {
         FastParticle1.SetActive(true);
-        FastParticle2.SetActive(true);
+        //FastParticle2.SetActive(true);
     }
 
     public void HeavyVFX()
