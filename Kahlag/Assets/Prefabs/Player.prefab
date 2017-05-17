@@ -774,6 +774,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1273382449564588
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4283805743959722}
+  - component: {fileID: 114289676179480176}
+  - component: {fileID: 96623395501058316}
+  m_Layer: 0
+  m_Name: SwingParticle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1273555462695396
 GameObject:
   m_ObjectHideFlags: 1
@@ -2162,7 +2179,7 @@ GameObject:
   - component: {fileID: 114071313619583610}
   - component: {fileID: 96812260037555454}
   m_Layer: 0
-  m_Name: SwingParticle
+  m_Name: ClawParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2828,6 +2845,19 @@ Transform:
   m_Father: {fileID: 4707649325136746}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4283805743959722
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273382449564588}
+  m_LocalRotation: {x: -0, y: 0.0000000037252907, z: -0.0000000037252907, w: 1}
+  m_LocalPosition: {x: 0.011634827, y: 8738.999, z: 0.011444092}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4568634345203846}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4300086868428662
 Transform:
   m_ObjectHideFlags: 1
@@ -3298,7 +3328,7 @@ Transform:
   - {fileID: 4663553165867058}
   - {fileID: 4574272086830006}
   m_Father: {fileID: 4908502364555078}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4557759055910378
 Transform:
@@ -3387,7 +3417,7 @@ Transform:
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 4872671590699844}
-  - {fileID: 4665008607319934}
+  - {fileID: 4283805743959722}
   - {fileID: 4962525204370990}
   m_Father: {fileID: 4816766339055058}
   m_RootOrder: 1
@@ -3603,12 +3633,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897420014613472}
-  m_LocalRotation: {x: -0, y: 0.0000000037252907, z: -0.0000000037252907, w: 1}
-  m_LocalPosition: {x: 0.011634827, y: 8738.999, z: 0.011444092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -32.5, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4568634345203846}
-  m_RootOrder: 1
+  m_Father: {fileID: 4908502364555078}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4673188919917834
 Transform:
@@ -4205,6 +4235,7 @@ Transform:
   m_LocalPosition: {x: -35.55365, y: -0.011527358, z: -0.34630227}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4665008607319934}
   - {fileID: 4554397963314962}
   m_Father: {fileID: 4681460090715074}
   m_RootOrder: 0
@@ -5162,9 +5193,15 @@ TrailRenderer:
         inSlope: 0
         outSlope: 0
         tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5284,13 +5321,13 @@ TrailRenderer:
     textureMode: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!96 &96812260037555454
+--- !u!96 &96623395501058316
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1897420014613472}
+  m_GameObject: {fileID: 1273382449564588}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
@@ -5374,6 +5411,96 @@ TrailRenderer:
     textureMode: 0
   m_MinVertexDistance: 0.01
   m_Autodestruct: 0
+--- !u!96 &96812260037555454
+TrailRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897420014613472}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 2100000, guid: f071381ae87906a4abcdb62efa572fb5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Time: 0.2
+  m_Parameters:
+    serializedVersion: 2
+    widthMultiplier: 0.3
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0.028238297
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+  m_MinVertexDistance: 0.01
+  m_Autodestruct: 0
 --- !u!114 &114026994671548568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5393,8 +5520,8 @@ MonoBehaviour:
   HeavyAttackTimer: 1.6
   _timer: 0
   FastCost: 2.5
-  HeavyCost: 5
-  FastParticle1: {fileID: 1897420014613472}
+  HeavyCost: 6
+  FastParticle1: {fileID: 1273382449564588}
   FastParticle2: {fileID: 1897420014613472}
   HeavyParticle1: {fileID: 1218990472337668}
   VyriaFastEvent: event:/Player Vyria/Vyria_Attack_Fast
@@ -5406,12 +5533,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897420014613472}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8231c31ff2c1874a8140c8c83c8e887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  root: {fileID: 0}
+  root: {fileID: 4908502364555078}
 --- !u!114 &114238433467434936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5451,6 +5578,18 @@ MonoBehaviour:
   aimDirection: {fileID: 4740210974452364}
   VyriaFootEvent: event:/Player Vyria/Vyria_Footsteps
   UsingLockOn: 0
+--- !u!114 &114289676179480176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273382449564588}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8231c31ff2c1874a8140c8c83c8e887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  root: {fileID: 0}
 --- !u!114 &114349002107181736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5550,7 +5689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementRef: {fileID: 114268717330986748}
   StaminaRef: {fileID: 114522122458047966}
-  DashCost: 5
+  DashCost: 4
   DashSpeed: 90
   DashCooldown: 0
   aimDir: {fileID: 4002667448693424}
@@ -5567,7 +5706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9769b973ba05bfd468e7e156d0f89fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 6
+  Damage: 7
   Force: 0
   target: {fileID: 0}
   HitSound: {fileID: 0}

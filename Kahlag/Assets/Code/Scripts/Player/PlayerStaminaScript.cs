@@ -19,8 +19,8 @@ public class PlayerStaminaScript : MonoBehaviour
 
     void Start ()
     {
-        colorStart = Color.black;
-        colorEnd = Color.cyan;
+        //colorStart = Color.black;
+        //colorEnd = Color.cyan;
         CurrentStamina = MaximumStamina;
     }
 	
@@ -42,7 +42,7 @@ public class PlayerStaminaScript : MonoBehaviour
     private void UpdateStaminaBar()
     {
         StaminaSlider.value = CurrentStamina;
-        Fill.color = Color.Lerp(colorStart, colorEnd, Mathf.InverseLerp(0, MaximumStamina, CurrentStamina));
+        //Fill.color = Color.Lerp(colorStart, colorEnd, Mathf.InverseLerp(0, MaximumStamina, CurrentStamina));
     }
 
     public void FillStamina()

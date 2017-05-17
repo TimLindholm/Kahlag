@@ -65,8 +65,9 @@ public class PlayerHealthScript : MonoBehaviour
         _rag = GetComponent<RagdollManager>();
         _stamRef = GetComponent<PlayerStaminaScript>();
 
-        colorStart = Color.black;
-        colorEnd = Color.red;
+        //colorStart = Color.black;
+        //colorEnd = Color.red;
+      
     }
 	
 	
@@ -116,7 +117,7 @@ public class PlayerHealthScript : MonoBehaviour
     private void UpdateHealthBar()
     {
         HealthSlider.value = CurrentHealth;
-        Fill.color = Color.Lerp(colorStart, colorEnd, Mathf.InverseLerp(0, MaxHealth, CurrentHealth));
+        //Fill.color = Color.Lerp(colorStart, colorEnd, Mathf.InverseLerp(0, MaxHealth, CurrentHealth));
     }
 
     private void UpdateRecoveryBar()

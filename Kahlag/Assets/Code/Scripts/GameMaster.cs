@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GameMaster : MonoBehaviour
@@ -21,6 +22,13 @@ public class GameMaster : MonoBehaviour
 
 
     public GameObject bossPercussion;
+
+    public GameObject PlayerUI;
+
+    public PlayerHealthScript healthRef;
+    public GameObject GameOverText;
+
+    public bool PlayerHasFailed;
 	
 
 	void Start ()
@@ -49,12 +57,38 @@ public class GameMaster : MonoBehaviour
                 PressedStart = true;
             }
         }
+
+        if(healthRef.IsDead == true && PlayerHasFailed == false)
+        {
+            StartCoroutine(GameOver());
+            PlayerHasFailed = true;
+        }
 	}
 
     public void StartTheLevel()
     {
 
     }
+
+
+    public void ReloadScene()
+    {
+       
+    }
+    IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(2f);
+        //Fade in GameOverText
+        GameOverText.SetActive(true);
+        FadeOut();
+        yield return new WaitForSeconds(5f);
+        //Fade out GameOverText
+        GameOverText.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(0);
+
+    }
+
 
     public void FadeIn()
     {
@@ -82,6 +116,7 @@ public class GameMaster : MonoBehaviour
         fadeScript.ShouldFading = true;
         
         GameStarted = true;
+        PlayerUI.SetActive(true);
     }
 
     public void SetCameraPos()
