@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1098688511639132
 GameObject:
   m_ObjectHideFlags: 1
@@ -96,7 +96,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1212608147181992
 GameObject:
   m_ObjectHideFlags: 1
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1324b336e2899419448a8c5abebaae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeTime: 1
+  FadeTime: 2
   Screen: {fileID: 1053956363907944}
   ScreenImage: {fileID: 114755322649338132}
   ShouldFading: 1
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1361094069327890}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 547c3984ffd1af64ba4bfcd25bdc9307, type: 3}
   m_Name: 
@@ -465,7 +465,7 @@ MonoBehaviour:
   gameCamera: {fileID: 0}
   fadeScript: {fileID: 114110937490333288}
   TitleText: {fileID: 1191848622272208}
-  GameStarted: 1
+  GameStarted: 0
 --- !u!114 &114193086948649806
 MonoBehaviour:
   m_ObjectHideFlags: 1

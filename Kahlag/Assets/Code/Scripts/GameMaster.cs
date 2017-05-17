@@ -15,27 +15,57 @@ public class GameMaster : MonoBehaviour
     public GameObject TitleText;
 
     public bool GameStarted;
+
+    private InputScript _ir;
 	
 
 	void Start ()
     {
+        _ir = (InputScript)FindObjectOfType(typeof(InputScript));
         gameCamera.position = menuPosition.position;
         gameCamera.rotation = menuPosition.rotation;
+        Invoke("FadeIn", 2f);
 	}
 	
 	
 	void Update ()
     {
-		
+		if(_ir.StartGame == true)
+        {
+            StartCoroutine(StartTheGame());
+        }
 	}
+
+    public void StartTheLevel()
+    {
+
+    }
+
+    public void FadeIn()
+    {
+        fadeScript.ShouldFading = true;
+    }
+
+    public void FadeOut()
+    {
+        fadeScript.ShouldFading = false;
+    }
 
     public void StartGame()
     {
-        //Start the game (press play)
-        //fade out
-        //TitleText.SetActive(false);
-        //Move Camera to gamepos
-        //fade in
+
+    }
+
+    IEnumerator StartTheGame()
+    {
+        fadeScript.ShouldFading = false;
+        yield return new WaitForSeconds(2f);
+        TitleText.SetActive(false);
+        gameCamera.position = gameplayPosition.position;
+        gameCamera.rotation = gameplayPosition.rotation;
+        yield return new WaitForSeconds(2f);
+        fadeScript.ShouldFading = true;
+        GameStarted = true;
     }
 
     public void SetCameraPos()

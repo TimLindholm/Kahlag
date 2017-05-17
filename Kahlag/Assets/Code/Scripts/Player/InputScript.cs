@@ -25,7 +25,8 @@ public class InputScript : MonoBehaviour
     private PlayerHealthScript _healthRef;
 
     public bool RestartLevel;
- 
+
+    public bool StartGame;
 
     public GameMaster gameMaster;
 
@@ -53,6 +54,7 @@ public class InputScript : MonoBehaviour
 
                 HeavyAttackFloat = Input.GetAxis("HeavyAttack");
 
+                
 
                 Dash = Input.GetKeyDown(KeyCode.Joystick1Button1);
                 //LockOn = Input.GetKeyDown(KeyCode.Joystick1Button4);
@@ -63,7 +65,11 @@ public class InputScript : MonoBehaviour
             }
         }
 
-
+        if(gameMaster.GameStarted == false)
+        {
+            StartGame = Input.GetKeyDown(KeyCode.Joystick1Button7);
+        }
+  
         RestartLevel = Input.GetKeyDown(KeyCode.JoystickButton6);
 
 

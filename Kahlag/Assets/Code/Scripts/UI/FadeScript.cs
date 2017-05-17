@@ -47,7 +47,7 @@ public class FadeScript : MonoBehaviour
         ScreenImage.color = Black;
         if (_inactiveTimer <= 0f)
         {
-            Screen.SetActive(false);
+            //Screen.SetActive(false);
         }
         //print("fadin");
     }
