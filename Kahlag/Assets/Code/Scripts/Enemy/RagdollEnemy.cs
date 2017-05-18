@@ -163,7 +163,7 @@ public class RagdollEnemy : MonoBehaviour
         {
 
             //Weapon.transform.parent = null;
-            //Destroy(Weapon);
+            Destroy(Weapon);
             Destroy(gameObject);
 
             if (GetComponent<HorizontalAttackState>())

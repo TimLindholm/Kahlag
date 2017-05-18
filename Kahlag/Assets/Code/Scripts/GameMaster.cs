@@ -98,10 +98,10 @@ public class GameMaster : MonoBehaviour
 
     IEnumerator MissionCompleted()
     {       
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.5f);
         //Fade in GameOverText
         MissionCompletedText.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         FadeOut();
         yield return new WaitForSeconds(4f);
         //Fade out GameOverText

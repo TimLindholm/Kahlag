@@ -8982,6 +8982,7 @@ MonoBehaviour:
   BossTakeDamageEvent: event:/Boss/Boss_Impacts
   CultistFootEvent: 
   BossDeathEvent: event:/Boss/Growl_Death
+  CultistDeathEvent: 
 --- !u!114 &114684616017618122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9062,6 +9063,7 @@ MonoBehaviour:
   BossGrowlShortEvent: event:/Boss/Growl_Short
   BossGroundImpactEvent: event:/Boss/Impact_Ground
   BossVerticalSwooshEvent: event:/Boss/Attack_Vertical
+  ChargeUpEvent: event:/Boss/Charge_Up
   BossHorizontalSwooshEvent: event:/Boss/Attack_Horizontal
   BossFootEvent: event:/Boss/Boss_Footsteps
   ChargeCollider: {fileID: 1047259749945966}
