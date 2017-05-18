@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4867637055197890}
   - component: {fileID: 65031997870795508}
   - component: {fileID: 114369451773055318}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Percussion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,13 +107,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1088826773221980}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.86, y: 48.661, z: -7.95}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.042314164, z: -0, w: 0.99910444}
+  m_LocalPosition: {x: -6.5, y: 48.661, z: -7.61}
+  m_LocalScale: {x: 0.10948779, y: 1, z: 1.205594}
   m_Children: []
   m_Father: {fileID: 4958770219181056}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 4.8500004, z: 0}
 --- !u!4 &4958770219181056
 Transform:
   m_ObjectHideFlags: 1
@@ -121,8 +121,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1815568089674660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.8, y: 0, z: 0.6}
+  m_LocalScale: {x: 0.4199412, y: 1, z: 0.7879411}
   m_Children:
   - {fileID: 4867637055197890}
   - {fileID: 4428904322538020}
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event: event:/Ambience/Percussion
   PlayEvent: 3
-  StopEvent: 0
+  StopEvent: 12
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0
