@@ -5647,8 +5647,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.97794116, g: 0.90881085, b: 0.68312067, a: 1}
+  m_Intensity: 1.5
   m_Range: 1
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -5948,6 +5948,7 @@ MonoBehaviour:
   amplitude: 0.1
   duration: 0.1
   VyriaTakeDamageEvent: event:/Player Vyria/Vyria_Impacts
+  VyriaDeathEvent: event:/Player Vyria/Vyria_Death
 --- !u!135 &135620315414856922
 SphereCollider:
   m_ObjectHideFlags: 1
