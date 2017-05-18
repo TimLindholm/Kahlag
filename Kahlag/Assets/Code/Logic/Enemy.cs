@@ -96,6 +96,11 @@ public class Enemy : MonoBehaviour
     //Navmesh Testing
     UnityEngine.AI.NavMeshAgent agent;
 
+
+    //GameMasterRef
+    private GameMaster _gm;
+
+
     public GameObject[] waypoints; //for patrolling, if enemy does not have any - won't patrol
     int currentWP = 0;
     public float accuracyWP;
@@ -133,6 +138,7 @@ public class Enemy : MonoBehaviour
         SetupAnimator(); //get anim component
         m_body = GetComponent<Rigidbody>();
 
+        _gm = (GameMaster)FindObjectOfType(typeof(GameMaster));
         _playerRef = (PlayerHealthScript)FindObjectOfType(typeof(PlayerHealthScript));
         m_target = _playerRef.transform;
 
@@ -430,6 +436,9 @@ public class Enemy : MonoBehaviour
             }
    
             IsDead = true;
+
+            _gm.EnemiesSlain += 1;
+
             if(IsBrute==true)
             {
                 FMODUnity.RuntimeManager.PlayOneShot(BossDeathEvent, GetComponent<Transform>().position);

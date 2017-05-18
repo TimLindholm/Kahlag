@@ -33,6 +33,14 @@ public class GameMaster : MonoBehaviour
     private Color White;
 
     public bool PlayerHasFailed;
+
+    public int EnemiesSlain = 0;
+    public int MaxEnemies;
+    public bool AllEnemiesKilled;
+    public GameObject MissionCompletedText;
+
+    public GameObject ThankYouText;
+    public GameObject Credits;
 	
 
 	void Start ()
@@ -69,7 +77,39 @@ public class GameMaster : MonoBehaviour
             StartCoroutine(GameOver());
             PlayerHasFailed = true;
         }
-	}
+
+        LevelCleared();
+
+    }
+
+    public void LevelCleared()
+    {
+        if(EnemiesSlain >= MaxEnemies)
+        {
+            if(AllEnemiesKilled == false)
+            {
+                StartCoroutine(MissionCompleted());
+                AllEnemiesKilled = true;
+            }
+        }
+    }
+
+    IEnumerator MissionCompleted()
+    {       
+        yield return new WaitForSeconds(1.5f);
+        //Fade in GameOverText
+        MissionCompletedText.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        FadeOut();
+        yield return new WaitForSeconds(4f);
+        //Fade out GameOverText
+        MissionCompletedText.SetActive(false);
+        ThankYouText.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        ThankYouText.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(0);
+    }
 
     public void StartTheLevel()
     {
@@ -94,23 +134,20 @@ public class GameMaster : MonoBehaviour
         fadeScript.ShouldFading = false;
     }
 
-    public void StartGame()
-    {
 
-    }
 
     IEnumerator StartTheGame()
     {
         fadeScript.ShouldFading = false;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.3f);
         TitleText.SetActive(false);
         gameCamera.position = gameplayPosition.position;
         gameCamera.rotation = gameplayPosition.rotation;
         yield return new WaitForSeconds(.5f);
         MissionText.SetActive(true);
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
         MissionText.SetActive(false);
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.3f);
         fadeScript.ShouldFading = true;
         
         GameStarted = true;
