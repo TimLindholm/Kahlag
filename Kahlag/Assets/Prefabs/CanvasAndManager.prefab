@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1072517700597942
 GameObject:
   m_ObjectHideFlags: 1
@@ -556,11 +556,12 @@ MonoBehaviour:
   MissionText: {fileID: 1914896068477518}
   PlayerHasFailed: 0
   EnemiesSlain: 0
-  MaxEnemies: 3
+  MaxEnemies: 10
   AllEnemiesKilled: 0
   MissionCompletedText: {fileID: 1739571646644564}
   ThankYouText: {fileID: 1317935824586790}
   Credits: {fileID: 0}
+  StartMenuPiece: {fileID: 0}
 --- !u!114 &114263765137393810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -896,7 +897,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cleanse the village by slaying the followers of Kahlag
+  m_Text: "Cleanse the village, \nSlay the followers of Kahlag"
 --- !u!114 &114640896974918458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -956,7 +957,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YOU FAILED
+  m_Text: Hope flickers and fades
 --- !u!114 &114665796852161432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1552,7 +1553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 49}
+  m_AnchoredPosition: {x: 0, y: 204}
   m_SizeDelta: {x: 1000, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224496611767761044

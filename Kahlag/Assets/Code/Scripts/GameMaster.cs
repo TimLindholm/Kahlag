@@ -41,6 +41,8 @@ public class GameMaster : MonoBehaviour
 
     public GameObject ThankYouText;
     public GameObject Credits;
+
+    public GameObject StartMenuPiece;
 	
 
 	void Start ()
@@ -106,6 +108,7 @@ public class GameMaster : MonoBehaviour
         MissionCompletedText.SetActive(false);
         ThankYouText.SetActive(true);
         yield return new WaitForSeconds(4f);
+        StartMenuPiece.SetActive(true);
         ThankYouText.SetActive(false);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(0);
@@ -139,17 +142,19 @@ public class GameMaster : MonoBehaviour
     IEnumerator StartTheGame()
     {
         fadeScript.ShouldFading = false;
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(1.5f);
         TitleText.SetActive(false);
         gameCamera.position = gameplayPosition.position;
         gameCamera.rotation = gameplayPosition.rotation;
         yield return new WaitForSeconds(.5f);
         MissionText.SetActive(true);
-        yield return new WaitForSeconds(4f);
-        MissionText.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        StartMenuPiece.SetActive(false);      
         yield return new WaitForSeconds(.3f);
         fadeScript.ShouldFading = true;
-        
+        yield return new WaitForSeconds(3f);
+        MissionText.SetActive(false);
+
         GameStarted = true;
         PlayerUI.SetActive(true);
     }
@@ -164,6 +169,7 @@ public class GameMaster : MonoBehaviour
         yield return new WaitForSeconds(5f);
         //Fade out GameOverText
         GameOverText.SetActive(false);
+        StartMenuPiece.SetActive(true);
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(0);
 
