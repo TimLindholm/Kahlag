@@ -24,6 +24,10 @@ public class ChargeState : StateBehaviour
     FMOD.Studio.EventInstance Growl;
 
     [FMODUnity.EventRef]
+    public string BossChargeEvent;
+    FMOD.Studio.EventInstance Boss_Charge_Atk;
+
+    [FMODUnity.EventRef]
     public string BossGrowlShortEvent;
     FMOD.Studio.EventInstance Growl_Short;
 
@@ -34,6 +38,10 @@ public class ChargeState : StateBehaviour
     [FMODUnity.EventRef]
     public string BossVerticalSwooshEvent;
     FMOD.Studio.EventInstance Attack_Vertical;
+
+    [FMODUnity.EventRef]
+    public string ChargeUpEvent;
+    FMOD.Studio.EventInstance Charge_Up;
 
     [FMODUnity.EventRef]
     public string BossHorizontalSwooshEvent;
@@ -95,6 +103,11 @@ public class ChargeState : StateBehaviour
         FMODUnity.RuntimeManager.PlayOneShot(BossGrowlEvent,GetComponent<Transform>().position);
     }
 
+    void Boss_Charge()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(BossChargeEvent, GetComponent<Transform>().position);
+    }
+
     void Boss_Growl_Short()
     {
         FMODUnity.RuntimeManager.PlayOneShot(BossGrowlShortEvent, GetComponent<Transform>().position);
@@ -108,6 +121,11 @@ public class ChargeState : StateBehaviour
     void Boss_Vertical_Swoosh()
     {
         FMODUnity.RuntimeManager.PlayOneShot(BossVerticalSwooshEvent, GetComponent<Transform>().position);
+    }
+
+    void Charge_Up_Atk()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(ChargeUpEvent, GetComponent<Transform>().position);
     }
 
     void Boss_Horizontal_Swoosh()

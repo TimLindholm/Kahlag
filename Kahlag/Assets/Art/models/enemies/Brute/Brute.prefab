@@ -9058,6 +9058,7 @@ MonoBehaviour:
   ChargeCD: 8
   ChargeDistance: 5
   BossGrowlEvent: event:/Boss/Growl
+  BossChargeEvent: event:/Boss/Boss_Charge_Atk
   BossGrowlShortEvent: event:/Boss/Growl_Short
   BossGroundImpactEvent: event:/Boss/Impact_Ground
   BossVerticalSwooshEvent: event:/Boss/Attack_Vertical

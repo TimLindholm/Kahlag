@@ -54,6 +54,10 @@ public class PlayerHealthScript : MonoBehaviour
     public string VyriaTakeDamageEvent;
     FMOD.Studio.EventInstance Vyria_Impacts;
 
+    [FMODUnity.EventRef]
+    public string VyriaDeathEvent;
+    FMOD.Studio.EventInstance Vyria_Death;
+
 
 
     void Start ()
@@ -141,6 +145,7 @@ public class PlayerHealthScript : MonoBehaviour
         {
             
             if (IsDead != true)
+
             {
                 //_score.DamageBonus += Damage;                
                 anim.SetTrigger("TakeDamage");
@@ -160,14 +165,18 @@ public class PlayerHealthScript : MonoBehaviour
                 //Debug.Log("Player Hit!");
                 StartCoroutine(InvulnerableTimer());
             }
-            if (CurrentHealth <= 0f && IsDead == false)
+            if (CurrentHealth <= 0f && IsDead == false)                          
             {
+
+                {
+                    FMODUnity.RuntimeManager.PlayOneShot(VyriaDeathEvent, GetComponent<Transform>().position);
+                }
+
                 //_rb.constraints = RigidbodyConstraints.None;
                 //StaminaRef._stamina = StaminaRef.Stamina;
                 _rag.RagdollCharacter();
                 _rag.CloseAllComponents();
-                IsDead = true;
-                
+                IsDead = true;                                
             }
         }
 

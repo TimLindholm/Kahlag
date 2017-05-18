@@ -125,6 +125,10 @@ public class Enemy : MonoBehaviour
     public string BossDeathEvent;
     FMOD.Studio.EventInstance Growl_Death;
 
+    [FMODUnity.EventRef]
+    public string CultistDeathEvent;
+    FMOD.Studio.EventInstance Cultist_Death;
+
     private void Awake()
 	{
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); //Navmesh Testing       
@@ -442,6 +446,11 @@ public class Enemy : MonoBehaviour
             if(IsBrute==true)
             {
                 FMODUnity.RuntimeManager.PlayOneShot(BossDeathEvent, GetComponent<Transform>().position);
+            }
+
+            if (IsCultist == true)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(CultistDeathEvent, GetComponent<Transform>().position);
             }
 
             m_body.isKinematic = true;
