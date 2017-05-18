@@ -318,7 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4754085594788828}
   - component: {fileID: 95068626318336546}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vyria (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5649,7 +5649,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 1
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -5666,7 +5666,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294961865
+    m_Bits: 4294953673
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1

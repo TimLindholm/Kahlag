@@ -29,6 +29,7 @@ public class GameMaster : MonoBehaviour
     public PlayerHealthScript healthRef;
 
     public GameObject GameOverText;
+    public GameObject MissionText;
     private Color White;
 
     public bool PlayerHasFailed;
@@ -80,20 +81,7 @@ public class GameMaster : MonoBehaviour
     {
        
     }
-    IEnumerator GameOver()
-    {
-        yield return new WaitForSeconds(1.5f);
-        //Fade in GameOverText
-        GameOverText.SetActive(true);
-        yield return new WaitForSeconds(2f);     
-        FadeOut();
-        yield return new WaitForSeconds(5f);
-        //Fade out GameOverText
-        GameOverText.SetActive(false);
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(0);
 
-    }
 
 
     public void FadeIn()
@@ -118,11 +106,30 @@ public class GameMaster : MonoBehaviour
         TitleText.SetActive(false);
         gameCamera.position = gameplayPosition.position;
         gameCamera.rotation = gameplayPosition.rotation;
+        yield return new WaitForSeconds(1f);
+        MissionText.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        MissionText.SetActive(false);
         yield return new WaitForSeconds(2f);
         fadeScript.ShouldFading = true;
         
         GameStarted = true;
         PlayerUI.SetActive(true);
+    }
+
+    IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(1.5f);
+        //Fade in GameOverText
+        GameOverText.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        FadeOut();
+        yield return new WaitForSeconds(5f);
+        //Fade out GameOverText
+        GameOverText.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(0);
+
     }
 
     public void SetCameraPos()
