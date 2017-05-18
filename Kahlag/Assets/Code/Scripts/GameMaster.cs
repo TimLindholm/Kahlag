@@ -102,15 +102,15 @@ public class GameMaster : MonoBehaviour
     IEnumerator StartTheGame()
     {
         fadeScript.ShouldFading = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         TitleText.SetActive(false);
         gameCamera.position = gameplayPosition.position;
         gameCamera.rotation = gameplayPosition.rotation;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
         MissionText.SetActive(true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3.5f);
         MissionText.SetActive(false);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(.5f);
         fadeScript.ShouldFading = true;
         
         GameStarted = true;
